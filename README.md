@@ -1,0 +1,1 @@
+# rdfjs-skos-dcat-generation
