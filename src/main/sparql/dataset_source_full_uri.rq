@@ -1,0 +1,255 @@
+prefix access_right:        <http://publications.europa.eu/resource/authority/access-right/>
+prefix adms:                <http://www.w3.org/ns/adms#>
+prefix assettype:           <http://purl.org/adms/assettype/>
+prefix country:             <http://publications.europa.eu/resource/authority/country/>
+prefix datasets:            <https://datasets.omgeving.vlaanderen.be/>
+prefix datatheme_be:        <http://vocab.belgif.be/auth/datatheme/>
+prefix datatheme_eu:        <http://publications.europa.eu/resource/authority/data-theme/>
+prefix dc:                  <http://purl.org/dc/elements/1.1/>
+prefix dcat:                <http://www.w3.org/ns/dcat#>
+prefix dcterms:             <http://purl.org/dc/terms/>
+prefix eurovoc:             <http://eurovoc.europa.eu/>
+prefix file_type:           <http://publications.europa.eu/resource/authority/file-type/>
+prefix foaf:                <http://xmlns.com/foaf/0.1/>
+prefix formats:             <http://www.w3.org/ns/formats/>
+prefix frequency:           <http://publications.europa.eu/resource/authority/frequency/>
+prefix gemet:               <http://www.eionet.europa.eu/gemet/concept/>
+prefix language:            <http://publications.europa.eu/resource/authority/language/>
+prefix metadata:            <https://data.omgeving.vlaanderen.be/ns/metadata#>
+prefix licence:             <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/>
+prefix omg_catalog:         <https://data.omgeving.vlaanderen.be/id/catalog/>
+prefix omg_collection:      <https://data.omgeving.vlaanderen.be/id/collection/>
+prefix omg_conceptscheme:   <https://data.omgeving.vlaanderen.be/id/conceptscheme/>
+prefix omg_dataservice:     <https://data.omgeving.vlaanderen.be/id/dataservice/>
+prefix omg_dataset:         <https://data.omgeving.vlaanderen.be/id/dataset/>
+prefix omg_distribution:    <https://data.omgeving.vlaanderen.be/id/distribution/>
+prefix omg_distribution_doc:    <https://data.omgeving.vlaanderen.be/doc/distribution/>
+prefix omg_graph:           <https://data.omgeving.vlaanderen.be/id/graph/>
+prefix omg_graphcollection: <https://data.omgeving.vlaanderen.be/id/graphcollection/>
+prefix omg_id:              <https://data.omgeving.vlaanderen.be/id/>
+prefix omg_named_graph:     <https://data.omgeving.vlaanderen.be/id/namedgraph/>
+prefix omg_ontology:        <https://data.omgeving.vlaanderen.be/id/ontology/>
+prefix omg_package:         <https://data.omgeving.vlaanderen.be/id/package/>
+prefix omg_periodoftime:    <https://data.omgeving.vlaanderen.be/id/periodoftime/>
+prefix omg_service:         <https://data.omgeving.vlaanderen.be/id/service/>
+prefix omg_vcard:           <https://data.omgeving.vlaanderen.be/id/vcard/>
+prefix ovo:                 <http://data.vlaanderen.be/id/organisatie/>
+prefix owl:                 <http://www.w3.org/2002/07/owl#>
+prefix rdf:                 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs:                <http://www.w3.org/2000/01/rdf-schema#>
+prefix sd:                  <http://www.w3.org/ns/sparql-service-description#>
+prefix skos:                <http://www.w3.org/2004/02/skos/core#>
+prefix spdx:                <http://spdx.org/rdf/terms#>
+prefix ssd:                 <http://www.w3.org/ns/sparql-service-description#>
+prefix vcard:               <http://www.w3.org/2006/vcard/ns#>
+prefix void:                <http://rdfs.org/ns/void#>
+prefix xsd:                 <http://www.w3.org/2001/XMLSchema#>
+
+
+
+CONSTRUCT
+{
+    omg_catalog:codelijst
+    rdf:type      dcat:Catalog ;
+    dcat:dataset  ?dataset .
+
+    ?dataset
+    rdf:type            dcat:Dataset ;
+    dc:identifier ?dataset_id ;
+    dc:language "nl"@nl;
+    dcterms:accessRights ?access_rights;
+    dcterms:accrualPeriodicity ?frequency;
+    dcterms:alternative ?dataset_alternative;
+    rdfs:label ?dataset_label;
+    dcterms:description ?dataset_description;
+    dcterms:identifier ?dataset;
+    dcterms:language ?nederlands ;
+    dcterms:license ?licentie;
+    dcterms:publisher ?publisher;
+    dcterms:rightsHolder ?rightsHolder;
+    dcterms:spatial ?flanders , ?belgium;
+    dcterms:temporal omg_periodoftime:dataset_omg;
+    dcterms:title ?dataset_label;
+    void:rootResource ?conceptscheme;
+    dcat:contactPoint omg_vcard:helpdesk;
+    dcat:landingPage <https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html>;
+    dcat:theme ?theme1, ?theme2, ?theme3, ?theme4 ;
+    foaf:page ?dataset_page;
+    dcterms:hasVersion  ?dataset_version .
+
+
+    ?dataset_version
+    rdf:type                    dcat:Dataset ;
+    rdfs:label                  ?dataset_version_label ;
+    dc:identifier               ?dataset_version_id ;
+    dc:language                 "@nl"@nl ;
+    dcterms:accessRights        ?access_rights ;
+    dcterms:accrualPeriodicity  ?frequency ;
+    dcterms:alternative         ?dataset_alternative ;
+    dcterms:description         ?dataset_description ;
+    dcterms:identifier          ?dataset_version ;
+    dcterms:isVersionOf         ?dataset ;
+    dcterms:issued              ?currentDateTime  ;
+    dcterms:language            ?nederlands ;
+    dcterms:license             ?licentie ;
+    dcterms:publisher           ?publisher ;
+    dcterms:rightsHolder        ?rightsHolder ;
+    dcterms:spatial             ?flanders , ?belgium ;
+    dcterms:temporal            omg_periodoftime:dataset_omg ;
+    dcterms:title               ?dataset_version_label ;
+    void:rootResource           ?conceptscheme ;
+    owl:versionInfo             ?next_release_version ;
+    dcat:contactPoint           omg_vcard:helpdesk ;
+    dcat:distribution           ?distribution_csv , ?distribution_jsonld, ?distribution_ttl, ?package;
+    dcat:landingPage            <https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html> ;
+    dcat:theme                  ?theme1, ?theme2, ?theme3, ?theme4  ;
+    foaf:page                   ?dataset_version_page .
+
+    ?package
+    rdf:type               dcat:Distribution , spdx:Package ;
+    rdfs:label             ?package_label ;
+    dc:identifier          ?package_id ;
+    dcterms:accessRights   ?access_rights ;
+    dcterms:description    ?jar_description ;
+    dcterms:format         file_type:JAR ;
+    dcterms:identifier     ?package ;
+    dcterms:issued         ?currentDateTime ;
+    dcterms:rightsHolder   ?rightsHolder ;
+    dcterms:title          ?package_label ;
+    spdx:downloadLocation  ?package_download_url ;
+    spdx:packageFileName   ?packageFileName ;
+    spdx:packageName       ?packageName ;
+    spdx:versionInfo       ?next_release_version ;
+    dcat:downloadURL       ?package_download_url .
+
+    ?distribution_ttl
+    rdf:type              dcat:Distribution ;
+    rdfs:label            ?ttl_label ;
+    dc:identifier         ?ttl_id ;
+    dcterms:accessRights  ?access_rights ;
+    dcterms:description   ?ttl_description ;
+    dcterms:format        file_type:RDF_TURTLE ;
+    dcterms:identifier    ?distribution_ttl ;
+    dcterms:issued        ?currentDateTime  ;
+    dcterms:rightsHolder  ?rightsHolder ;
+    dcterms:title         ?ttl_label ;
+    dcat:accessURL        ?accessURL ;
+    dcat:compressFormat   <http://www.iana.org/assignments/media-types/application/gzip> ;
+    dcat:downloadURL      ?ttl_download ;
+    dcat:mediaType        <https://www.iana.org/assignments/media-types/text/turtle> ;
+    foaf:page             ?distribution_csv_page .
+
+    ?distribution_jsonld
+    rdf:type              dcat:Distribution ;
+    rdfs:label            ?jsonld_label ;
+    dc:identifier         ?jsonld_id ;
+    dcterms:accessRights  ?access_rights ;
+    dcterms:description   ?jsonld_description;
+    dcterms:format        file_type:JSON_LD ;
+    dcterms:identifier    ?distribution_jsonld ;
+    dcterms:issued        ?currentDateTime ;
+    dcterms:rightsHolder  ?rightsHolder ;
+    dcterms:title         ?jsonld_label ;
+    dcat:accessURL        ?accessURL ;
+    dcat:compressFormat   <http://www.iana.org/assignments/media-types/application/gzip> ;
+    dcat:downloadURL      ?jsonld_download;
+    dcat:mediaType        <https://www.iana.org/assignments/media-types/application/ld+json> ;
+    foaf:page            ?distribution_jsonld_page .
+
+    ?distribution_csv
+    rdf:type              dcat:Distribution ;
+    rdfs:label            ?csv_label ;
+    dc:identifier         ?csv_id ;
+    dcterms:accessRights  ?access_rights ;
+    dcterms:description   ?csv_description ;
+    dcterms:format        file_type:CSV ;
+    dcterms:identifier    ?distribution_csv ;
+    dcterms:issued        ?currentDateTime  ;
+    dcterms:rightsHolder  ?rightsHolder ;
+    dcterms:title         ?csv_label ;
+    dcat:accessURL        ?accessURL ;
+    dcat:compressFormat   <http://www.iana.org/assignments/media-types/application/gzip> ;
+    dcat:downloadURL      ?csv_download ;
+    dcat:mediaType        <https://www.iana.org/assignments/media-types/text/csv> ;
+    foaf:page             ?distribution_csv_page .
+}
+WHERE
+{
+    ?s spdx:name ?name; # "codelijst-matrix"
+    owl:versionInfo ?v ;
+    metadata:artifactId ?artifactId ; # "codelijst-matrix"
+    metadata:groupId ?groupId; # "be.vlaanderen.omgeving.data.id.graph"
+    metadata:next_release_version ?next_release_version . #"2.0.1"
+
+
+    BIND( now() AS ?currentDateTime ) .
+
+    BIND(IRI("http://eurovoc.europa.eu/2407") AS ?theme1) .
+    BIND(IRI("http://publications.europa.eu/resource/authority/data-theme/ENVI") AS ?theme2) .
+    BIND(IRI("http://vocab.belgif.be/auth/datatheme/ENVI") AS ?theme3) .
+    BIND(IRI("http://www.eionet.europa.eu/gemet/concept/10087") AS ?theme4) .
+    BIND(IRI("http://publications.europa.eu/resource/authority/access-right/PUBLIC") AS ?access_rights) .
+    BIND(IRI("http://publications.europa.eu/resource/authority/frequency/IRREG") AS ?frequency) .
+    BIND(IRI("http://data.vlaanderen.be/id/organisatie/OVO003323") AS ?publisher) .
+    BIND(IRI("http://data.vlaanderen.be/id/organisatie/OVO003751") AS ?rightsHolder) .
+
+    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/dataset/", STR( ?artifactId ))) AS ?dataset ) .
+    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/dataset/", STR( ?artifactId ), "_", STR( ?next_release_version ) )) AS ?dataset_version ) .
+    BIND(IRI(CONCAT(REPLACE(STR( ?dataset ),"/id/","/doc/","i"), ".html")) AS ?dataset_page) .
+    BIND(IRI(CONCAT(REPLACE(STR( ?dataset_version ),"/id/","/doc/","i"), ".html")) AS ?dataset_version_page) .
+
+    BIND(IRI(CONCAT("https://repo.omgeving.vlaanderen.be/artifactory/release/", REPLACE(STR( ?groupId ),"\\.","/","i"), "/", STR( ?artifactId ), "/", STR( ?next_release_version ),  "/", STR( ?artifactId ), "-", STR( ?next_release_version ), ".jar" )) AS ?package_download_url ) .
+
+    BIND(CONCAT(STR( ?groupId ), ".", STR( ?artifactId )  ) AS ?packageName ) .
+
+    BIND(REPLACE(STR( ?packageName ),"graph","dataset","i")   AS ?dataset_id ) .
+    BIND(CONCAT(STR( ?packageName ), ".", STR( ?next_release_version )  ) AS ?package_id ) .
+    BIND(REPLACE(STR( ?package_id ),"graph","dataset","i")   AS ?dataset_version_id ) .
+    BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_ttl")  AS ?ttl_id ) .
+    BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_jsonld"  ) AS ?jsonld_id ) .
+    BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_csv" ) AS ?csv_id ) .
+    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/package/", STR( ?package_id ) ) ) AS ?package ) .
+    BIND(CONCAT(STR( ?artifactId ), "-", STR( ?next_release_version ), ".jar"  ) AS ?packageFileName ) .
+
+    BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?ttl_id ) ) ) AS ?ttl_download ) .
+    BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?jsonld_id ) ) ) AS ?jsonld_download ) .
+    BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?csv_id ) ) ) AS ?csv_download ) .
+
+    BIND(CONCAT("https://data.omgeving.vlaanderen.be/id/distribution/", STR( ?artifactId ), "_", STR( ?next_release_version )  ) AS ?distribution_base ) .
+    BIND(IRI(CONCAT(STR( ?distribution_base ), "_csv")) AS ?distribution_csv ) .
+    BIND(IRI(CONCAT(STR( ?distribution_base ), "_jsonld")) AS ?distribution_jsonld ) .
+    BIND(IRI(CONCAT(STR( ?distribution_base ), "_ttl")) AS ?distribution_ttl ) .
+    BIND(CONCAT("https://data.omgeving.vlaanderen.be/doc/distribution/", STR( ?artifactId ), "_", STR( ?next_release_version )  ) AS ?distribution_doc_base ) .
+    BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_csv.html")) AS ?distribution_csv_page ) .
+    BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_jsonld.html")) AS ?distribution_jsonld_page ) .
+    BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_ttl.html")) AS ?distribution_ttl_page ) .
+
+    BIND(REPLACE(CONCAT(UCASE(SUBSTR(?name, 1, 1)), SUBSTR(?artifactId, 2)), "-", " ", "i") as ?Name)
+    BIND(STRLANG(?name, "nl") as ?name_lang)
+    BIND(STRLANG(CONCAT(STR( ?Name ), " package versie ", STR(?next_release_version)), "nl") AS ?package_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in Turtle rdf-formaat. Versie ", STR(?next_release_version)), "nl") AS ?ttl_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in jsonld-formaat. Versie ", STR(?next_release_version)), "nl") AS ?jsonld_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in csv-formaat. Versie ", STR(?next_release_version)), "nl") AS ?csv_label ) .
+
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", geserialiseerd als Turtle bestand."), "nl") AS ?ttl_description ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", geserialiseerd als json-ld bestand."), "nl") AS ?jsonld_description ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", geserialiseerd als csv bestand."), "nl") AS ?csv_description ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", Jar maven package."), "nl") AS ?jar_description ) .
+
+    BIND(STRLANG(STR( ?Name ), "nl") AS ?dataset_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", versie ", STR(?next_release_version)), "nl") AS ?dataset_version_label ) .
+
+    BIND(STRLANG(CONCAT("Dataset ", STR( ?artifactId )), "nl") AS ?dataset_alternative ) .
+    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/conceptscheme/", strafter(?artifactId,"-"))) AS ?conceptscheme ) .
+    BIND(IRI("http://publications.europa.eu/resource/authority/language/NLD") AS ?nederlands)
+    BIND(IRI("http://publications.europa.eu/resource/authority/country/BEL") AS ?belgium)
+    BIND(IRI("https://www.geonames.org/3337388/flanders") AS ?flanders)
+    ##### VARIABLES
+    BIND(IRI("http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0") AS ?licentie ) .
+    BIND(IRI(CONCAT("https://github.com/milieuinfo/", STR( ?artifactId ), ".git")) AS ?accessURL ) .
+    BIND("matrixtypes"AS ?types ) .
+    BIND(STRLANG(CONCAT("Deze dataset bevat een lijst van ", STR( ?types ), ", die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."), "nl") AS ?dataset_description ) .
+
+
+
+}

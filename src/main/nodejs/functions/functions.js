@@ -1,0 +1,148 @@
+import fs from "fs";
+import jsonld from 'jsonld';
+import {readFileSync} from 'fs';
+import csv from 'csvtojson';
+import N3 from 'n3';
+import { RdfStore } from 'rdf-stores';
+import { QueryEngine } from '@comunica/query-sparql';
+import rdfDataset from '@rdfjs/dataset';
+import validate from '../shacl/shacl_validation.js';
+import yaml from "js-yaml";
+
+class Mapping {
+    constructor(method1, method2) {
+        this.config = yaml.load(fs.readFileSync('../../resources/source/config.yml', 'utf8'));
+        function separateString(originalString) {
+            if (originalString.includes('|')) {
+                return originalString.split('|');
+            }
+            else {
+                return originalString;
+            }
+        }
+        this.method1 = method1;
+        this.method2= method2;
+    }
+
+}
+
+// FUNCTIONS
+function separateString(originalString) {
+    if (originalString.includes('|')) {
+        return originalString.split('|');
+    }
+    else {
+        return originalString;
+    }
+}
+
+async function rdf_to_jsonld(dataset, file_name) {
+    console.log("6 rdf to jsonld");
+    let my_json = await jsonld.fromRDF(dataset);
+    fs.writeFileSync(file_name, JSON.stringify(my_json, null, 4));
+}
+
+async function rdf_to_framedjsonld(dataset,my_frame, file_name) {
+    console.log("7 rdf to framed jsonld");
+    let my_json = await jsonld.fromRDF(dataset);
+    console.log("Extract a conceptscheme as a tree using a frame.");
+    let framed = await jsonld.frame(my_json, my_frame);
+    fs.writeFileSync(file_name, JSON.stringify(framed, null, 4));
+}
+
+async function jsonld_to_store(json_ld) {
+    //https://github.com/digitalbazaar/jsonld.js/issues/255
+    let rdf = await jsonld.toRDF(json_ld, { format: "application/n-quads" })
+    console.log("2 Jsonld to Quads in Store.");
+    const parser = new N3.Parser();
+    const store = RdfStore.createDefault();
+    parser.parse(
+        rdf,
+        (error, quad) => {
+            if (quad)
+                store.addQuad(quad);
+            else
+                verrijk(store);
+        });
+}
+
+async function store_to_csv(store){
+    console.log("4 store to csv");
+    const myEngine = new QueryEngine();
+    const query = readFileSync(config.sparql.select, 'utf8');
+    const result = await myEngine.query(query, { sources: [ store ] });
+    const { data } = await myEngine.resultToString(result,'text/csv');
+    var csv_file = fs.createWriteStream(config.skos.csv, 'utf8') ;
+    data.pipe(csv_file);
+}
+
+async function store_to_rdf(store){
+    console.log("5 store to rdf");
+    const myConstructEngine = new QueryEngine();
+    const query = readFileSync(config.sparql.construct, 'utf8');
+    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store ] });
+    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: prefixen });
+    const nt_writer = new N3.Writer({ format: 'N-Triples' });
+    const dataset = rdfDataset.dataset()
+    quadStream.on('data', (quad) => {
+        ttl_writer.addQuad(quad);
+        nt_writer.addQuad(quad);
+        dataset.add(quad);
+    });
+    quadStream.on('end', () => {
+        nt_writer.end((error, result) => fs.writeFileSync(config.skos.nt, result));
+        ttl_writer.end((error, result) => fs.writeFileSync(config.skos.turtle, result));
+        rdf_to_jsonld(dataset);
+        validate(shapes, dataset);
+    });
+    quadStream.on('error', (error) => {
+        console.error(error);
+    });
+}
+
+async function verrijk(store){
+    console.log("3 verrijk met construct");
+    const myConstructEngine = new QueryEngine();
+    const query = readFileSync(config.sparql.verrijking, 'utf8');
+    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store ] });
+    quadStream.on('data', (quad) => {
+        store.addQuad(quad);
+    });
+    quadStream.on('end', () => {
+        store_to_csv(store);
+        store_to_rdf(store);
+    });
+    quadStream.on('error', (error) => {
+        console.error(error);
+    });
+}
+
+async function csv_to_jsonld() {
+    await csv({
+        ignoreEmpty:true,
+        flatKeys:true
+    })
+        .fromFile(config.skos.csv_source)
+        .then((jsonObj)=>{
+            var new_json = new Array();
+            for(var i = 0; i < jsonObj.length; i++){
+                const object = {};
+                Object.keys(jsonObj[i]).forEach(function(key) {
+                    //object[update_key(key)] = separateString(jsonObj[i][key]);
+                    object[key] = separateString(jsonObj[i][key]);
+                })
+                new_json.push(object)
+            }
+            let jsonld = {"@graph": new_json, "@context": context};
+            console.log("1 Csv to Jsonld");
+            jsonld_to_store(jsonld)
+        })
+}
+//export default separateString
+export  {separateString ,rdf_to_jsonld, rdf_to_framedjsonld,}// jsonld_to_store, store_to_csv, store_to_rdf,  verrijk, csv_to_jsonld}
+
+
+
+
+
+

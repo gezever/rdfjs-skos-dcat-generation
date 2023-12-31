@@ -1,0 +1,31 @@
+skos:
+  distributie_pad: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/
+  distributie_naam: matrix
+  jsonld_context: ../resources/source/codelijst_context.json
+  csv_source: ../resources/source/codelijst-source.csv
+  turtle: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.ttl
+  jsonld: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.jsonld
+  jsonld_framed: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix_framed.jsonld
+  csv: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.csv
+  nt: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.nt
+dcat:
+  distributie_pad_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/
+  distributie_pad_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/
+  dataset_csv: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.csv
+  dataset_jsonld: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.jsonld
+  dataset_turtle: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.ttl
+  catalog_csv: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.csv
+  catalog_turtle: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.ttl
+  catalog_jsonld: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.jsonld
+  jsonld_context : ../resources/source/catalog_context.json
+  jsonld_dataset_context : ../resources/source/dataset_context.json
+  dataset_source : ../resources/source/dataset_source.csv
+  catalog_source : ../resources/source/catalog_source.csv
+sparql :
+  select : ../sparql/rdf_to_csv.rq
+  verrijking : ../sparql/verrijk.rq
+  verrijking_dcat : ../sparql/verrijk_dcat.rq
+  construct : ../sparql/construct.rq
+  dataset_source : ../sparql/dataset_source_full_uri.rq
+ap :
+  constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/matrix-ap-constraints/matrix-ap-constraints.ttl

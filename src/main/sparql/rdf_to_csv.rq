@@ -1,0 +1,129 @@
+##sparql --results=CSV --data=../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.ttl  --query rdf_to_csv.rq > ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.csv
+
+
+prefix skos:  <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+prefix dcat:   <http://www.w3.org/ns/dcat#>
+
+select distinct
+?uri
+?prefLabel
+?definition
+?notation
+?theme
+?collection
+?inScheme
+?topConceptOf
+?hasTopConcept
+(group_concat(?mem;separator="|") as ?member)
+?type
+
+where
+{
+    select distinct
+    ?uri
+    ?prefLabel
+    ?definition
+    ?notation
+    ?theme
+    ?collection
+    ?inScheme
+    ?topConceptOf
+    (group_concat(?hasTC;separator="|") as ?hasTopConcept)
+    ?type
+    ?mem
+    where
+    {
+        select distinct
+        ?uri
+        ?prefLabel
+        ?definition
+        ?notation
+        ?theme
+        (group_concat(?coll;separator="|") as ?collection)
+        ?inScheme
+        ?topConceptOf
+        ?type
+        ?hasTC
+        ?mem
+        where
+        {
+            select distinct
+            ?type
+            ?uri
+            ?notation
+            ?prefLabel
+            ?altLabel
+            ?definition
+            ?coll
+            ?inScheme
+            (group_concat(?th;separator="|") as ?theme)
+            ?seeAlso
+            ?topConceptOf
+            ?hasTC
+            ?mem
+            where
+            {
+                select distinct
+                ?type
+                ?uri
+                ?notation
+                ?prefLabel
+                ?altLabel
+                (group_concat(?def;separator="|") as ?definition)
+                ?coll
+                ?inScheme
+                ?th
+                ?seeAlso
+                ?topConceptOf
+                ?hasTC
+                ?mem
+                where
+                {
+                    select distinct
+                    ?type
+                    ?uri
+                    ?notation
+                    ?prefLabel
+                    ?altLabel
+                    ?def
+                    ?coll
+                    ?inScheme
+                    ?th
+                    ?seeAlso
+                    ?topConceptOf
+                    ?hasTC
+                    ?mem
+                    where
+                    {?uri
+                    a ?type .
+                    optional {?uri skos:definition ?def }
+                    optional {?uri skos:inScheme ?inScheme }
+                    optional {?uri skos:notation ?notation }
+                    optional {?uri skos:prefLabel ?prefLabel }
+                    optional {?uri skos:altLabel ?altLabel }
+                    optional {?uri rdfs:seeAlso ?seeAlso .}
+                    optional {?uri dcat:theme ?th .}
+                    optional {?uri skos:topConceptOf ?topConceptOf .}
+                    optional {?uri skos:hasTopConcept ?hasTC .}
+
+                    optional {?uri a skos:Concept . ?coll skos:member ?uri .}
+                    optional {?uri skos:member ?mem .}
+                    }
+                    GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?def ?coll ?inScheme ?th ?seeAlso ?topConceptOf ?hasTC ?mem
+                    ORDER BY ?def
+                }
+                GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?coll ?inScheme ?th ?seeAlso ?topConceptOf ?hasTC ?mem
+                ORDER BY ?th
+            }
+            GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?coll ?inScheme ?seeAlso ?topConceptOf ?definition ?hasTC ?mem
+            ORDER BY ?coll
+        }
+        GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?inScheme ?theme ?seeAlso ?topConceptOf ?definition ?hasTC ?mem
+        ORDER BY ?uri
+    }
+    GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?inScheme ?theme ?seeAlso ?topConceptOf ?definition ?collection ?mem
+    ORDER BY ?uri
+}
+GROUP BY ?type ?uri ?notation ?prefLabel ?altLabel ?inScheme ?theme ?seeAlso ?topConceptOf ?definition ?collection ?hasTopConcept
+ORDER BY ?uri

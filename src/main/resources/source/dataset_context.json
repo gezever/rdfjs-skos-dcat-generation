@@ -1,0 +1,22 @@
+{
+
+  "groupId" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#groupId"
+  },
+  "artifactId" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#artifactId"
+  },
+  "version" : {
+    "@id" : "owl:versionInfo"
+  },
+  "next_release_version" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#next_release_version"
+  },
+  "name" : {
+    "@id" : "http://spdx.org/rdf/terms#name"
+  },
+  "owl" : "http://www.w3.org/2002/07/owl#"
+
+
+}
+
