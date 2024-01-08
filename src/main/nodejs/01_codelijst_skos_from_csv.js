@@ -29,23 +29,14 @@ const prefixen = {xsd: "http://www.w3.org/2001/XMLSchema#",
     dc: "http://purl.org/dc/elements/1.1/",
     gemet: "http://www.eionet.europa.eu/gemet/concept/"}
 
+
 const frame = {
     "@context": context,
     "@type": ["skos:ConceptScheme", "skos:Collection", "skos:Concept"],
     "member": {
         "@type": "skos:Concept",
-        "@embed": "@always",
-        "@omitDefault": true,
-        "inScheme": {
-            "@type": "skos:ConceptScheme",
-            "@embed": "@never",
-            "@omitDefault": true
-        },
-        "topConceptOf": {
-            "@type": "skos:ConceptScheme",
-            "@embed": "@never",
-            "@omitDefault": true
-        }
+        "@embed": "@never",
+        "@omitDefault": true
     },
     "inScheme": {
         "@type": "skos:ConceptScheme",
@@ -54,6 +45,11 @@ const frame = {
     },
     "topConceptOf": {
         "@type": "skos:ConceptScheme",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "hasTopConcept": {
+        "@type": "skos:Concept",
         "@embed": "@never",
         "@omitDefault": true
     }
@@ -68,6 +64,8 @@ function separateString(originalString) {
         return originalString;
     }
 }
+
+
 
 async function n3_reasoning(json_ld) {
     console.log("2: n3 reasoning ");
