@@ -99,31 +99,6 @@ async function rdf_to_jsonld(rdf_dataset, filename) {
     writeFileSync(filename, JSON.stringify(framed, null, 4));
 }
 
-async function add_dcat_dataset_to_catalog(dcat_dataset_store) {
-    console.log("4. add dcat dataset to catalog");
-    let catalog_old =readFileSync(config.dcat.catalog_turtle, 'utf8');
-    const catalog_parser = new N3.Parser();
-    const catalog_store = RdfStore.createDefault();
-    catalog_parser.parse(
-        catalog_old,
-        (error, quad) => {
-            if (quad)
-                catalog_store.addQuad(quad);
-            else
-                // construct_dcat(store);
-                console.log('catalog store loaded');});
-    const myConstructEngine = new QueryEngine();
-    const query = readFileSync(config.sparql.construct, 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ dcat_dataset_store, catalog_store ] });
-    const final_store = RdfStore.createDefault();
-    quadStream.on('data', (quad) => {
-        final_store.addQuad(quad);
-    });
-    quadStream.on('end', () => {
-        serialize_catalog(final_store);
-    });
-}
-
 async function serialize_catalog(store) {
     console.log("5. serialize catalog");
     const myConstructEngine = new QueryEngine();
@@ -134,7 +109,6 @@ async function serialize_catalog(store) {
     quadStream.on('data', (quad) => {
         catalog_ttl_writer.addQuad(quad);
         catalog.add(quad);
-        //console.log(quad);
     });
     quadStream.on('end', () => {
         (async () => {
@@ -149,6 +123,30 @@ async function serialize_catalog(store) {
     });
 }
 
+async function add_dcat_dataset_to_catalog(dcat_dataset_store) {
+    console.log("4. add dcat dataset to catalog");
+    let catalog_old =readFileSync(config.dcat.catalog_turtle, 'utf8');
+    const catalog_parser = new N3.Parser();
+    const catalog_store = RdfStore.createDefault();
+    catalog_parser.parse(
+        catalog_old,
+        (error, quad) => {
+            if (quad)
+                catalog_store.addQuad(quad);
+            else
+                console.log('catalog store loaded');});
+    const myConstructEngine = new QueryEngine();
+    const query = readFileSync(config.sparql.construct, 'utf8');
+    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ dcat_dataset_store, catalog_store ] });
+    const final_store = RdfStore.createDefault();
+    quadStream.on('data', (quad) => {
+        final_store.addQuad(quad);
+    });
+    quadStream.on('end', () => {
+        serialize_catalog(final_store);
+    });
+}
+
 
 async function serialize_dcat_dataset(store){
     console.log("3. serialize dcat dataset");
@@ -160,15 +158,16 @@ async function serialize_dcat_dataset(store){
     quadStream.on('data', (quad) => {
         ttl_writer.addQuad(quad);
         dataset.add(quad);
-        //console.log(quad);
     });
     quadStream.on('end', () => {
-        ttl_writer.end((error, result) => fs.writeFileSync(config.dcat.dataset_turtle, result));
-        rdf_to_jsonld(dataset, config.dcat.dataset_jsonld);
-        //validate(shapes, dataset);
+        (async () => {
+            if (await validate(shapes, dataset)) {
+                ttl_writer.end((error, result) => fs.writeFileSync(config.dcat.dataset_turtle, result));
+                rdf_to_jsonld(dataset, config.dcat.dataset_jsonld);
+            }
+        })()
     });
     quadStream.on('error', (error) => {
-        //console.error(error);
     });
 }
 
@@ -182,7 +181,6 @@ async function construct_dcat_dataset(pom_metadata_store){
         store.addQuad(quad);
     });
     quadStream.on('end', () => {
-        //store_to_csv(store);
         serialize_dcat_dataset(store);
         add_dcat_dataset_to_catalog(store);
     });
