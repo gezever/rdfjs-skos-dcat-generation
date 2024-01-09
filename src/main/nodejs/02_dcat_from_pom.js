@@ -10,27 +10,14 @@ import { RdfStore } from 'rdf-stores';
 import { QueryEngine } from '@comunica/query-sparql';
 import rdfDataset from "@rdfjs/dataset";
 import validate from './shacl/shacl_validation.js';
+import rdf from "@zazuko/env-node";
+
 const { DataFactory } = N3;
 const { namedNode, quad } = DataFactory;
-import rdf from "@zazuko/env-node";
 const config = yaml.load(readFileSync('../resources/source/config.yml', 'utf8'));
 const shapes = await rdf.dataset().import(rdf.fromFile(config.ap.dcat_constraint))
-
-
-import ParserJsonld from '@rdfjs/parser-jsonld'
-import { Readable } from 'stream'
-
-
-
-
-
 const context = JSON.parse(readFileSync(config.dcat.jsonld_context));
-
-var xml_file = readFileSync('../../../pom.xml', 'utf8');
-
-//const catalog = await rdf.dataset().import(rdf.fromFile(config.dcat.catalog_jsonld));
-//const catalog = await rdf.fromFile(config.dcat.catalog_jsonld);
-
+const xml_file = readFileSync('../../../pom.xml', 'utf8');
 
 const prefixen = {
     access_right: "http://publications.europa.eu/resource/authority/access-right/",
