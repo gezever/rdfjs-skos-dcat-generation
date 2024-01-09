@@ -24,6 +24,7 @@ async function validate(shapes, data) {
 
     // Validation report as RDF dataset
     console.log(await report.dataset.serialize({ format: 'text/n3' }))
+    return report.conforms;
 }
 export default validate
 

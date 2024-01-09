@@ -16,7 +16,7 @@ const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8
 
 const context = JSON.parse(readFileSync(config.skos.jsonld_context));
 
-const shapes = await rdf.dataset().import(rdf.fromFile(config.ap.constraint))
+const shapes = await rdf.dataset().import(rdf.fromFile(config.ap.skos_constraint))
 
 const prefixen = {xsd: "http://www.w3.org/2001/XMLSchema#",
     skos: "http://www.w3.org/2004/02/skos/core#",
@@ -65,8 +65,6 @@ function separateString(originalString) {
     }
 }
 
-
-
 async function n3_reasoning(json_ld) {
     console.log("2: n3 reasoning ");
     //https://github.com/digitalbazaar/jsonld.js/issues/255
@@ -95,11 +93,14 @@ function output(rdf) {
                     store.addQuad(quad),
                     dataset.add(quad);
             else
-                nt_writer.end((error, result) => fs.writeFileSync(config.skos.nt, result)),
-                    ttl_writer.end((error, result) => fs.writeFileSync(config.skos.turtle, result)),
-                    rdf_to_jsonld(dataset),
-                    store_to_csv(store),
-                    validate(shapes, dataset);
+                (async () => {
+                    if (await validate(shapes, dataset)) {
+                        nt_writer.end((error, result) => fs.writeFileSync(config.skos.nt, result)),
+                            ttl_writer.end((error, result) => fs.writeFileSync(config.skos.turtle, result)),
+                            rdf_to_jsonld(dataset),
+                            store_to_csv(store);
+                    }
+                })()
         });
 }
 

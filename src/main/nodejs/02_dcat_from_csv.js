@@ -11,7 +11,6 @@ import validate from './shacl/shacl_validation.js';
 import rdf from '@zazuko/env-node'
 
 
-
 // VARIABLES
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
