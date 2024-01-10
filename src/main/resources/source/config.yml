@@ -28,4 +28,7 @@ sparql :
   construct : ../sparql/construct.rq
   dataset_source : ../sparql/dataset_source_full_uri.rq
 ap :
-  constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/matrix-ap-constraints/matrix-ap-constraints.ttl
+  skos_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/matrix-ap-constraints/matrix-ap-constraints.ttl
+  dcat_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/dcat-ap-constraints/dcat-ap-constraints.ttl
+n3 :
+  skos_inverse : ../n3/skos_inverse_properties.n3

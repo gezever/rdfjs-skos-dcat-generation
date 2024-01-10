@@ -4,7 +4,7 @@ import SHACLValidator from 'rdf-validate-shacl'
 async function validate(shapes, data) {
     //const shapes = await rdf.dataset().import(rdf.fromFile('my-shapes.ttl'))
     //const data = await rdf.dataset().import(rdf.fromFile('my-data.ttl'))
-
+    console.log("Validation");
     const validator = new SHACLValidator(shapes, { factory: rdf })
     const report = await validator.validate(data)
 
@@ -24,6 +24,7 @@ async function validate(shapes, data) {
 
     // Validation report as RDF dataset
     console.log(await report.dataset.serialize({ format: 'text/n3' }))
+    return report.conforms;
 }
 export default validate
 

@@ -56,7 +56,6 @@
         <excludes>
         </excludes>
       </resource>
-
     </resources>
   </build>
 </project>

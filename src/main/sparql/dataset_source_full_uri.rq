@@ -250,6 +250,4 @@ WHERE
     BIND("matrixtypes"AS ?types ) .
     BIND(STRLANG(CONCAT("Deze dataset bevat een lijst van ", STR( ?types ), ", die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."), "nl") AS ?dataset_description ) .
 
-
-
 }

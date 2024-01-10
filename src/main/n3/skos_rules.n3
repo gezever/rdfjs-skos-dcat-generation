@@ -1,0 +1,345 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+
+# https://www.w3.org/TR/skos-reference
+# S1 skos:Concept is an instance of owl:Class.
+{
+        ?s rdf:type skos:Concept .
+} => {
+        skos:Concept rdf:type owl:Class .
+} .
+
+#S2 	skos:ConceptScheme is an instance of owl:Class.
+{
+        ?s rdf:type skos:ConceptScheme .
+} => {
+        skos:ConceptScheme rdf:type owl:Class .
+} .
+
+#S3 	skos:inScheme, skos:hasTopConcept and skos:topConceptOf are each instances of owl:ObjectProperty.
+        {
+        ?s skos:inScheme ?o .
+} => {
+        skos:inScheme rdf:type owl:ObjectProperty .
+} .
+        {
+        ?s skos:hasTopConcept ?o .
+} => {
+        skos:hasTopConcept rdf:type owl:ObjectProperty .
+} .
+        {
+        ?s skos:topConceptOf ?o .
+} => {
+        skos:topConceptOf rdf:type owl:ObjectProperty .
+} .
+
+   #S4 	The rdfs:range of skos:inScheme is the class skos:ConceptScheme.
+        {
+        ?s skos:inScheme ?o .
+} => {
+        ?o rdf:type skos:ConceptScheme .
+} .
+#S5 	The rdfs:domain of skos:hasTopConcept is the class skos:ConceptScheme.
+        {
+        ?s skos:hasTopConcept ?o .
+} => {
+        ?s rdf:type skos:ConceptScheme .
+} .
+#S6 	The rdfs:range of skos:hasTopConcept is the class skos:Concept.
+        {
+        ?s skos:hasTopConcept ?o .
+} => {
+        ?o rdf:type skos:Concept .
+} .
+
+#S7 	skos:topConceptOf is a sub-property of skos:inScheme.
+        {
+        ?s skos:topConceptOf ?o .
+} => {
+        skos:topConceptOf rdfs:subPropertyOf skos:inScheme .
+} .
+        {
+        ?s skos:topConceptOf ?o .
+} => {
+?s skos:inScheme ?o .
+} .
+
+#S8 	skos:topConceptOf is owl:inverseOf the property skos:hasTopConcept.
+
+{
+        ?o skos:topConceptOf ?s .
+} => {
+        ?s skos:hasTopConcept ?o .
+} .
+        {
+        ?o skos:hasTopConcept ?s .
+} => {
+        ?s skos:topConceptOf ?o .
+        } .
+#S9 	skos:ConceptScheme is disjoint with skos:Concept
+# TODO
+
+#S10 	skos:prefLabel, skos:altLabel and skos:hiddenLabel are each instances of owl:AnnotationProperty.
+        {
+        ?s skos:prefLabel ?o .
+} => {
+        skos:prefLabel rdf:type owl:AnnotationProperty .
+        } .
+        {
+        ?s skos:altLabel ?o .
+} => {
+        skos:altLabel rdf:type owl:AnnotationProperty .
+        } .
+        {
+        ?s skos:hiddenLabel ?o .
+} => {
+        skos:hiddenLabel rdf:type owl:AnnotationProperty .
+        } .
+#S11 	skos:prefLabel, skos:altLabel and skos:hiddenLabel are each sub-properties of rdfs:label.
+        {
+        ?s skos:prefLabel ?o .
+} => {
+        ?s rdfs:label ?o .
+} .
+        {
+        ?s skos:altLabel ?o .
+} => {
+        ?s rdfs:label ?o .
+} .
+        {
+        ?s skos:hiddenLabel ?o .
+} => {
+        ?s rdfs:label ?o .
+        } .
+
+#S12 	The rdfs:range of each of skos:prefLabel, skos:altLabel and skos:hiddenLabel is the class of RDF plain literals.
+        {
+        ?s skos:prefLabel ?o .
+} => {
+        ?o rdf:type rdf:PlainLiteral .
+} .
+        {
+        ?s skos:altLabel ?o .
+} => {
+        ?o rdf:type rdf:PlainLiteral .
+} .
+        {
+        ?s skos:hiddenLabel ?o .
+} => {
+        ?o rdf:type rdf:PlainLiteral .
+        } .
+#S13 skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.
+#TODO
+#S14 	A resource has no more than one value of skos:prefLabel per language tag.
+#TODO
+
+#S15 	skos:notation is an instance of owl:DatatypeProperty.
+        {
+        ?s skos:notation ?o .
+} => {
+        skos:notation rdf:type owl:DatatypeProperty .
+        } .
+#S16 	skos:note, skos:changeNote, skos:definition, skos:editorialNote, skos:example, skos:historyNote and skos:scopeNote are each instances of owl:AnnotationProperty.
+#S17 	skos:changeNote, skos:definition, skos:editorialNote, skos:example, skos:historyNote and skos:scopeNote are each sub-properties of skos:note.
+        {
+        ?s skos:note ?o .
+} => {
+        skos:note rdf:type owl:AnnotationProperty .
+        } .
+
+        {
+        ?s skos:changeNote ?o .
+} => {
+        skos:changeNote rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+        {
+        ?s skos:definition ?o .
+} => {
+        skos:definition rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+        {
+        ?s skos:editorialNote ?o .
+} => {
+        skos:editorialNote rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+        {
+        ?s skos:example ?o .
+} => {
+        skos:example rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+        {
+        ?s skos:historyNote ?o .
+} => {
+        skos:historyNote rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+        {
+        ?s skos:scopeNote ?o .
+} => {
+        skos:scopeNote rdf:type owl:AnnotationProperty .
+?s skos:note ?o .
+        } .
+
+#S18 	skos:semanticRelation, skos:broader, skos:narrower, skos:related, skos:broaderTransitive and skos:narrowerTransitive are each instances of owl:ObjectProperty.
+        {
+        ?s skos:semanticRelation ?o .
+} => {
+        skos:semanticRelation rdf:type owl:ObjectProperty .
+        } .
+
+        {
+        ?s skos:broader ?o .
+} => {
+        skos:broader rdf:type owl:ObjectProperty .
+        } .
+
+        {
+        ?s skos:narrower ?o .
+} => {
+        skos:narrower rdf:type owl:ObjectProperty .
+        } .
+
+        {
+        ?s skos:related ?o .
+} => {
+        skos:related rdf:type owl:ObjectProperty .
+        } .
+
+        {
+        ?s skos:broaderTransitive ?o .
+} => {
+        skos:broaderTransitive rdf:type owl:ObjectProperty .
+        } .
+
+        {
+        ?s skos:narrowerTransitive ?o .
+} => {
+        skos:narrowerTransitive rdf:type owl:ObjectProperty .
+        } .
+
+#S19 	The rdfs:domain of skos:semanticRelation is the class skos:Concept.
+        {
+        ?s skos:semanticRelation ?o .
+} => {
+        ?s rdf:type skos:Concept .
+        } .
+#S20 	The rdfs:range of skos:semanticRelation is the class skos:Concept.
+        {
+        ?s skos:semanticRelation ?o .
+} => {
+        ?o rdf:type skos:Concept .
+        } .
+#S21 skos:broaderTransitive, skos:narrowerTransitive and skos:related are each sub-properties of skos:semanticRelation.
+                {
+                ?s skos:broaderTransitive ?o .
+} => {
+        skos:broaderTransitive rdfs:subPropertyOf skos:semanticRelation .
+?s skos:semanticRelation ?o .
+        } .
+        {
+        ?s skos:narrowerTransitive ?o .
+} => {
+        skos:narrowerTransitive rdfs:subPropertyOf skos:semanticRelation .
+?s skos:semanticRelation ?o .
+        } .
+        {
+        ?s skos:related ?o .
+} => {
+        skos:related rdfs:subPropertyOf skos:semanticRelation .
+?s skos:semanticRelation ?o .
+        } .
+
+#S22 	skos:broader is a sub-property of skos:broaderTransitive, and skos:narrower is a sub-property of skos:narrowerTransitive.
+        {
+        ?s skos:broader ?o .
+} => {
+        skos:broader rdfs:subPropertyOf skos:broaderTransitive .
+?s skos:broaderTransitive ?o .
+        } .
+        {
+        ?s skos:narrower ?o .
+} => {
+        skos:narrower rdfs:subPropertyOf skos:narrowerTransitive .
+?s skos:narrowerTransitive ?o .
+        } .
+#S23 	skos:related is an instance of owl:SymmetricProperty.
+        {
+        ?s skos:related ?o .
+} => {
+        ?o skos:related ?s .
+        } .
+#skos:broaderTransitive and skos:narrowerTransitive are each instances of owl:TransitiveProperty.
+        {
+        ?s skos:broaderTransitive ?o .
+} => {
+        skos:broaderTransitive rdf:type  owl:TransitiveProperty .
+        } .
+        {
+        ?s skos:narrowerTransitive ?o .
+} => {
+        skos:narrowerTransitive rdf:type  owl:TransitiveProperty .
+        } .
+#S25 	skos:narrower is owl:inverseOf the property skos:broader.
+        {
+        ?s skos:broader ?o .
+} => {
+        skos:broader owl:inverseOf skos:narrower .
+        ?o skos:narrower ?s .
+} .
+        {
+        ?s skos:narrower ?o .
+} => {
+        skos:narrower owl:inverseOf skos:broader .
+        ?o skos:broader ?s .
+        } .
+#S26 	skos:narrowerTransitive is owl:inverseOf the property skos:broaderTransitive.
+        {
+        ?s skos:narrowerTransitive ?o .
+} => {
+        skos:narrowerTransitive owl:inverseOf skos:broaderTransitive .
+?o skos:broaderTransitive ?s .
+} .
+        {
+        ?s skos:broaderTransitive ?o .
+} => {
+        skos:broaderTransitive owl:inverseOf skos:narrowerTransitive .
+?o skos:narrowerTransitive ?s .
+        } .
+#S27 	skos:related is disjoint with the property skos:broaderTransitive.
+#TODO
+
+#S28 	skos:Collection and skos:OrderedCollection are each instances of owl:Class.
+
+
+#S29 	skos:OrderedCollection is a sub-class of skos:Collection.
+#S30 	skos:member and skos:memberList are each instances of owl:ObjectProperty.
+#S31 	The rdfs:domain of skos:member is the class skos:Collection.
+#S32 	The rdfs:range of skos:member is the union of classes skos:Concept and skos:Collection.
+#S33 	The rdfs:domain of skos:memberList is the class skos:OrderedCollection.
+#S34 	The rdfs:range of skos:memberList is the class rdf:List.
+#S35 	skos:memberList is an instance of owl:FunctionalProperty.
+#S36 	For any resource, every item in the list given as the value of the skos:memberList property is also a value of the skos:member property.
+#S37 	skos:Collection is disjoint with each of skos:Concept and skos:ConceptScheme.
+
+#S38 	skos:mappingRelation, skos:closeMatch, skos:exactMatch, skos:broadMatch, skos:narrowMatch and skos:relatedMatch are each instances of owl:ObjectProperty.
+#S39 	skos:mappingRelation is a sub-property of skos:semanticRelation.
+#S40 	skos:closeMatch, skos:broadMatch, skos:narrowMatch and skos:relatedMatch are each sub-properties of skos:mappingRelation.
+#S41 	skos:broadMatch is a sub-property of skos:broader, skos:narrowMatch is a sub-property of skos:narrower, and skos:relatedMatch is a sub-property of skos:related.
+#S42 	skos:exactMatch is a sub-property of skos:closeMatch.
+#S43 	skos:narrowMatch is owl:inverseOf the property skos:broadMatch.
+#S44 	skos:relatedMatch, skos:closeMatch and skos:exactMatch are each instances of owl:SymmetricProperty.
+#S45 	skos:exactMatch is an instance of owl:TransitiveProperty.
+
+#S46 	skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.

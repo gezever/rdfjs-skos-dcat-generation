@@ -50,7 +50,7 @@
         },
         "member": {
             "@id": "http://www.w3.org/2004/02/skos/core#member",
-            "@language": "nl"
+            "@type": "@id"
         },
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -68,23 +68,9 @@
             "uri": "com:bodem",
             "type": "skos:Collection",
             "inScheme": "vlcs:matrix",
-            "skos:member": [
-                {
-                    "uri": "cm:depositie",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Depositie",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:270"
-                },
-                {
-                    "uri": "cm:zwevend_stof",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Zwevend stof",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:270"
-                }
+            "member": [
+                "cm:depositie",
+                "cm:zwevend_stof"
             ],
             "prefLabel": "Collectie van matrices m.b.t. bodem."
         },
@@ -92,81 +78,16 @@
             "uri": "com:lucht",
             "type": "skos:Collection",
             "inScheme": "vlcs:matrix",
-            "skos:member": [
-                {
-                    "uri": "cm:biota",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Biota",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:eieren",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Eieren",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:gewassen",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Gewassen",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:groenten",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Groenten",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:hard_gesteente",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Hard gesteente",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:infrastructuur",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Infrastructuur",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:sediment",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Sediment",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:strooisel",
-                    "type": "skos:Concept",
-                    "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Strooisel",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:vilt",
-                    "type": "skos:Concept",
-                    "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Vilt",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                }
+            "member": [
+                "cm:biota",
+                "cm:eieren",
+                "cm:gewassen",
+                "cm:groenten",
+                "cm:hard_gesteente",
+                "cm:infrastructuur",
+                "cm:sediment",
+                "cm:strooisel",
+                "cm:vilt"
             ],
             "prefLabel": "Collectie van matrices m.b.t. lucht."
         },
@@ -174,63 +95,14 @@
             "uri": "com:water",
             "type": "skos:Collection",
             "inScheme": "vlcs:matrix",
-            "skos:member": [
-                {
-                    "uri": "cm:afvalwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Afvalwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:bemalingswater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Bemalingswater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:drinkwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Drinkwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:grondwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Grondwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:koelwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Koelwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:oppervlaktewater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Oppervlaktewater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:waterbodem",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Waterbodem",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                }
+            "member": [
+                "cm:afvalwater",
+                "cm:bemalingswater",
+                "cm:drinkwater",
+                "cm:grondwater",
+                "cm:koelwater",
+                "cm:oppervlaktewater",
+                "cm:waterbodem"
             ],
             "prefLabel": "Collectie van matrices m.b.t. water."
         },
@@ -384,152 +256,24 @@
             "uri": "vlcs:matrix",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
-                {
-                    "uri": "cm:depositie",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Depositie",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:270"
-                },
-                {
-                    "uri": "cm:zwevend_stof",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Zwevend stof",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:270"
-                },
-                {
-                    "uri": "cm:biota",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Biota",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:eieren",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Eieren",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:gewassen",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Gewassen",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:groenten",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Groenten",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:hard_gesteente",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Hard gesteente",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:infrastructuur",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Infrastructuur",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:sediment",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Sediment",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:strooisel",
-                    "type": "skos:Concept",
-                    "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Strooisel",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:vilt",
-                    "type": "skos:Concept",
-                    "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Vilt",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:7884"
-                },
-                {
-                    "uri": "cm:afvalwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Afvalwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:bemalingswater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Bemalingswater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:drinkwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Drinkwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:grondwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Grondwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:koelwater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Koelwater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:oppervlaktewater",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Oppervlaktewater",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                },
-                {
-                    "uri": "cm:waterbodem",
-                    "type": "skos:Concept",
-                    "inScheme": "vlcs:matrix",
-                    "prefLabel": "Waterbodem",
-                    "topConceptOf": "vlcs:matrix",
-                    "theme": "gemet:15179"
-                }
+                "cm:depositie",
+                "cm:zwevend_stof",
+                "cm:biota",
+                "cm:eieren",
+                "cm:gewassen",
+                "cm:groenten",
+                "cm:hard_gesteente",
+                "cm:infrastructuur",
+                "cm:sediment",
+                "cm:strooisel",
+                "cm:vilt",
+                "cm:afvalwater",
+                "cm:bemalingswater",
+                "cm:drinkwater",
+                "cm:grondwater",
+                "cm:koelwater",
+                "cm:oppervlaktewater",
+                "cm:waterbodem"
             ],
             "prefLabel": "Codelijst matrices."
         }
