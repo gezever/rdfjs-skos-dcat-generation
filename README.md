@@ -31,9 +31,13 @@ In summary, the reusability of machine-readable lists in business applications a
 
 ##Task
 • Implementing a set of user-friendly tools for managing reference data, accommodating individuals with limited technical background.
+
 • Establishing a transparent system for managing different versions of reference data.
+
 • Ensuring machine-readable distributions, versioned code dependencies, and adherence to web standards.
+
 • Conducting training sessions to educate business analysts and business architects on producing the desired outcomes from their analysis.
+
 • Forming governance work groups to oversee and guide the data governance processes.
 
 ##Solution
@@ -41,5 +45,5 @@ In summary, the reusability of machine-readable lists in business applications a
 The proposed solution for this project involves utilizing GitHub version control software to manage the reference data. The source of the reference data is a CSV file, which undergoes transformation, using javascript, into multiple RDF distributions. Additionally, a JAR dependency is created, containing these distributions. To ensure proper documentation, metadata for the versioned distributions is generated in DCAT (Data Catalog Vocabulary) format, which is added to the version control system and also packaged as a jar dependency.
 
 Once there is consensus on the content of the reference data, all these components are released as a version in a Maven build on the Bamboo build server. This allows for controlled and structured deployment of the reference data in a standardized manner. The use of GitHub version control, along with Maven and Bamboo, ensures traceability, collaboration, and reproducibility in managing the reference data throughout its lifecycle.
-Conclusion/perspective
+##Conclusion/perspective
 In conclusion, the proposed system is suitable and user-friendly for managing simple lists and controlled vocabularies with limited interdependencies and a small number of concepts. It efficiently handles straightforward reference data requirements. However, for more complex lists, particularly those categorized as master data, such as chemical substance lists that necessitate a step-by-step protocol, it may be beneficial to develop specific business applications to assist in the governance process. These applications can provide dedicated functionalities and features tailored to the unique complexities of managing and governing intricate reference data, enhancing efficiency and accuracy in the governance process.
