@@ -1,0 +1,9 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <http://www.example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+:planten a skos:Concept .
+
+:planten a skos:ConceptScheme .
+
+skos:ConceptScheme owl:disjointWith skos:Concept .

@@ -1,0 +1,24 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix : <http://www.example.org/> .
+
+:planten a skos:Concept;
+            skos:inScheme :scheme;
+            skos:prefLabel "Planten"@nl;
+            skos:topConceptOf :scheme .
+
+:gewassen a skos:Concept;
+          skos:inScheme :scheme;
+          skos:prefLabel "Gewassen"@nl;
+          skos:broader :planten .
+
+:groenten a skos:Concept;
+            skos:inScheme :scheme;
+            skos:prefLabel "Groenten"@nl;
+            skos:broader :gewassen.
+
+:bladgroenten a skos:Concept;
+          skos:inScheme :scheme;
+          skos:prefLabel "Bladgroenten"@nl;
+          skos:broader :groenten.

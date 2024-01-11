@@ -1,0 +1,7 @@
+@prefix : <urn:example:> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+
+:Light1 :is :Green .
+:Light2 :is :Orange .
+:Light3 :is :Red .
