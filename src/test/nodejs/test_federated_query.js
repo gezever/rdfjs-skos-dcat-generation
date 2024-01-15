@@ -8,7 +8,7 @@ import jsonld from "jsonld";
 import { RdfStore } from 'rdf-stores';
 import { QueryEngine } from '@comunica/query-sparql';
 
-const config = yaml.load(readFileSync('../resources/source/config.yml', 'utf8'));
+//const config = yaml.load(readFileSync('../resources/source/config.yml', 'utf8'));
 const xml_file = readFileSync('../../../pom.xml', 'utf8');
 
 
@@ -66,7 +66,7 @@ async function construct_dcat_dataset(pom_metadata_store){
     console.log("2. construct dcat dataset");
     const myConstructEngine = new QueryEngine();
     const query = readFileSync("/home/gehau/git/rdfjs-skos-dcat-generation/src/main/sparql/get_dataset_previous_versions.rq", 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ 'https://data.omgeving.vlaanderen.be/sparql', pom_metadata_store ] });
+    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ 'https://data.omgeving.vlaanderen.be/sparql' ] });
     const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: prefixen });
     quadStream.on('data', (quad) => {
         ttl_writer.addQuad(quad);
@@ -82,7 +82,7 @@ async function construct_metadata(){
     console.log('1. construct metadata');
     var result = JSON.parse(convert.xml2json(xml_file, {compact: true, spaces: 4}));
     var metadata = {}
-    metadata['@context'] = JSON.parse(readFileSync(config.dcat.jsonld_dataset_context));
+    metadata['@context'] = JSON.parse(readFileSync('/home/gehau/git/rdfjs-skos-dcat-generation/src/main/resources/source/dataset_context.json'));
     metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template";
     metadata['groupId'] = jp.query(result, '$.project.groupId._text').toString();
     metadata['artifactId'] = jp.query(result, '$.project.artifactId._text').toString();
