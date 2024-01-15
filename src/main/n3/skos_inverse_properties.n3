@@ -5,14 +5,25 @@
 
         {
         ?a skos:broader ?b .
-        ?b skos:broader ?c .
+} => {
+        ?a skos:broaderTransitive ?b .
+} .
+        {
+        ?a skos:broaderTransitive ?b .
+        ?b skos:broaderTransitive ?c .
 } => {
         ?a skos:broaderTransitive ?c .
 } .
 
         {
-        ?a skos:narrower ?b .
-?b skos:narrower ?c .
+        ?a skos:narrowerTransitive ?b .
+} => {
+        ?a skos:narrowerTransitive ?b .
+} .
+
+        {
+        ?a skos:narrowerTransitive ?b .
+?b skos:narrowerTransitive ?c .
 } => {
         ?a skos:narrowerTransitive ?c .
 } .
