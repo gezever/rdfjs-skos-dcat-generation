@@ -8,7 +8,7 @@
 
 
 
-        { ?c skos:topConceptOf  ?s } => { ?s skos:hasTopConcept ?c }.
+{ ?c skos:topConceptOf  ?s } => { ?s skos:hasTopConcept ?c }.
 { ?s skos:hasTopConcept ?c } => { ?c skos:topConceptOf  ?s }.
 
 { ?x skos:related ?y } => { ?y skos:related ?x }.
