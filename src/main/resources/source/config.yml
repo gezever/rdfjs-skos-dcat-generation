@@ -2,9 +2,11 @@ skos:
   distributie_pad: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/
   distributie_naam: matrix
   jsonld_context: ../resources/source/codelijst_context.json
+  csv_result_context: ../resources/source/codelijst_csv_result_context.json
   csv_source: ../resources/source/codelijst-source.csv
   turtle: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.ttl
   jsonld: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.jsonld
+  json: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.json
   jsonld_framed: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix_framed.jsonld
   csv: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.csv
   nt: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.nt
@@ -32,3 +34,5 @@ ap :
   dcat_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/dcat-ap-constraints/dcat-ap-constraints.ttl
 n3 :
   skos_inverse : ../n3/skos_inverse_properties.n3
+  skos_rules : ../n3/skos-rules.n3
+  skos_domain_range : ../n3/skos_domain_range.n3

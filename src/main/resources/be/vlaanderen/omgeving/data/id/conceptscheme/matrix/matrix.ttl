@@ -115,4 +115,8 @@ cm:zwevend_stof a skos:Concept;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/270>.
 vlcs:matrix a skos:ConceptScheme;
     skos:prefLabel "Codelijst matrices."@nl;
-    skos:hasTopConcept cm:afvalwater, cm:bemalingswater, cm:biota, cm:depositie, cm:drinkwater, cm:eieren, cm:gewassen, cm:groenten, cm:grondwater, cm:hard_gesteente, cm:infrastructuur, cm:koelwater, cm:oppervlaktewater, cm:sediment, cm:strooisel, cm:vilt, cm:waterbodem, cm:zwevend_stof.
+    skos:hasTopConcept cm:afvalwater, cm:bemalingswater, cm:biota, cm:depositie, cm:drinkwater, cm:eieren, cm:gewassen, cm:groenten, cm:grondwater, cm:hard_gesteente, cm:infrastructuur, cm:koelwater, cm:oppervlaktewater, cm:sediment.
+cm:strooisel skos:note "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl.
+vlcs:matrix skos:hasTopConcept cm:strooisel.
+cm:vilt skos:note "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl.
+vlcs:matrix skos:hasTopConcept cm:vilt, cm:waterbodem, cm:zwevend_stof.

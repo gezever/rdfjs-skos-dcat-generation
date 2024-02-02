@@ -133,7 +133,9 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment> .
+<https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#note> "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> .
+<https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#note> "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof> .

@@ -1,0 +1,12 @@
+prefix skos:  <http://www.w3.org/2004/02/skos/core#>
+select
+?uri
+?type
+?hasTC
+
+where
+{?uri
+a ?type ;
+ skos:hasTopConcept ?hasTC .
+
+}

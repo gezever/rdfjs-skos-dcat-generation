@@ -519,6 +519,12 @@
                 "@value": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
                 "@language": "nl"
             }
+        ],
+        "http://www.w3.org/2004/02/skos/core#note": [
+            {
+                "@value": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
+                "@language": "nl"
+            }
         ]
     },
     {
@@ -548,6 +554,12 @@
             }
         ],
         "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
+                "@language": "nl"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#note": [
             {
                 "@value": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
                 "@language": "nl"

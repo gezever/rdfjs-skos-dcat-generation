@@ -40,6 +40,10 @@
             "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "@language": "nl"
         },
+        "note": {
+            "@id": "http://www.w3.org/2004/02/skos/core#note",
+            "@language": "nl"
+        },
         "definition": {
             "@id": "http://www.w3.org/2004/02/skos/core#definition",
             "@language": "nl"
@@ -52,6 +56,9 @@
             "@id": "http://www.w3.org/2004/02/skos/core#member",
             "@type": "@id"
         },
+        "graph": {
+            "@id": "@graph"
+        },
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -63,7 +70,7 @@
         "dc": "http://purl.org/dc/elements/1.1/",
         "gemet": "http://www.eionet.europa.eu/gemet/concept/"
     },
-    "@graph": [
+    "graph": [
         {
             "uri": "com:bodem",
             "type": "skos:Collection",
@@ -223,6 +230,7 @@
             "type": "skos:Concept",
             "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
             "inScheme": "vlcs:matrix",
+            "note": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
             "prefLabel": "Strooisel",
             "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
@@ -232,6 +240,7 @@
             "type": "skos:Concept",
             "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
             "inScheme": "vlcs:matrix",
+            "note": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
             "prefLabel": "Vilt",
             "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"

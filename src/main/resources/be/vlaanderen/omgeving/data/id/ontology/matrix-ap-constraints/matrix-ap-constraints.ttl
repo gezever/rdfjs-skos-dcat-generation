@@ -91,7 +91,7 @@ ons:matrix
                      omg_ps:matrix_references, omg_ps:matrix_definition,
                      omg_ps:matrix_prefLabel, omg_ps:matrix_theme,
                       omg_ps:matrix_topConceptOf, omg_ps:matrix_altLabel,
-                     omg_ps:matrix_rdf_type;
+                     omg_ps:matrix_rdf_type, omg_ps:matrix_note ;
     sh:closed true ;
     sh:targetClass   skos:Concept .
 
@@ -253,6 +253,17 @@ omg_ps:matrix_definition
     sh:maxCount      2 ;
     sh:nodeKind      sh:Literal ;
     sh:path          skos:definition .
+
+omg_ps:matrix_note
+    a                sh:PropertyShape ;
+    rdfs:label       "note"@en ;
+    sh:name          "note"@en ;
+    sh:description   "Een uitspraak over de betekenis van het concept, de collectie of het schema."@en ;
+    rdfs:isDefinedBy omg_ont:matrix-ap-constraints, omg_voc:matrix-ap-constraints ;
+    sh:datatype      rdf:langString ;
+    sh:languageIn    ( "nl" "en" ) ;
+    sh:nodeKind      sh:Literal ;
+    sh:path          skos:note .
 
 omg_ps:matrix_prefLabel
     a                sh:PropertyShape ;
