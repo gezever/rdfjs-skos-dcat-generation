@@ -40,7 +40,6 @@ async function n3_reasoning(json_ld) {
     output(reasoner.get_abox_dump());
 }
 
-
 function output(rdf) {
     console.log("3: output");
     const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: prefixen });
