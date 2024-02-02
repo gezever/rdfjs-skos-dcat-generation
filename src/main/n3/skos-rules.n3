@@ -63,16 +63,14 @@
 
 { ?c skos:inScheme ?s } => { ?s a skos:ConceptScheme }.
 { ?s skos:hasTopConcept ?c } => { ?s a skos:ConceptScheme. ?c a skos:Concept }.
-                                                                                                                                                                                                                                                                                                                                                                                                            { ?x skos:semanticRelation ?y } => { ?x a skos:Concept. ?y a skos:Concept }.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 { ?c a skos:OrderedCollection } => { ?c a skos:Collection }.
+{ ?x skos:semanticRelation ?y } => { ?x a skos:Concept. ?y a skos:Concept }.
+{ ?c a skos:OrderedCollection } => { ?c a skos:Collection }.
 { ?s skos:member ?c } => { ?s a skos:Collection }.
 { ?s skos:memberList ?L } => { ?s a skos:OrderedCollection. ?L a rdf:List }.
 
 
 
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                { ?x a skos:ConceptScheme, skos:Concept } => @false.
+{ ?x a skos:ConceptScheme, skos:Concept } => @false.
 { ?x a skos:Collection, skos:Concept } => @false.
 { ?x a skos:Collection, skos:ConceptScheme } => @false.
 
