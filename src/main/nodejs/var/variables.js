@@ -1,18 +1,21 @@
 'use strict';
 import yaml from 'js-yaml';
-import fs from "fs";
+import fs, {readFileSync} from "fs";
 import rdf from "@zazuko/env-node";
 
 
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
-const context = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_context));
+const context_skos_prefixes = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_context));
 
-const context_csv_result = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_csv_result_context));
+const context_skos_no_prefixes = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_csv_result_context));
 
-const shapes = await rdf.dataset().import(rdf.fromFile(config.ap.skos_constraint))
+const context_catalog = JSON.parse(readFileSync(config.dcat.jsonld_context));
 
-const prefixen = {xsd: "http://www.w3.org/2001/XMLSchema#",
+const shapes_skos = await rdf.dataset().import(rdf.fromFile(config.ap.skos_constraint))
+
+const skos_prefixes = {
+    xsd: "http://www.w3.org/2001/XMLSchema#",
     skos: "http://www.w3.org/2004/02/skos/core#",
     rdfs: "http://www.w3.org/2000/01/rdf-schema#",
     vlcs: "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
@@ -21,10 +24,63 @@ const prefixen = {xsd: "http://www.w3.org/2001/XMLSchema#",
     dcat: "http://www.w3.org/ns/dcat#",
     dct: "http://purl.org/dc/terms/",
     dc: "http://purl.org/dc/elements/1.1/",
-    gemet: "http://www.eionet.europa.eu/gemet/concept/"}
+    gemet: "http://www.eionet.europa.eu/gemet/concept/",
+}
 
-const frame = {
-    "@context": context,
+
+
+const dcat_prefixes = {
+    access_right: "http://publications.europa.eu/resource/authority/access-right/",
+    adms: "http://www.w3.org/ns/adms#",
+    assettype: "http://purl.org/adms/assettype/",
+    country: "http://publications.europa.eu/resource/authority/country/",
+    datasets: "https://datasets.omgeving.vlaanderen.be/",
+    datatheme_be: "http://vocab.belgif.be/auth/datatheme/",
+    datatheme_eu: "http://publications.europa.eu/resource/authority/data-theme/",
+    dcat: "http://www.w3.org/ns/dcat#",
+    dc: "http://purl.org/dc/elements/1.1/",
+    dcterms: "http://purl.org/dc/terms/",
+    eurovoc: "http://eurovoc.europa.eu/",
+    file_type: "http://publications.europa.eu/resource/authority/file-type/",
+    foaf: "http://xmlns.com/foaf/0.1/",
+    formats: "http://www.w3.org/ns/formats/",
+    frequency: "http://publications.europa.eu/resource/authority/frequency/",
+    gemet: "http://www.eionet.europa.eu/gemet/concept/",
+    licence :  "http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/",
+    metadata: "https://data.omgeving.vlaanderen.be/ns/metadata#",
+    omg_catalog: "https://data.omgeving.vlaanderen.be/id/catalog/",
+    omg_collection: "https://data.omgeving.vlaanderen.be/id/collection/",
+    omg_conceptscheme: "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
+    omg_dataservice: "https://data.omgeving.vlaanderen.be/id/dataservice/",
+    omg_dataset: "https://data.omgeving.vlaanderen.be/id/dataset/",
+    omg_distribution: "https://data.omgeving.vlaanderen.be/id/distribution/",
+    omg_distribution_doc:    "https://data.omgeving.vlaanderen.be/doc/distribution/",
+    omg_graphcollection: "https://data.omgeving.vlaanderen.be/id/graphcollection/",
+    omg_graph: "https://data.omgeving.vlaanderen.be/id/graph/",
+    omg_id: "https://data.omgeving.vlaanderen.be/id/",
+    omg_named_graph: "https://data.omgeving.vlaanderen.be/id/namedgraph/",
+    omg_ontology: "https://data.omgeving.vlaanderen.be/id/ontology/",
+    omg_package: "https://data.omgeving.vlaanderen.be/id/package/",
+    omg_periodoftime: "https://data.omgeving.vlaanderen.be/id/periodoftime/",
+    omg_service: "https://data.omgeving.vlaanderen.be/id/service/",
+    omg_vcard: "https://data.omgeving.vlaanderen.be/id/vcard/",
+    ovo: "http://data.vlaanderen.be/id/organisatie/",
+    owl: "http://www.w3.org/2002/07/owl#",
+    rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    rdfs: "http://www.w3.org/2000/01/rdf-schema#",
+    sd: "http://www.w3.org/ns/sparql-service-description#",
+    skos: "http://www.w3.org/2004/02/skos/core#",
+    spdx: "http://spdx.org/rdf/terms#",
+    ssd: "http://www.w3.org/ns/sparql-service-description#",
+    ts: "http://www.w3.org/ns/formats/",
+    vcard: "http://www.w3.org/2006/vcard/ns#",
+    void: "http://rdfs.org/ns/void#",
+    xsd: "http://www.w3.org/2001/XMLSchema#"
+
+}
+
+const frame_skos_prefixes = {
+    "@context": context_skos_prefixes,
     "@type": ["skos:ConceptScheme", "skos:Collection", "skos:Concept"],
     "member": {
         "@type": "skos:Concept",
@@ -58,8 +114,8 @@ const frame = {
     }
 }
 
-const frame_csv_result = {
-    "@context": context_csv_result,
+const frame_skos_no_prefixes = {
+    "@context": context_skos_no_prefixes,
     "@type": ["http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Collection", "http://www.w3.org/2004/02/skos/core#Concept"],
     "member": {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -93,5 +149,26 @@ const frame_csv_result = {
     }
 }
 
-export { frame, frame_csv_result, config, context, context_csv_result, shapes, prefixen };
+const frame_catalog = {
+    "@context": context_catalog,
+    "@type": ["dcat:Catalog"],
+    "dataset": {
+        "@embed": "@always",
+        "@omitDefault": true,
+        "hasVersion": {
+            "@embed": "@always",
+            "@omitDefault": true,
+            "isVersionOf": {
+                "@embed": "@never",
+                "@omitDefault": true
+            },
+            "distribution": {
+                "@embed": "@always",
+                "@omitDefault": true
+            }
+        }
+    }
+}
+
+export { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
 

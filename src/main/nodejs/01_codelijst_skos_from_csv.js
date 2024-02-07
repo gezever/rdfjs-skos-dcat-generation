@@ -8,7 +8,9 @@ import {RoxiReasoner} from "roxi-js";
 import jp from 'jsonpath';
 import  { json2csv }  from 'json-2-csv';
 import validate from './shacl/shacl_validation.js';
-import { frame, frame_csv_result, config, context, shapes, prefixen } from './var/variables.js';
+import { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
+
+
 
 
 function separateString(originalString) {
@@ -43,20 +45,20 @@ async function n3_reasoning(json_ld) {
 
 function output(rdf) {
     console.log("3: output");
-    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: prefixen });
+    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: skos_prefixes });
     const nt_writer = new N3.Writer({ format: 'N-Triples' });
     const dataset = rdfDataset.dataset()
     const parser = new N3.Parser();
     parser.parse(
         rdf,
-        (error, quad, prefixen) => {
+        (error, quad) => {
             if (quad)
                 ttl_writer.addQuad(quad),
                     nt_writer.addQuad(quad),
                     dataset.add(quad);
             else
                 (async () => {
-                    if (await validate(shapes, dataset)) {
+                    if (await validate(shapes_skos, dataset)) {
                         nt_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.nt, result)),
                             ttl_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.turtle, result)),
                             rdf_to_jsonld(dataset)
@@ -69,9 +71,9 @@ async function rdf_to_jsonld(dataset) {
     console.log("4: rdf to jsonld");
     console.log("Extract a conceptscheme as a tree using a frame.");
     let json_from_rdf = await jsonld.fromRDF(dataset);
-    let framed_without_prefix = await jsonld.frame(json_from_rdf, frame_csv_result);
+    let framed_without_prefix = await jsonld.frame(json_from_rdf, frame_skos_no_prefixes);
     fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.jsonld, JSON.stringify(framed_without_prefix, null, 4));
-    let framed_with_prefix = await jsonld.frame(json_from_rdf, frame);
+    let framed_with_prefix = await jsonld.frame(json_from_rdf, frame_skos_prefixes);
     fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.jsonld_framed, JSON.stringify(framed_with_prefix, null, 4));
     jsonld_to_csv(framed_without_prefix);
 }
@@ -110,7 +112,7 @@ async function csv_to_jsonld() {
                 })
                 new_json.push(object)
             }
-            let jsonld = {"@graph": new_json, "@context": context};
+            let jsonld = {"@graph": new_json, "@context": context_skos_prefixes};
             console.log("1: Csv to Jsonld");
             n3_reasoning(jsonld)
         })

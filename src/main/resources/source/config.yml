@@ -26,6 +26,7 @@ dcat:
   jsonld_dataset_context : ../resources/source/dataset_context.json
   dataset_source : ../resources/source/dataset_source.csv
   catalog_source : ../resources/source/catalog_source.csv
+
 sparql :
   verrijking_dcat : ../sparql/verrijk_dcat.rq
   construct : ../sparql/construct.rq
