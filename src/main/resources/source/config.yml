@@ -1,15 +1,18 @@
 skos:
-  distributie_pad: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/
-  distributie_naam: matrix
-  jsonld_context: ../resources/source/codelijst_context.json
-  csv_result_context: ../resources/source/codelijst_csv_result_context.json
-  csv_source: ../resources/source/codelijst-source.csv
-  turtle: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.ttl
-  jsonld: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.jsonld
-  json: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.json
-  jsonld_framed: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix_framed.jsonld
-  csv: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.csv
-  nt: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/matrix/matrix.nt
+  path: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/
+  name: matrix
+  turtle: .ttl
+  jsonld: .jsonld
+  jsonld_framed: _prefix.jsonld
+  csv: .csv
+  nt: .nt
+
+source:
+  path: ../resources/source/
+  codelijst_csv: codelijst-source.csv
+  codelijst_context: codelijst_context.json
+  codelijst_csv_result_context: codelijst_csv_result_context.json
+
 dcat:
   distributie_pad_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/
   distributie_pad_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/
@@ -24,8 +27,6 @@ dcat:
   dataset_source : ../resources/source/dataset_source.csv
   catalog_source : ../resources/source/catalog_source.csv
 sparql :
-  select : ../sparql/rdf_to_csv.rq
-  verrijking : ../sparql/verrijk.rq
   verrijking_dcat : ../sparql/verrijk_dcat.rq
   construct : ../sparql/construct.rq
   dataset_source : ../sparql/dataset_source_full_uri.rq
@@ -33,6 +34,4 @@ ap :
   skos_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/matrix-ap-constraints/matrix-ap-constraints.ttl
   dcat_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/dcat-ap-constraints/dcat-ap-constraints.ttl
 n3 :
-  skos_inverse : ../n3/skos_inverse_properties.n3
   skos_rules : ../n3/skos-rules.n3
-  skos_domain_range : ../n3/skos_domain_range.n3

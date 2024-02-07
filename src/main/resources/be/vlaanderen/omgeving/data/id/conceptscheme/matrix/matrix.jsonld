@@ -1,691 +1,276 @@
-[
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/bodem",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Collection"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#member": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Collectie van matrices m.b.t. bodem.",
-                "@language": "nl"
-            }
-        ]
+{
+    "@context": {
+        "seeAlso": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+            "@type": "@id"
+        },
+        "inScheme": {
+            "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+            "@type": "@id"
+        },
+        "topConceptOf": {
+            "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+            "@type": "@id"
+        },
+        "hasTopConcept": {
+            "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+            "@type": "@id"
+        },
+        "theme": {
+            "@id": "http://www.w3.org/ns/dcat#theme",
+            "@type": "@id"
+        },
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
+        "uri": {
+            "@id": "@id",
+            "@type": "@id"
+        },
+        "prefLabel": {
+            "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "@language": "nl"
+        },
+        "notation": {
+            "@id": "http://www.w3.org/2004/02/skos/core#notation",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "altLabel": {
+            "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+            "@language": "nl"
+        },
+        "note": {
+            "@id": "http://www.w3.org/2004/02/skos/core#note",
+            "@language": "nl"
+        },
+        "definition": {
+            "@id": "http://www.w3.org/2004/02/skos/core#definition",
+            "@language": "nl"
+        },
+        "member": {
+            "@id": "http://www.w3.org/2004/02/skos/core#member",
+            "@type": "@id"
+        },
+        "graph": {
+            "@id": "@graph"
+        }
     },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/lucht",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Collection"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#member": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Collectie van matrices m.b.t. lucht.",
-                "@language": "nl"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/water",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Collection"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#member": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Collectie van matrices m.b.t. water.",
-                "@language": "nl"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Afvalwater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Bemalingswater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Biota",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Depositie",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/270"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Drinkwater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Eieren",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Gewassen",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Groenten",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Grondwater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Hard gesteente",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Infrastructuur",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Koelwater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Oppervlaktewater",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Sediment",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Strooisel",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#definition": [
-            {
-                "@value": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#note": [
-            {
-                "@value": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
-                "@language": "nl"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Vilt",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/7884"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#definition": [
-            {
-                "@value": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#note": [
-            {
-                "@value": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
-                "@language": "nl"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Waterbodem",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/15179"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Zwevend stof",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#theme": [
-            {
-                "@id": "http://www.eionet.europa.eu/gemet/concept/270"
-            }
-        ]
-    },
-    {
-        "@id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
-        "@type": [
-            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-        ],
-        "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-                "@value": "Codelijst matrices.",
-                "@language": "nl"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater"
-            },
-            {
-                "@id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem"
-            }
-        ]
-    }
-]
+    "graph": [
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/bodem",
+            "type": "http://www.w3.org/2004/02/skos/core#Collection",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "member": [
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof"
+            ],
+            "prefLabel": "Collectie van matrices m.b.t. bodem."
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/lucht",
+            "type": "http://www.w3.org/2004/02/skos/core#Collection",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "member": [
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt"
+            ],
+            "prefLabel": "Collectie van matrices m.b.t. lucht."
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/water",
+            "type": "http://www.w3.org/2004/02/skos/core#Collection",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "member": [
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem"
+            ],
+            "prefLabel": "Collectie van matrices m.b.t. water."
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Afvalwater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Bemalingswater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Biota",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Depositie",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/270"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Drinkwater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Eieren",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Gewassen",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Groenten",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Grondwater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Hard gesteente",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Infrastructuur",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Koelwater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Oppervlaktewater",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Sediment",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "note": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
+            "prefLabel": "Strooisel",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "note": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
+            "prefLabel": "Vilt",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Waterbodem",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof",
+            "type": "http://www.w3.org/2004/02/skos/core#Concept",
+            "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "prefLabel": "Zwevend stof",
+            "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "theme": "http://www.eionet.europa.eu/gemet/concept/270"
+        },
+        {
+            "uri": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "type": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+            "hasTopConcept": [
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
+                "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem"
+            ],
+            "prefLabel": "Codelijst matrices."
+        }
+    ]
+}

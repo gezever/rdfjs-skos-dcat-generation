@@ -1,23 +1,23 @@
-type,uri,prefLabel,definition,inScheme,theme,collection,topConceptOf
-skos:Collection,com:bodem,Collectie van matrices m.b.t. bodem.,,vlcs:matrix,,,
-skos:Collection,com:lucht,Collectie van matrices m.b.t. lucht.,,vlcs:matrix,,,
-skos:Collection,com:water,Collectie van matrices m.b.t. water.,,vlcs:matrix,,,
-skos:Concept,cm:afvalwater,Afvalwater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:oppervlaktewater,Oppervlaktewater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:grondwater,Grondwater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:drinkwater,Drinkwater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:bemalingswater,Bemalingswater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:waterbodem,Waterbodem,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:koelwater,Koelwater,,vlcs:matrix,gemet:15179,com:water,vlcs:matrix
-skos:Concept,cm:hard_gesteente,Hard gesteente,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:sediment,Sediment,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:infrastructuur,Infrastructuur,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:strooisel,Strooisel,Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:vilt,Vilt,"Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:biota,Biota,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:gewassen,Gewassen,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:groenten,Groenten,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:eieren,Eieren,,vlcs:matrix,gemet:7884,com:lucht,vlcs:matrix
-skos:Concept,cm:zwevend_stof,Zwevend stof,,vlcs:matrix,gemet:270,com:bodem,vlcs:matrix
-skos:Concept,cm:depositie,Depositie,,vlcs:matrix,gemet:270,com:bodem,vlcs:matrix
-skos:ConceptScheme,vlcs:matrix,Codelijst matrices.,,,,,
+uri,prefLabel,definition,inScheme,theme,collections,topConceptOf
+collection:bodem,Collectie van matrices m.b.t. bodem.,,conceptscheme:matrix,,,
+collection:lucht,Collectie van matrices m.b.t. lucht.,,conceptscheme:matrix,,,
+collection:water,Collectie van matrices m.b.t. water.,,conceptscheme:matrix,,,
+afvalwater,Afvalwater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+oppervlaktewater,Oppervlaktewater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+grondwater,Grondwater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+drinkwater,Drinkwater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+bemalingswater,Bemalingswater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+waterbodem,Waterbodem,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+koelwater,Koelwater,,conceptscheme:matrix,gemet:15179,collection:water,conceptscheme:matrix
+hard_gesteente,Hard gesteente,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+sediment,Sediment,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+infrastructuur,Infrastructuur,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+strooisel,Strooisel,Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+vilt,Vilt,"Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+biota,Biota,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+gewassen,Gewassen,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+groenten,Groenten,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+eieren,Eieren,,conceptscheme:matrix,gemet:7884,collection:lucht,conceptscheme:matrix
+zwevend_stof,Zwevend stof,,conceptscheme:matrix,gemet:270,collection:bodem,conceptscheme:matrix
+depositie,Depositie,,conceptscheme:matrix,gemet:270,collection:bodem,conceptscheme:matrix
+conceptscheme:matrix,Codelijst matrices.,,,,,

@@ -46,7 +46,7 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#definition",
       "@language" : "nl"
     },
-    "collection": {
+    "collections": {
       "@type": "@id",
       "@reverse": "member"
     },
@@ -60,11 +60,11 @@
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "vlcs" : "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
-    "cm" : "https://data.omgeving.vlaanderen.be/id/concept/matrix/",
-    "com" : "https://data.omgeving.vlaanderen.be/id/collection/matrix/",
     "dcat" : "http://www.w3.org/ns/dcat#",
     "dct" : "http://purl.org/dc/terms/",
     "dc" : "http://purl.org/dc/elements/1.1/",
-    "gemet" : "http://www.eionet.europa.eu/gemet/concept/"
-  }
+    "gemet" : "http://www.eionet.europa.eu/gemet/concept/",
+    "conceptscheme" : "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
+    "collection" : "https://data.omgeving.vlaanderen.be/id/collection/matrix/",
+    "@base" : "https://data.omgeving.vlaanderen.be/id/concept/matrix/"
+}

@@ -37,6 +37,7 @@ async function n3_reasoning(json_ld) {
     reasoner.add_abox(rdf);
     reasoner.add_rules(rules);
     reasoner.materialize();
+    //let test = await pretty(reasoner.get_abox_dump())
     output(reasoner.get_abox_dump());
 }
 
@@ -56,10 +57,10 @@ function output(rdf) {
             else
                 (async () => {
                     if (await validate(shapes, dataset)) {
-                        nt_writer.end((error, result) => fs.writeFileSync(config.skos.nt, result)),
-                            ttl_writer.end((error, result) => fs.writeFileSync(config.skos.turtle, result)),
+                        nt_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.nt, result)),
+                            ttl_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.turtle, result)),
                             rdf_to_jsonld(dataset)
-                    }
+                   }
                 })()
         });
 }
@@ -67,17 +68,17 @@ function output(rdf) {
 async function rdf_to_jsonld(dataset) {
     console.log("4: rdf to jsonld");
     console.log("Extract a conceptscheme as a tree using a frame.");
-    let my_json = await jsonld.fromRDF(dataset);
-    fs.writeFileSync(config.skos.jsonld, JSON.stringify(my_json, null, 4));
-    let framed = await jsonld.frame(my_json, frame);
-    fs.writeFileSync(config.skos.jsonld_framed, JSON.stringify(framed, null, 4));
-    jsonld_to_csv(my_json);
+    let json_from_rdf = await jsonld.fromRDF(dataset);
+    let framed_without_prefix = await jsonld.frame(json_from_rdf, frame_csv_result);
+    fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.jsonld, JSON.stringify(framed_without_prefix, null, 4));
+    let framed_with_prefix = await jsonld.frame(json_from_rdf, frame);
+    fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.jsonld_framed, JSON.stringify(framed_with_prefix, null, 4));
+    jsonld_to_csv(framed_without_prefix);
 }
 
 async function jsonld_to_csv(my_json){
     console.log("5: jsonld to csv");
-    let framed_csv = await jsonld.frame(my_json, frame_csv_result);
-    var array = jp.query(framed_csv, '$.graph[*]');
+    var array = jp.query(my_json, '$.graph[*]');
     let temp = {};
     const results = [];
     for (const row of array){
@@ -90,7 +91,7 @@ async function jsonld_to_csv(my_json){
     const csv = await json2csv(results,
         {emptyFieldValue: null,
             expandArrayObjects: false});
-    fs.writeFileSync(config.skos.csv, csv, 'utf8' );
+    fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.csv, csv, 'utf8' );
 }
 
 async function csv_to_jsonld() {
@@ -99,7 +100,7 @@ async function csv_to_jsonld() {
         ignoreEmpty:true,
         flatKeys:true
     })
-        .fromFile(config.skos.csv_source)
+        .fromFile(config.source.path + config.source.codelijst_csv)
         .then((jsonObj)=>{
             var new_json = new Array();
             for(var i = 0; i < jsonObj.length; i++){

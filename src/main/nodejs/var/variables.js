@@ -6,9 +6,9 @@ import rdf from "@zazuko/env-node";
 
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
-const context = JSON.parse(fs.readFileSync(config.skos.jsonld_context));
+const context = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_context));
 
-const context_csv_result = JSON.parse(fs.readFileSync(config.skos.csv_result_context));
+const context_csv_result = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_csv_result_context));
 
 const shapes = await rdf.dataset().import(rdf.fromFile(config.ap.skos_constraint))
 

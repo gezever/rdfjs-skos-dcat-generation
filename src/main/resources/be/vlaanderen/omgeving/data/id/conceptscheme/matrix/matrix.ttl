@@ -9,114 +9,114 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix gemet: <http://www.eionet.europa.eu/gemet/concept/>.
 
-com:bodem a skos:Collection;
-    skos:inScheme vlcs:matrix;
+com:bodem skos:inScheme vlcs:matrix;
     skos:member cm:depositie, cm:zwevend_stof;
     skos:prefLabel "Collectie van matrices m.b.t. bodem."@nl.
-com:lucht a skos:Collection;
-    skos:inScheme vlcs:matrix;
+com:lucht skos:inScheme vlcs:matrix;
     skos:member cm:biota, cm:eieren, cm:gewassen, cm:groenten, cm:hard_gesteente, cm:infrastructuur, cm:sediment, cm:strooisel, cm:vilt;
     skos:prefLabel "Collectie van matrices m.b.t. lucht."@nl.
-com:water a skos:Collection;
-    skos:inScheme vlcs:matrix;
+com:water skos:inScheme vlcs:matrix;
     skos:member cm:afvalwater, cm:bemalingswater, cm:drinkwater, cm:grondwater, cm:koelwater, cm:oppervlaktewater, cm:waterbodem;
     skos:prefLabel "Collectie van matrices m.b.t. water."@nl.
-cm:afvalwater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:afvalwater skos:inScheme vlcs:matrix;
     skos:prefLabel "Afvalwater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:bemalingswater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:bemalingswater skos:inScheme vlcs:matrix;
     skos:prefLabel "Bemalingswater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:biota a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:biota skos:inScheme vlcs:matrix;
     skos:prefLabel "Biota"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:depositie a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:depositie skos:inScheme vlcs:matrix;
     skos:prefLabel "Depositie"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/270>.
-cm:drinkwater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:drinkwater skos:inScheme vlcs:matrix;
     skos:prefLabel "Drinkwater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:eieren a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:eieren skos:inScheme vlcs:matrix;
     skos:prefLabel "Eieren"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:gewassen a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:gewassen skos:inScheme vlcs:matrix;
     skos:prefLabel "Gewassen"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:groenten a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:groenten skos:inScheme vlcs:matrix;
     skos:prefLabel "Groenten"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:grondwater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:grondwater skos:inScheme vlcs:matrix;
     skos:prefLabel "Grondwater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:hard_gesteente a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:hard_gesteente skos:inScheme vlcs:matrix;
     skos:prefLabel "Hard gesteente"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:infrastructuur a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:infrastructuur skos:inScheme vlcs:matrix;
     skos:prefLabel "Infrastructuur"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:koelwater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:koelwater skos:inScheme vlcs:matrix;
     skos:prefLabel "Koelwater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:oppervlaktewater a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:oppervlaktewater skos:inScheme vlcs:matrix;
     skos:prefLabel "Oppervlaktewater"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:sediment a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:sediment skos:inScheme vlcs:matrix;
     skos:prefLabel "Sediment"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:strooisel a skos:Concept;
-    skos:definition "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl;
+cm:strooisel skos:definition "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl;
     skos:inScheme vlcs:matrix;
     skos:prefLabel "Strooisel"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:vilt a skos:Concept;
-    skos:definition "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl;
+cm:vilt skos:definition "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl;
     skos:inScheme vlcs:matrix;
     skos:prefLabel "Vilt"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/7884>.
-cm:waterbodem a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:waterbodem skos:inScheme vlcs:matrix;
     skos:prefLabel "Waterbodem"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/15179>.
-cm:zwevend_stof a skos:Concept;
-    skos:inScheme vlcs:matrix;
+cm:zwevend_stof skos:inScheme vlcs:matrix;
     skos:prefLabel "Zwevend stof"@nl;
     skos:topConceptOf vlcs:matrix;
     dcat:theme <http://www.eionet.europa.eu/gemet/concept/270>.
-vlcs:matrix a skos:ConceptScheme;
-    skos:prefLabel "Codelijst matrices."@nl;
-    skos:hasTopConcept cm:afvalwater, cm:bemalingswater, cm:biota, cm:depositie, cm:drinkwater, cm:eieren, cm:gewassen, cm:groenten, cm:grondwater, cm:hard_gesteente, cm:infrastructuur, cm:koelwater, cm:oppervlaktewater, cm:sediment.
+vlcs:matrix skos:prefLabel "Codelijst matrices."@nl;
+    a skos:ConceptScheme.
+com:bodem a skos:Collection.
+com:lucht a skos:Collection.
+com:water a skos:Collection.
+vlcs:matrix skos:hasTopConcept cm:afvalwater, cm:bemalingswater, cm:biota, cm:depositie, cm:drinkwater, cm:eieren, cm:gewassen, cm:groenten, cm:grondwater, cm:hard_gesteente, cm:infrastructuur, cm:koelwater, cm:oppervlaktewater, cm:sediment.
 cm:strooisel skos:note "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl.
 vlcs:matrix skos:hasTopConcept cm:strooisel.
 cm:vilt skos:note "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl.
 vlcs:matrix skos:hasTopConcept cm:vilt, cm:waterbodem, cm:zwevend_stof.
+cm:afvalwater a skos:Concept.
+cm:bemalingswater a skos:Concept.
+cm:biota a skos:Concept.
+cm:depositie a skos:Concept.
+cm:drinkwater a skos:Concept.
+cm:eieren a skos:Concept.
+cm:gewassen a skos:Concept.
+cm:groenten a skos:Concept.
+cm:grondwater a skos:Concept.
+cm:hard_gesteente a skos:Concept.
+cm:infrastructuur a skos:Concept.
+cm:koelwater a skos:Concept.
+cm:oppervlaktewater a skos:Concept.
+cm:sediment a skos:Concept.
+cm:strooisel a skos:Concept.
+cm:vilt a skos:Concept.
+cm:waterbodem a skos:Concept.
+cm:zwevend_stof a skos:Concept.

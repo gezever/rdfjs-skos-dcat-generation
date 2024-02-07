@@ -46,10 +46,6 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#definition",
       "@language" : "nl"
     },
-    "collection": {
-      "@type": "@id",
-      "@reverse": "member"
-    },
     "member" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#member",
       "@type" : "@id"
