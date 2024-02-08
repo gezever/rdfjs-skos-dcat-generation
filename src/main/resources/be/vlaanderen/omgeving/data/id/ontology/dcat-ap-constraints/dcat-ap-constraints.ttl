@@ -291,7 +291,6 @@ omg_ps:dcterms_hasVersion
     sh:name ""@en ;
     sh:description ""@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
-    sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind  sh:IRI ;
     sh:path  dcterms:hasVersion .

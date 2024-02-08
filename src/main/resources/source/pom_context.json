@@ -9,9 +9,6 @@
   "version" : {
     "@id" : "owl:versionInfo"
   },
-  "next_release_version" : {
-    "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#next_release_version"
-  },
   "name" : {
     "@id" : "http://spdx.org/rdf/terms#name"
   },

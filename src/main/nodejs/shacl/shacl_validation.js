@@ -6,7 +6,6 @@ async function validate(shapes, data) {
     const validator = new SHACLValidator(shapes, { factory: rdf })
     const report = await validator.validate(data)
 
-
     for (const result of report.results) {
         // See https://www.w3.org/TR/shacl/#results-validation-result for details
         // about each property

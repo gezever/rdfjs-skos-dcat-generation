@@ -98,7 +98,7 @@ CONSTRUCT
     dcterms:temporal            omg_periodoftime:dataset_omg ;
     dcterms:title               ?dataset_version_label ;
     void:rootResource           ?conceptscheme ;
-    owl:versionInfo             ?next_release_version ;
+    owl:versionInfo             ?version ;
     dcat:contactPoint           omg_vcard:helpdesk ;
     dcat:distribution           ?distribution_csv , ?distribution_jsonld, ?distribution_ttl, ?package;
     dcat:landingPage            <https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html> ;
@@ -119,7 +119,7 @@ CONSTRUCT
     spdx:downloadLocation  ?package_download_url ;
     spdx:packageFileName   ?packageFileName ;
     spdx:packageName       ?packageName ;
-    spdx:versionInfo       ?next_release_version ;
+    spdx:versionInfo       ?version ;
     dcat:downloadURL       ?package_download_url .
 
     ?distribution_ttl
@@ -176,10 +176,10 @@ CONSTRUCT
 WHERE
 {
     ?s spdx:name ?name; # "codelijst-matrix"
-    owl:versionInfo ?v ;
+    owl:versionInfo ?version ;
     metadata:artifactId ?artifactId ; # "codelijst-matrix"
-    metadata:groupId ?groupId; # "be.vlaanderen.omgeving.data.id.graph"
-    metadata:next_release_version ?next_release_version . #"2.0.1"
+    metadata:groupId ?groupId  # "be.vlaanderen.omgeving.data.id.graph"
+    #metadata:next_release_version ?next_release_version . #"2.0.1"
 
 
     BIND( now() AS ?currentDateTime ) .
@@ -194,42 +194,42 @@ WHERE
     BIND(IRI("http://data.vlaanderen.be/id/organisatie/OVO003751") AS ?rightsHolder) .
 
     BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/dataset/", STR( ?artifactId ))) AS ?dataset ) .
-    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/dataset/", STR( ?artifactId ), "_", STR( ?next_release_version ) )) AS ?dataset_version ) .
+    BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/dataset/", STR( ?artifactId ), "_", STR( ?version ) )) AS ?dataset_version ) .
     BIND(IRI(CONCAT(REPLACE(STR( ?dataset ),"/id/","/doc/","i"), ".html")) AS ?dataset_page) .
     BIND(IRI(CONCAT(REPLACE(STR( ?dataset_version ),"/id/","/doc/","i"), ".html")) AS ?dataset_version_page) .
 
-    BIND(IRI(CONCAT("https://repo.omgeving.vlaanderen.be/artifactory/release/", REPLACE(STR( ?groupId ),"\\.","/","i"), "/", STR( ?artifactId ), "/", STR( ?next_release_version ),  "/", STR( ?artifactId ), "-", STR( ?next_release_version ), ".jar" )) AS ?package_download_url ) .
+    BIND(IRI(CONCAT("https://repo.omgeving.vlaanderen.be/artifactory/release/", REPLACE(STR( ?groupId ),"\\.","/","i"), "/", STR( ?artifactId ), "/", STR( ?version ),  "/", STR( ?artifactId ), "-", STR( ?version ), ".jar" )) AS ?package_download_url ) .
 
     BIND(CONCAT(STR( ?groupId ), ".", STR( ?artifactId )  ) AS ?packageName ) .
 
     BIND(REPLACE(STR( ?packageName ),"graph","dataset","i")   AS ?dataset_id ) .
-    BIND(CONCAT(STR( ?packageName ), ".", STR( ?next_release_version )  ) AS ?package_id ) .
+    BIND(CONCAT(STR( ?packageName ), ".", STR( ?version )  ) AS ?package_id ) .
     BIND(REPLACE(STR( ?package_id ),"graph","dataset","i")   AS ?dataset_version_id ) .
     BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_ttl")  AS ?ttl_id ) .
     BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_jsonld"  ) AS ?jsonld_id ) .
     BIND(CONCAT(REPLACE(STR( ?package_id ),"graph","distribution","i") , "_csv" ) AS ?csv_id ) .
     BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/package/", STR( ?package_id ) ) ) AS ?package ) .
-    BIND(CONCAT(STR( ?artifactId ), "-", STR( ?next_release_version ), ".jar"  ) AS ?packageFileName ) .
+    BIND(CONCAT(STR( ?artifactId ), "-", STR( ?version ), ".jar"  ) AS ?packageFileName ) .
 
     BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?ttl_id ) ) ) AS ?ttl_download ) .
     BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?jsonld_id ) ) ) AS ?jsonld_download ) .
     BIND(IRI(CONCAT("https://datasets.omgeving.vlaanderen.be/", STR( ?csv_id ) ) ) AS ?csv_download ) .
 
-    BIND(CONCAT("https://data.omgeving.vlaanderen.be/id/distribution/", STR( ?artifactId ), "_", STR( ?next_release_version )  ) AS ?distribution_base ) .
+    BIND(CONCAT("https://data.omgeving.vlaanderen.be/id/distribution/", STR( ?artifactId ), "_", STR( ?version )  ) AS ?distribution_base ) .
     BIND(IRI(CONCAT(STR( ?distribution_base ), "_csv")) AS ?distribution_csv ) .
     BIND(IRI(CONCAT(STR( ?distribution_base ), "_jsonld")) AS ?distribution_jsonld ) .
     BIND(IRI(CONCAT(STR( ?distribution_base ), "_ttl")) AS ?distribution_ttl ) .
-    BIND(CONCAT("https://data.omgeving.vlaanderen.be/doc/distribution/", STR( ?artifactId ), "_", STR( ?next_release_version )  ) AS ?distribution_doc_base ) .
+    BIND(CONCAT("https://data.omgeving.vlaanderen.be/doc/distribution/", STR( ?artifactId ), "_", STR( ?version )  ) AS ?distribution_doc_base ) .
     BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_csv.html")) AS ?distribution_csv_page ) .
     BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_jsonld.html")) AS ?distribution_jsonld_page ) .
     BIND(IRI(CONCAT(STR( ?distribution_doc_base ), "_ttl.html")) AS ?distribution_ttl_page ) .
 
     BIND(REPLACE(CONCAT(UCASE(SUBSTR(?name, 1, 1)), SUBSTR(?artifactId, 2)), "-", " ", "i") as ?Name)
     BIND(STRLANG(?name, "nl") as ?name_lang)
-    BIND(STRLANG(CONCAT(STR( ?Name ), " package versie ", STR(?next_release_version)), "nl") AS ?package_label ) .
-    BIND(STRLANG(CONCAT(STR( ?Name ), " in Turtle rdf-formaat. Versie ", STR(?next_release_version)), "nl") AS ?ttl_label ) .
-    BIND(STRLANG(CONCAT(STR( ?Name ), " in jsonld-formaat. Versie ", STR(?next_release_version)), "nl") AS ?jsonld_label ) .
-    BIND(STRLANG(CONCAT(STR( ?Name ), " in csv-formaat. Versie ", STR(?next_release_version)), "nl") AS ?csv_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " package versie ", STR(?version)), "nl") AS ?package_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in Turtle rdf-formaat. Versie ", STR(?version)), "nl") AS ?ttl_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in jsonld-formaat. Versie ", STR(?version)), "nl") AS ?jsonld_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), " in csv-formaat. Versie ", STR(?version)), "nl") AS ?csv_label ) .
 
     BIND(STRLANG(CONCAT(STR( ?Name ), ", geserialiseerd als Turtle bestand."), "nl") AS ?ttl_description ) .
     BIND(STRLANG(CONCAT(STR( ?Name ), ", geserialiseerd als json-ld bestand."), "nl") AS ?jsonld_description ) .
@@ -237,7 +237,7 @@ WHERE
     BIND(STRLANG(CONCAT(STR( ?Name ), ", Jar maven package."), "nl") AS ?jar_description ) .
 
     BIND(STRLANG(STR( ?Name ), "nl") AS ?dataset_label ) .
-    BIND(STRLANG(CONCAT(STR( ?Name ), ", versie ", STR(?next_release_version)), "nl") AS ?dataset_version_label ) .
+    BIND(STRLANG(CONCAT(STR( ?Name ), ", versie ", STR(?version)), "nl") AS ?dataset_version_label ) .
 
     BIND(STRLANG(CONCAT("Dataset ", STR( ?artifactId )), "nl") AS ?dataset_alternative ) .
     BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/conceptscheme/", strafter(?artifactId,"-"))) AS ?conceptscheme ) .

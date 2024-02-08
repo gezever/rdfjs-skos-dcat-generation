@@ -5,73 +5,63 @@ import { QueryEngine } from '@comunica/query-sparql';
 import rdfDataset from "@rdfjs/dataset";
 import validate from './shacl/shacl_validation.js';
 import jsonld from "jsonld";
-import { groupId, artifactId, version, next_release_version, name, dcat_prefixes, frame_catalog, shapes_dcat, config } from './var/variables.js';
+import request from "request";
+import jp from "jsonpath";
+import { dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, pom_context, groupId, artifactId, next_release_version, name, dcat_prefixes, frame_catalog, shapes_dcat, config } from './var/variables.js';
 
 
-async function rdf_to_jsonld(rdf_dataset, filename) {
-    console.log("6 rdf to jsonld");
-    let my_json = await jsonld.fromRDF(rdf_dataset);
-    console.log("Extract a conceptscheme as a tree using a frame.");
-    let framed = await jsonld.frame(my_json, frame_catalog);
-    fs.writeFileSync(filename, JSON.stringify(framed, null, 4));
-}
-
-async function serialize_catalog(store) {
-    console.log("5. serialize catalog");
-    const myConstructEngine = new QueryEngine();
-    const query = fs.readFileSync(config.sparql.construct, 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store] });
-    const catalog_ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: dcat_prefixes });
-    const catalog = rdfDataset.dataset()
-    quadStream.on('data', (quad) => {
-        catalog_ttl_writer.addQuad(quad);
-        catalog.add(quad);
-    });
-    quadStream.on('end', () => {
-        (async () => {
-            if (await validate(shapes_dcat, catalog)) {
-                catalog_ttl_writer.end((error, result) => fs.writeFileSync(config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_turtle, result));
-                rdf_to_jsonld(catalog, config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_jsonld);
-            }
-        })()
-    });
-    quadStream.on('error', (error) => {
-        console.error(error);
+async function get_versions() {
+    console.log('1. get previous versions');
+    let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=' +
+        groupId +
+        '&a=' +
+        artifactId +
+        '&classifier=sources&repos=release'
+    let options = {json: true};
+    request(url, options, (error, res, body) => {
+        if (error) {
+            return  console.log(error)
+        };
+        if (!error && res.statusCode == 200) {
+            let version = [next_release_version]
+            let versions = jp.query(body, '$..version');
+            versions.push(next_release_version)
+            construct_metadata(version, dcat_dataset_turtle, dcat_dataset_jsonld)
+            construct_metadata(versions, dcat_catalog_turtle, dcat_catalog_jsonld)
+        };
     });
 }
 
-async function add_dcat_dataset_to_catalog(dcat_dataset_store) {
-    console.log("4. add dcat dataset to catalog");
-    let catalog_old = fs.readFileSync(config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_turtle, 'utf8');
-    const catalog_parser = new N3.Parser();
-    const catalog_store = RdfStore.createDefault();
-    catalog_parser.parse(
-        catalog_old,
-        (error, quad) => {
-            if (quad)
-                catalog_store.addQuad(quad);
-            else
-                console.log('catalog store loaded');});
-    const myConstructEngine = new QueryEngine();
-    const query = fs.readFileSync(config.sparql.construct, 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ dcat_dataset_store, catalog_store ] });
-    const final_store = RdfStore.createDefault();
-    quadStream.on('data', (quad) => {
-        final_store.addQuad(quad);
-    });
-    quadStream.on('end', () => {
-        serialize_catalog(final_store);
-    });
+async function construct_metadata(versions, turtle, json_ld){
+    console.log('2. construct metadata');
+    const store = RdfStore.createDefault();
+    for (const version of versions) {
+        var metadata = {}
+        metadata['@context'] = pom_context;
+        metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template";
+        metadata['groupId'] = groupId
+        metadata['artifactId'] = artifactId
+        metadata['version'] = version
+        metadata['name'] = name
+        const metadata_rdf = await jsonld.toRDF(metadata, { format: "application/n-quads" })
+        const parser = new N3.Parser();
+        parser.parse(
+            metadata_rdf,
+            (error, quad) => {
+                if (quad)
+                    store.addQuad(quad);
+            });
+    }
+    construct_dcat(store, turtle, json_ld);
 }
 
-
-async function serialize_dcat_dataset(store){
-    console.log("3. serialize dcat dataset");
+async function construct_dcat(store, turtle, json_ld){
+    console.log('3. construct dcat');
     const myConstructEngine = new QueryEngine();
-    const query = fs.readFileSync(config.sparql.construct, 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store ] });
+    const query = fs.readFileSync(config.sparql.dataset_source, 'utf8');
     const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: dcat_prefixes });
     const dataset = rdfDataset.dataset()
+    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store ] });
     quadStream.on('data', (quad) => {
         ttl_writer.addQuad(quad);
         dataset.add(quad);
@@ -79,55 +69,24 @@ async function serialize_dcat_dataset(store){
     quadStream.on('end', () => {
         (async () => {
             if (await validate(shapes_dcat, dataset)) {
-                ttl_writer.end((error, result) => fs.writeFileSync(config.dcat.path_dataset + config.dcat.name + '/' + config.dcat.dataset_turtle, result));
-                rdf_to_jsonld(dataset, config.dcat.path_dataset + name + '/' + config.dcat.dataset_jsonld );
+                ttl_writer.end((error, result) => fs.writeFileSync(turtle, result));
+                rdf_to_jsonld(dataset, json_ld);
             }
         })()
     });
     quadStream.on('error', (error) => {
-    });
-}
-
-async function construct_dcat_dataset(pom_metadata_store){
-    console.log("2. construct dcat dataset");
-    const myConstructEngine = new QueryEngine();
-    const store = RdfStore.createDefault();
-    const query = fs.readFileSync(config.sparql.dataset_source, 'utf8');
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ pom_metadata_store ] });
-    quadStream.on('data', (quad) => {
-        store.addQuad(quad);
-    });
-    quadStream.on('end', () => {
-        serialize_dcat_dataset(store);
-        add_dcat_dataset_to_catalog(store);
-    });
-    quadStream.on('error', (error) => {
         console.error(error);
     });
-
 }
 
-async function construct_metadata(){
-    console.log('1. construct metadata');
-    var metadata = {}
-    metadata['@context'] = JSON.parse(fs.readFileSync(config.source.path + config.source.pom_context));
-    metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template";
-    metadata['groupId'] = groupId
-    metadata['artifactId'] = artifactId
-    metadata['version'] = version
-    metadata['next_release_version'] = next_release_version
-    metadata['name'] = name
-    const metadata_rdf = await jsonld.toRDF(metadata, { format: "application/n-quads" })
-    const parser = new N3.Parser();
-    const pom_metadata_store = RdfStore.createDefault();
-    parser.parse(
-        metadata_rdf,
-        (error, quad) => {
-            if (quad)
-                pom_metadata_store.addQuad(quad);
-            else
-                construct_dcat_dataset(pom_metadata_store);
-        });
+async function rdf_to_jsonld(rdf_dataset, filename) {
+    console.log("4 rdf to jsonld");
+    let my_json = await jsonld.fromRDF(rdf_dataset);
+    console.log("Extract Catalog as a tree using a frame.");
+    let framed = await jsonld.frame(my_json, frame_catalog);
+    fs.writeFileSync(filename, JSON.stringify(framed, null, 4));
 }
-construct_metadata();
+
+get_versions()
+
 

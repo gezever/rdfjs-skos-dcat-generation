@@ -4,34 +4,7 @@ import fs, {readFileSync} from "fs";
 import rdf from "@zazuko/env-node";
 import convert from "xml-js";
 import jp from "jsonpath";
-import request from 'request';
 
-
-
-
-
-// import fetch from 'node-fetch';
-//
-// (async () => {
-//     try {
-//
-//         const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
-//         const json = await response.json()
-//
-//         console.log(json.url);
-//         console.log(json.explanation);
-//     } catch (error) {
-//         console.log(error.response.body);
-//     }
-// })();
-
-
-
-
-///api/search/versions
-//https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
-
-//https://repo.omgeving.vlaanderen.be/artifactory/api/search/gavc?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
 
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
@@ -57,6 +30,8 @@ const next_release_version = jp.query(result, '$.project.version._text').toStrin
 
 const name = jp.query(result, '$.project.name._text').toString();
 
+const pom_context = JSON.parse(fs.readFileSync(config.source.path + config.source.pom_context))
+
 const skos_prefixes = {
     xsd: "http://www.w3.org/2001/XMLSchema#",
     skos: "http://www.w3.org/2004/02/skos/core#",
@@ -69,7 +44,6 @@ const skos_prefixes = {
     dc: "http://purl.org/dc/elements/1.1/",
     gemet: "http://www.eionet.europa.eu/gemet/concept/",
 }
-
 
 
 const dcat_prefixes = {
@@ -213,9 +187,15 @@ const frame_catalog = {
     }
 }
 
-//const
+const dcat_dataset_jsonld = config.dcat.path_dataset + name + '/' + config.dcat.dataset_jsonld
 
-//https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
+const dcat_dataset_turtle = config.dcat.path_dataset + config.dcat.name + '/' + config.dcat.dataset_turtle
 
-export { groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
+const dcat_catalog_jsonld = config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_jsonld
+
+const dcat_catalog_turtle = config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_turtle
+
+
+
+export { dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, pom_context, groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
 
