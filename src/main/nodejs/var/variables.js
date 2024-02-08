@@ -2,7 +2,36 @@
 import yaml from 'js-yaml';
 import fs, {readFileSync} from "fs";
 import rdf from "@zazuko/env-node";
+import convert from "xml-js";
+import jp from "jsonpath";
+import request from 'request';
 
+
+
+
+
+// import fetch from 'node-fetch';
+//
+// (async () => {
+//     try {
+//
+//         const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+//         const json = await response.json()
+//
+//         console.log(json.url);
+//         console.log(json.explanation);
+//     } catch (error) {
+//         console.log(error.response.body);
+//     }
+// })();
+
+
+
+
+///api/search/versions
+//https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
+
+//https://repo.omgeving.vlaanderen.be/artifactory/api/search/gavc?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
 
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
@@ -10,9 +39,23 @@ const context_skos_prefixes = JSON.parse(fs.readFileSync(config.source.path + co
 
 const context_skos_no_prefixes = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_csv_result_context));
 
-const context_catalog = JSON.parse(readFileSync(config.dcat.jsonld_context));
+const context_catalog = JSON.parse(readFileSync(config.source.path + config.source.catalog_context));
 
-const shapes_skos = await rdf.dataset().import(rdf.fromFile(config.ap.skos_constraint))
+const shapes_skos = await rdf.dataset().import(rdf.fromFile(config.ap.path + config.ap.name + '-' + config.ap.type + '/' + config.ap.name + '-' + config.ap.type + config.ap.turtle))
+
+const shapes_dcat = await rdf.dataset().import(rdf.fromFile(config.ap.path + 'dcat-' + config.ap.type + '/' + 'dcat-' + config.ap.type + config.ap.turtle))
+
+var result = JSON.parse(convert.xml2json(readFileSync('../../../pom.xml', 'utf8'), {compact: true, spaces: 4}));
+
+const groupId = jp.query(result, '$.project.groupId._text').toString();
+
+const artifactId = jp.query(result, '$.project.artifactId._text').toString();
+
+const version = jp.query(result, '$.project.version._text').toString();
+
+const next_release_version = jp.query(result, '$.project.version._text').toString().split('-')[0];
+
+const name = jp.query(result, '$.project.name._text').toString();
 
 const skos_prefixes = {
     xsd: "http://www.w3.org/2001/XMLSchema#",
@@ -170,5 +213,9 @@ const frame_catalog = {
     }
 }
 
-export { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
+//const
+
+//https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release
+
+export { groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
 

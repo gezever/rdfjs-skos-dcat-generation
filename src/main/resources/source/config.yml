@@ -12,27 +12,29 @@ source:
   codelijst_csv: codelijst-source.csv
   codelijst_context: codelijst_context.json
   codelijst_csv_result_context: codelijst_csv_result_context.json
+  catalog_context: catalog_context.json
+  pom_context: pom_context.json
 
 dcat:
-  distributie_pad_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/
-  distributie_pad_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/
-  dataset_csv: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.csv
-  dataset_jsonld: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.jsonld
-  dataset_turtle: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-matrix/dataset.ttl
-  catalog_csv: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.csv
-  catalog_turtle: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.ttl
-  catalog_jsonld: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-matrix/catalog.jsonld
-  jsonld_context : ../resources/source/catalog_context.json
-  jsonld_dataset_context : ../resources/source/dataset_context.json
-  dataset_source : ../resources/source/dataset_source.csv
-  catalog_source : ../resources/source/catalog_source.csv
+  path_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/
+  path_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/
+  name: codelijst-matrix
+  dataset_jsonld: dataset.jsonld
+  dataset_turtle: dataset.ttl
+  catalog_turtle: catalog.ttl
+  catalog_jsonld: catalog.jsonld
+
 
 sparql :
   verrijking_dcat : ../sparql/verrijk_dcat.rq
   construct : ../sparql/construct.rq
   dataset_source : ../sparql/dataset_source_full_uri.rq
+
 ap :
-  skos_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/matrix-ap-constraints/matrix-ap-constraints.ttl
-  dcat_constraint : ../resources/be/vlaanderen/omgeving/data/id/ontology/dcat-ap-constraints/dcat-ap-constraints.ttl
+  path: ../resources/be/vlaanderen/omgeving/data/id/ontology/
+  type: ap-constraints
+  name: matrix
+  turtle: .ttl
+
 n3 :
   skos_rules : ../n3/skos-rules.n3
