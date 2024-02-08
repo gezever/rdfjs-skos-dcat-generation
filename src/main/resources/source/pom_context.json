@@ -1,5 +1,4 @@
 {
-
   "groupId" : {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#groupId"
   },
@@ -13,6 +12,4 @@
     "@id" : "http://spdx.org/rdf/terms#name"
   },
   "owl" : "http://www.w3.org/2002/07/owl#"
-
-
 }
