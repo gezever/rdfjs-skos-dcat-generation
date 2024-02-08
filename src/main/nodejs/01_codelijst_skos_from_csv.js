@@ -120,36 +120,3 @@ async function csv_to_jsonld() {
 
 csv_to_jsonld();
 
-
-
-
-
-// async function roxy_select_to_json(result){
-// const query = fs.readFileSync('/home/gehau/git/rdfjs-skos-dcat-generation/src/main/sparql/rdf_to_csv_test.rq', 'utf8');
-// const result = reasoner.query(query);
-//const result = reasoner.query('select  ?s ?o where {?s a ?o}');
-//roxy_select_to_csv(result);
-
-//console.log("3: output");
-//     const urlRegex = new RegExp(/<?(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*))>?/);
-//     const results = [];
-//     let temp = {};
-//     let headVars = new Map();
-//     for (const row of result){
-//         temp = {};
-//         for(const binding of row){
-//             headVars.set(binding.getVar(), binding.getVar());
-//             const regexArray = urlRegex.exec(binding.getValue());
-//             if (regexArray == null) {
-//                 temp[binding.getVar()] = {type:"literal",value: binding.getValue()};
-//             }
-//             else {
-//                 temp[binding.getVar()] = {type:"uri",value: regexArray[1]};
-//             }
-//         }
-//         results.push(temp)
-//     }
-//     const data = {head:{vars:Array.from(headVars.keys())},results:{bindings:results}};
-//     fs.writeFileSync(config.skos.json, JSON.stringify(data, null, 4));
-// }
-
