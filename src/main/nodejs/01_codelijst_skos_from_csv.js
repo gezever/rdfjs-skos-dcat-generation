@@ -11,7 +11,7 @@ import validate from './shacl/shacl_validation.js';
 import { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
 
 
-
+const sortLines = str => str.split(/\r?\n/).sort().join('\n');
 
 function separateString(originalString) {
     if (originalString.includes('|')) {
@@ -40,7 +40,7 @@ async function n3_reasoning(json_ld) {
     reasoner.add_rules(rules);
     reasoner.materialize();
     //let test = await pretty(reasoner.get_abox_dump())
-    output(reasoner.get_abox_dump());
+    output(sortLines(reasoner.get_abox_dump()));
 }
 
 function output(rdf) {
