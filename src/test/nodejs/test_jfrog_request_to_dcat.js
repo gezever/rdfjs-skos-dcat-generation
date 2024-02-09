@@ -1,7 +1,9 @@
 
 import request from 'request';
 
-let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release'
+//let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release'
+
+let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/gavc?g=be.vlaanderen.omgeving.data.id.graph&a=codelijst-emissie&classifier=sources&repos=release'
 
 let options = {json: true};
 

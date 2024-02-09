@@ -258,19 +258,39 @@
         "geonames": "https://www.geonames.org/3337388/"
     },
     "id": "omg_catalog:codelijst",
-    "type": "dcat:Catalog",
-    "dataset": {
+    "type": [
+        "dcat:Catalog",
+        "dcat:Dataset",
+        "dcat:Resource"
+    ],
+    "dcterms:hasPart": {
         "id": "omg_dataset:codelijst-matrix",
-        "type": "dcat:Dataset",
+        "type": [
+            "rdfs:Resource",
+            "void:Dataset",
+            "dcat:Dataset",
+            "dcat:Resource"
+        ],
         "dc.identifier": "be.vlaanderen.omgeving.data.id.dataset.codelijst-matrix",
         "dc.language": "nl",
-        "accessRights": "access_right:PUBLIC",
-        "accrualPeriodicity": "frequency:IRREG",
+        "accessRights": {
+            "id": "access_right:PUBLIC",
+            "type": "dcterms:RightsStatement"
+        },
+        "accrualPeriodicity": {
+            "id": "frequency:IRREG",
+            "type": "dcterms:Frequency"
+        },
         "alternative": "Dataset codelijst-matrix",
         "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
         "hasVersion": {
             "id": "omg_dataset:codelijst-matrix_2.0.1",
-            "type": "dcat:Dataset",
+            "type": [
+                "rdfs:Resource",
+                "void:Dataset",
+                "dcat:Dataset",
+                "dcat:Resource"
+            ],
             "dc.identifier": "be.vlaanderen.omgeving.data.id.dataset.codelijst-matrix.2.0.1",
             "dc.language": "@nl",
             "accessRights": "access_right:PUBLIC",
@@ -279,91 +299,171 @@
             "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
             "identifier": "omg_dataset:codelijst-matrix_2.0.1",
             "isVersionOf": "omg_dataset:codelijst-matrix",
-            "issued": "2024-02-08T19:01:03-01:00",
-            "dct.language": "language:NLD",
-            "license": "licence:v1.0",
-            "publisher": "ovo:OVO003323",
-            "rightsHolder": "ovo:OVO003751",
-            "spatial": [
-                "geonames:flanders",
-                "country:BEL"
-            ],
-            "temporal": "omg_periodoftime:dataset_omg",
-            "title": "Codelijst matrix, versie 2.0.1",
-            "rootResource": "omg_conceptscheme:matrix",
-            "label": "Codelijst matrix, versie 2.0.1",
-            "owl.versionInfo": "2.0.1",
-            "contactPoint": "omg_vcard:helpdesk",
-            "distribution": [
+            "issued": "2024-02-09T20:03:12-01:00",
+            "dct.language": {
+                "id": "language:NLD",
+                "type": "dcterms:LinguisticSystem"
+            },
+            "license": {
+                "id": "licence:v1.0",
+                "type": "dcterms:LicenseDocument"
+            },
+            "publisher": {
+                "id": "ovo:OVO003323",
+                "type": "dcterms:Agent"
+            },
+            "dcterms:relation": [
                 {
                     "id": "omg_distribution:codelijst-matrix_2.0.1_csv",
-                    "type": "dcat:Distribution",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
                     "accessRights": "access_right:PUBLIC",
                     "description": "Codelijst matrix, geserialiseerd als csv bestand.",
-                    "format": "file_type:CSV",
+                    "format": [
+                        {
+                            "id": "file_type:CSV",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/csv",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
-                    "issued": "2024-02-08T19:01:03-01:00",
-                    "rightsHolder": "ovo:OVO003751",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
                     "title": "Codelijst matrix in csv-formaat. Versie 2.0.1",
                     "label": "Codelijst matrix in csv-formaat. Versie 2.0.1",
-                    "accessURL": "https://github.com/milieuinfo/codelijst-matrix.git",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
                     "compressFormat": "http://www.iana.org/assignments/media-types/application/gzip",
-                    "downloadURL": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                        "type": "rdfs:Resource"
+                    },
                     "mediaType": "https://www.iana.org/assignments/media-types/text/csv",
-                    "page": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html"
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html",
+                        "type": "foaf:Document"
+                    }
                 },
                 {
                     "id": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
-                    "type": "dcat:Distribution",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
                     "accessRights": "access_right:PUBLIC",
                     "description": "Codelijst matrix, geserialiseerd als json-ld bestand.",
-                    "format": "file_type:JSON_LD",
+                    "format": [
+                        {
+                            "id": "file_type:JSON_LD",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        "http://www.iana.org/assignments/media-types/application/gzip",
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/application/ld+json",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
-                    "issued": "2024-02-08T19:01:03-01:00",
+                    "issued": "2024-02-09T20:03:12-01:00",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
                     "label": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
                     "accessURL": "https://github.com/milieuinfo/codelijst-matrix.git",
                     "compressFormat": "http://www.iana.org/assignments/media-types/application/gzip",
-                    "downloadURL": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                        "type": "rdfs:Resource"
+                    },
                     "mediaType": "https://www.iana.org/assignments/media-types/application/ld+json",
-                    "page": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_jsonld.html"
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_jsonld.html",
+                        "type": "foaf:Document"
+                    }
                 },
                 {
                     "id": "omg_distribution:codelijst-matrix_2.0.1_ttl",
-                    "type": "dcat:Distribution",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
                     "accessRights": "access_right:PUBLIC",
                     "description": "Codelijst matrix, geserialiseerd als Turtle bestand.",
-                    "format": "file_type:RDF_TURTLE",
+                    "format": [
+                        {
+                            "id": "file_type:RDF_TURTLE",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        "http://www.iana.org/assignments/media-types/application/gzip",
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/turtle",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
-                    "issued": "2024-02-08T19:01:03-01:00",
+                    "issued": "2024-02-09T20:03:12-01:00",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
                     "label": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
                     "accessURL": "https://github.com/milieuinfo/codelijst-matrix.git",
                     "compressFormat": "http://www.iana.org/assignments/media-types/application/gzip",
-                    "downloadURL": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                        "type": "rdfs:Resource"
+                    },
                     "mediaType": "https://www.iana.org/assignments/media-types/text/turtle",
                     "page": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html"
                 },
                 {
                     "id": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
                     "type": [
-                        "dcat:Distribution",
-                        "spdx:Package"
+                        "rdfs:Resource",
+                        "spdx:Package",
+                        "dcat:Distribution"
                     ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
                     "accessRights": "access_right:PUBLIC",
                     "description": "Codelijst matrix, Jar maven package.",
-                    "format": "file_type:JAR",
+                    "format": {
+                        "id": "file_type:JAR",
+                        "type": "dcterms:MediaTypeOrExtent"
+                    },
                     "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
-                    "issued": "2024-02-08T19:01:03-01:00",
+                    "issued": "2024-02-09T20:03:12-01:00",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix package versie 2.0.1",
-                    "downloadLocation": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                    "downloadLocation": {
+                        "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                        "type": "rdfs:Resource"
+                    },
                     "packageFileName": "codelijst-matrix-2.0.1.jar",
                     "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "versionInfo": "2.0.1",
@@ -371,23 +471,111 @@
                     "downloadURL": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar"
                 }
             ],
-            "landingPage": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+            "rightsHolder": "ovo:OVO003751",
+            "spatial": [
+                {
+                    "id": "country:BEL",
+                    "type": "dcterms:Location"
+                },
+                {
+                    "id": "geonames:flanders",
+                    "type": "dcterms:Location"
+                }
+            ],
+            "dcterms:subject": [
+                {
+                    "id": "eurovoc:2407",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_eu:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_be:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "gemet:10087",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                }
+            ],
+            "temporal": {
+                "id": "omg_periodoftime:dataset_omg",
+                "type": "dcterms:PeriodOfTime"
+            },
+            "title": "Codelijst matrix, versie 2.0.1",
+            "rootResource": {
+                "id": "omg_conceptscheme:matrix",
+                "type": "skos:ConceptScheme"
+            },
+            "label": "Codelijst matrix, versie 2.0.1",
+            "owl.versionInfo": "2.0.1",
+            "contactPoint": {
+                "id": "omg_vcard:helpdesk",
+                "type": "vcard:Kind"
+            },
+            "distribution": [
+                "omg_distribution:codelijst-matrix_2.0.1_csv",
+                "omg_distribution:codelijst-matrix_2.0.1_jsonld",
+                "omg_distribution:codelijst-matrix_2.0.1_ttl",
+                "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1"
+            ],
+            "landingPage": {
+                "id": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+                "type": "foaf:Document"
+            },
             "theme": [
                 "eurovoc:2407",
                 "datatheme_eu:ENVI",
                 "datatheme_be:ENVI",
                 "gemet:10087"
             ],
-            "page": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix_2.0.1.html"
+            "page": [
+                "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+                {
+                    "id": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix_2.0.1.html",
+                    "type": "foaf:Document"
+                }
+            ]
         },
         "identifier": "omg_dataset:codelijst-matrix",
+        "dcterms:isPartOf": {
+            "id": "omg_catalog:codelijst"
+        },
         "dct.language": "language:NLD",
         "license": "licence:v1.0",
         "publisher": "ovo:OVO003323",
         "rightsHolder": "ovo:OVO003751",
         "spatial": [
-            "geonames:flanders",
-            "country:BEL"
+            "country:BEL",
+            "geonames:flanders"
+        ],
+        "dcterms:subject": [
+            {
+                "id": "eurovoc:2407"
+            },
+            {
+                "id": "datatheme_eu:ENVI"
+            },
+            {
+                "id": "datatheme_be:ENVI"
+            },
+            {
+                "id": "gemet:10087"
+            }
         ],
         "temporal": "omg_periodoftime:dataset_omg",
         "title": "Codelijst matrix",
@@ -401,6 +589,773 @@
             "datatheme_be:ENVI",
             "gemet:10087"
         ],
-        "page": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix.html"
+        "page": [
+            "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+            {
+                "id": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix.html",
+                "type": "foaf:Document"
+            }
+        ]
+    },
+    "rdfs:member": {
+        "id": "omg_dataset:codelijst-matrix"
+    },
+    "dataset": {
+        "id": "omg_dataset:codelijst-matrix",
+        "type": [
+            "rdfs:Resource",
+            "void:Dataset",
+            "dcat:Dataset",
+            "dcat:Resource"
+        ],
+        "dc.identifier": "be.vlaanderen.omgeving.data.id.dataset.codelijst-matrix",
+        "dc.language": "nl",
+        "accessRights": {
+            "id": "access_right:PUBLIC",
+            "type": "dcterms:RightsStatement"
+        },
+        "accrualPeriodicity": {
+            "id": "frequency:IRREG",
+            "type": "dcterms:Frequency"
+        },
+        "alternative": "Dataset codelijst-matrix",
+        "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
+        "hasVersion": {
+            "id": "omg_dataset:codelijst-matrix_2.0.1",
+            "type": [
+                "rdfs:Resource",
+                "void:Dataset",
+                "dcat:Dataset",
+                "dcat:Resource"
+            ],
+            "dc.identifier": "be.vlaanderen.omgeving.data.id.dataset.codelijst-matrix.2.0.1",
+            "dc.language": "@nl",
+            "accessRights": {
+                "id": "access_right:PUBLIC",
+                "type": "dcterms:RightsStatement"
+            },
+            "accrualPeriodicity": {
+                "id": "frequency:IRREG",
+                "type": "dcterms:Frequency"
+            },
+            "alternative": "Dataset codelijst-matrix",
+            "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
+            "identifier": "omg_dataset:codelijst-matrix_2.0.1",
+            "isVersionOf": "omg_dataset:codelijst-matrix",
+            "issued": "2024-02-09T20:03:12-01:00",
+            "dct.language": {
+                "id": "language:NLD",
+                "type": "dcterms:LinguisticSystem"
+            },
+            "license": {
+                "id": "licence:v1.0",
+                "type": "dcterms:LicenseDocument"
+            },
+            "publisher": {
+                "id": "ovo:OVO003323",
+                "type": "dcterms:Agent"
+            },
+            "dcterms:relation": [
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_csv",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als csv bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:CSV",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/csv",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in csv-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in csv-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/text/csv",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als json-ld bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:JSON_LD",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/application/ld+json",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/application/ld+json",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_jsonld.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_ttl",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als Turtle bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:RDF_TURTLE",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/turtle",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/text/turtle",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "type": [
+                        "rdfs:Resource",
+                        "spdx:Package",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, Jar maven package.",
+                    "format": {
+                        "id": "file_type:JAR",
+                        "type": "dcterms:MediaTypeOrExtent"
+                    },
+                    "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix package versie 2.0.1",
+                    "downloadLocation": {
+                        "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                        "type": "rdfs:Resource"
+                    },
+                    "packageFileName": "codelijst-matrix-2.0.1.jar",
+                    "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
+                    "versionInfo": "2.0.1",
+                    "label": "Codelijst matrix package versie 2.0.1",
+                    "downloadURL": {
+                        "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                        "type": "rdfs:Resource"
+                    }
+                }
+            ],
+            "rightsHolder": {
+                "id": "ovo:OVO003751",
+                "type": "dcterms:Agent"
+            },
+            "spatial": [
+                {
+                    "id": "country:BEL",
+                    "type": "dcterms:Location"
+                },
+                {
+                    "id": "geonames:flanders",
+                    "type": "dcterms:Location"
+                }
+            ],
+            "dcterms:subject": [
+                {
+                    "id": "eurovoc:2407",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_eu:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_be:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "gemet:10087",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                }
+            ],
+            "temporal": {
+                "id": "omg_periodoftime:dataset_omg",
+                "type": "dcterms:PeriodOfTime"
+            },
+            "title": "Codelijst matrix, versie 2.0.1",
+            "rootResource": {
+                "id": "omg_conceptscheme:matrix",
+                "type": "skos:ConceptScheme"
+            },
+            "label": "Codelijst matrix, versie 2.0.1",
+            "owl.versionInfo": "2.0.1",
+            "contactPoint": {
+                "id": "omg_vcard:helpdesk",
+                "type": "vcard:Kind"
+            },
+            "distribution": [
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_csv",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als csv bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:CSV",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/csv",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in csv-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in csv-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_csv",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/text/csv",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als json-ld bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:JSON_LD",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/application/ld+json",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_jsonld",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/application/ld+json",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_jsonld.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_distribution:codelijst-matrix_2.0.1_ttl",
+                    "type": [
+                        "rdfs:Resource",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, geserialiseerd als Turtle bestand.",
+                    "format": [
+                        {
+                            "id": "file_type:RDF_TURTLE",
+                            "type": "dcterms:MediaTypeOrExtent"
+                        },
+                        {
+                            "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        },
+                        {
+                            "id": "https://www.iana.org/assignments/media-types/text/turtle",
+                            "type": [
+                                "dcterms:MediaTypeOrExtent",
+                                "dcterms:MediaType"
+                            ]
+                        }
+                    ],
+                    "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
+                    "label": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
+                    "accessURL": {
+                        "id": "https://github.com/milieuinfo/codelijst-matrix.git",
+                        "type": "rdfs:Resource"
+                    },
+                    "compressFormat": {
+                        "id": "http://www.iana.org/assignments/media-types/application/gzip",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "downloadURL": {
+                        "id": "https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-matrix.2.0.1_ttl",
+                        "type": "rdfs:Resource"
+                    },
+                    "mediaType": {
+                        "id": "https://www.iana.org/assignments/media-types/text/turtle",
+                        "type": [
+                            "dcterms:MediaTypeOrExtent",
+                            "dcterms:MediaType"
+                        ]
+                    },
+                    "page": {
+                        "id": "https://data.omgeving.vlaanderen.be/doc/distribution/codelijst-matrix_2.0.1_csv.html",
+                        "type": "foaf:Document"
+                    }
+                },
+                {
+                    "id": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "type": [
+                        "rdfs:Resource",
+                        "spdx:Package",
+                        "dcat:Distribution"
+                    ],
+                    "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "accessRights": {
+                        "id": "access_right:PUBLIC",
+                        "type": "dcterms:RightsStatement"
+                    },
+                    "description": "Codelijst matrix, Jar maven package.",
+                    "format": {
+                        "id": "file_type:JAR",
+                        "type": "dcterms:MediaTypeOrExtent"
+                    },
+                    "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
+                    "issued": "2024-02-09T20:03:12-01:00",
+                    "rightsHolder": {
+                        "id": "ovo:OVO003751",
+                        "type": "dcterms:Agent"
+                    },
+                    "title": "Codelijst matrix package versie 2.0.1",
+                    "downloadLocation": {
+                        "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                        "type": "rdfs:Resource"
+                    },
+                    "packageFileName": "codelijst-matrix-2.0.1.jar",
+                    "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
+                    "versionInfo": "2.0.1",
+                    "label": "Codelijst matrix package versie 2.0.1",
+                    "downloadURL": {
+                        "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
+                        "type": "rdfs:Resource"
+                    }
+                }
+            ],
+            "landingPage": {
+                "id": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+                "type": "foaf:Document"
+            },
+            "theme": [
+                {
+                    "id": "eurovoc:2407",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_eu:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "datatheme_be:ENVI",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                },
+                {
+                    "id": "gemet:10087",
+                    "type": [
+                        "rdfs:Resource",
+                        "skos:Concept"
+                    ]
+                }
+            ],
+            "page": [
+                {
+                    "id": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+                    "type": "foaf:Document"
+                },
+                {
+                    "id": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix_2.0.1.html",
+                    "type": "foaf:Document"
+                }
+            ]
+        },
+        "identifier": "omg_dataset:codelijst-matrix",
+        "dcterms:isPartOf": {
+            "id": "omg_catalog:codelijst"
+        },
+        "dct.language": {
+            "id": "language:NLD",
+            "type": "dcterms:LinguisticSystem"
+        },
+        "license": {
+            "id": "licence:v1.0",
+            "type": "dcterms:LicenseDocument"
+        },
+        "publisher": {
+            "id": "ovo:OVO003323",
+            "type": "dcterms:Agent"
+        },
+        "rightsHolder": {
+            "id": "ovo:OVO003751",
+            "type": "dcterms:Agent"
+        },
+        "spatial": [
+            {
+                "id": "country:BEL",
+                "type": "dcterms:Location"
+            },
+            {
+                "id": "geonames:flanders",
+                "type": "dcterms:Location"
+            }
+        ],
+        "dcterms:subject": [
+            {
+                "id": "eurovoc:2407",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "datatheme_eu:ENVI",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "datatheme_be:ENVI",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "gemet:10087",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            }
+        ],
+        "temporal": {
+            "id": "omg_periodoftime:dataset_omg",
+            "type": "dcterms:PeriodOfTime"
+        },
+        "title": "Codelijst matrix",
+        "rootResource": {
+            "id": "omg_conceptscheme:matrix",
+            "type": "skos:ConceptScheme"
+        },
+        "label": "Codelijst matrix",
+        "contactPoint": {
+            "id": "omg_vcard:helpdesk",
+            "type": "vcard:Kind"
+        },
+        "landingPage": {
+            "id": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+            "type": "foaf:Document"
+        },
+        "theme": [
+            {
+                "id": "eurovoc:2407",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "datatheme_eu:ENVI",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "datatheme_be:ENVI",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            },
+            {
+                "id": "gemet:10087",
+                "type": [
+                    "rdfs:Resource",
+                    "skos:Concept"
+                ]
+            }
+        ],
+        "page": [
+            {
+                "id": "https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html",
+                "type": "foaf:Document"
+            },
+            {
+                "id": "https://data.omgeving.vlaanderen.be/doc/dataset/codelijst-matrix.html",
+                "type": "foaf:Document"
+            }
+        ]
     }
 }

@@ -27,8 +27,8 @@ dcat:
 
 sparql :
   verrijking_dcat : ../sparql/verrijk_dcat.rq
-  construct : ../sparql/construct.rq
-  dataset_source : ../sparql/dataset_source_full_uri.rq
+  construct_spo : ../sparql/construct.rq
+  construct_dataset : ../sparql/construct_dataset.rq
 
 ap :
   path: ../resources/be/vlaanderen/omgeving/data/id/ontology/
@@ -38,3 +38,8 @@ ap :
 
 n3 :
   skos_rules : ../n3/skos-rules.n3
+  dcat_rules : ../n3/dcat-rules.n3
+  dcterms_rules : ../n3/dcterms-rules.n3
+  foaf_rules : ../n3/foaf-rules.n3
+  void_rules : ../n3/void-rules.n3
+  rdf_rules : ../n3/rdf-rules.n3

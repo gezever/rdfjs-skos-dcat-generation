@@ -32,6 +32,18 @@ const name = jp.query(result, '$.project.name._text').toString();
 
 const pom_context = JSON.parse(fs.readFileSync(config.source.path + config.source.pom_context))
 
+const skos_rules = fs.readFileSync(config.n3.skos_rules, 'utf8');
+
+const dcat_rules = fs.readFileSync(config.n3.dcat_rules, 'utf8');
+
+const dcterms_rules = fs.readFileSync(config.n3.dcterms_rules, 'utf8');
+
+const foaf_rules = fs.readFileSync(config.n3.foaf_rules, 'utf8');
+
+const void_rules = fs.readFileSync(config.n3.void_rules, 'utf8');
+
+const rdf_rules = fs.readFileSync(config.n3.rdf_rules, 'utf8');
+
 const skos_prefixes = {
     xsd: "http://www.w3.org/2001/XMLSchema#",
     skos: "http://www.w3.org/2004/02/skos/core#",
@@ -195,7 +207,8 @@ const dcat_catalog_jsonld = config.dcat.path_catalog + config.dcat.name + '/' + 
 
 const dcat_catalog_turtle = config.dcat.path_catalog + config.dcat.name + '/' + config.dcat.catalog_turtle
 
+const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
 
-export { dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, pom_context, groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
+export { sortLines, rdf_rules, void_rules, foaf_rules, dcterms_rules, dcat_rules, skos_rules, dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, pom_context, groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
 

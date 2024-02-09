@@ -8,7 +8,7 @@ import {RoxiReasoner} from "roxi-js";
 import jp from 'jsonpath';
 import  { json2csv }  from 'json-2-csv';
 import validate from './shacl/shacl_validation.js';
-import { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
+import { sortLines, skos_rules, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
 
 
 async function csv_to_jsonld() {
@@ -36,10 +36,10 @@ async function csv_to_jsonld() {
 async function n3_reasoning(json_ld) {
     console.log("2: n3 reasoning ");
     let rdf = await jsonld.toRDF(json_ld, { format: "application/n-quads" })
-    const rules = fs.readFileSync(config.n3.skos_rules, 'utf8');
+    //const skos_rules = fs.readFileSync(config.n3.skos_rules, 'utf8');
     const reasoner = RoxiReasoner.new();
     reasoner.add_abox(rdf);
-    reasoner.add_rules(rules);
+    reasoner.add_rules(skos_rules);
     reasoner.materialize();
     output(sortLines(reasoner.get_abox_dump()));
 }
@@ -97,7 +97,7 @@ async function jsonld_to_csv(my_json){
     fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.csv, csv, 'utf8' );
 }
 
-const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
+
 
 function separateString(originalString) {
     if (originalString.includes('|')) {
