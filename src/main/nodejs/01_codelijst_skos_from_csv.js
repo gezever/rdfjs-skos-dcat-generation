@@ -11,24 +11,26 @@ import validate from './shacl/shacl_validation.js';
 import { frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
 
 
-const sortLines = str => str.split(/\r?\n/).sort().join('\n');
-
-function separateString(originalString) {
-    if (originalString.includes('|')) {
-        return originalString.split('|'); // pipe separated string to array
-    }
-    else {
-        return originalString; // is string
-    }
-}
-
-function joinArray(arr) {
-    if (Array.isArray(arr)) {
-        return arr.join('|') // array to pipe separated string
-    }
-    else {
-        return arr; // is string
-    }
+async function csv_to_jsonld() {
+    console.log("1: csv to jsonld ");
+    await csv({
+        ignoreEmpty:true,
+        flatKeys:true
+    })
+        .fromFile(config.source.path + config.source.codelijst_csv)
+        .then((jsonObj)=>{
+            var new_json = new Array();
+            for(var i = 0; i < jsonObj.length; i++){
+                const object = {};
+                Object.keys(jsonObj[i]).forEach(function(key) {
+                    object[key] = separateString(jsonObj[i][key]);
+                })
+                new_json.push(object)
+            }
+            let jsonld = {"@graph": new_json, "@context": context_skos_prefixes};
+            console.log("1: Csv to Jsonld");
+            n3_reasoning(jsonld)
+        })
 }
 
 async function n3_reasoning(json_ld) {
@@ -39,7 +41,6 @@ async function n3_reasoning(json_ld) {
     reasoner.add_abox(rdf);
     reasoner.add_rules(rules);
     reasoner.materialize();
-    //let test = await pretty(reasoner.get_abox_dump())
     output(sortLines(reasoner.get_abox_dump()));
 }
 
@@ -96,26 +97,24 @@ async function jsonld_to_csv(my_json){
     fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.csv, csv, 'utf8' );
 }
 
-async function csv_to_jsonld() {
-    console.log("1: csv to jsonld ");
-    await csv({
-        ignoreEmpty:true,
-        flatKeys:true
-    })
-        .fromFile(config.source.path + config.source.codelijst_csv)
-        .then((jsonObj)=>{
-            var new_json = new Array();
-            for(var i = 0; i < jsonObj.length; i++){
-                const object = {};
-                Object.keys(jsonObj[i]).forEach(function(key) {
-                    object[key] = separateString(jsonObj[i][key]);
-                })
-                new_json.push(object)
-            }
-            let jsonld = {"@graph": new_json, "@context": context_skos_prefixes};
-            console.log("1: Csv to Jsonld");
-            n3_reasoning(jsonld)
-        })
+const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
+
+function separateString(originalString) {
+    if (originalString.includes('|')) {
+        return originalString.split('|'); // pipe separated string to array
+    }
+    else {
+        return originalString; // is string
+    }
+}
+
+function joinArray(arr) {
+    if (Array.isArray(arr)) {
+        return arr.join('|') // array to pipe separated string
+    }
+    else {
+        return arr; // is string
+    }
 }
 
 csv_to_jsonld();
