@@ -53,7 +53,7 @@ async function get_versions() {
             let versions = jp.query(body, '$..version');
             versions.push(next_release_version)
             construct_metadata(version, dcat_dataset_turtle, dcat_dataset_jsonld)
-            //construct_metadata(versions, dcat_catalog_turtle, dcat_catalog_jsonld)
+            construct_metadata(versions, dcat_catalog_turtle, dcat_catalog_jsonld)
         };
     });
 }
