@@ -5,6 +5,10 @@
   "artifactId" : {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#artifactId"
   },
+  "date_time" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/metadata#date_time",
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  },
   "version" : {
     "@id" : "owl:versionInfo"
   },

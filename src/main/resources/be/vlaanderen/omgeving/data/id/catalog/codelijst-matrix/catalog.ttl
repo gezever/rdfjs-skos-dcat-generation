@@ -154,7 +154,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.1>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-07T15:28:18.883+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -181,7 +181,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.2>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-22T16:05:41.172+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -208,7 +208,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.3>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-29T12:20:09.198+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -235,7 +235,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.4>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T14:33:04.073+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -262,7 +262,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.5>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T15:51:04.330+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -289,7 +289,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.0.6>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-10-10T09:57:34.924+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -316,7 +316,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.1.1>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-17T18:20:03.337+01:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -343,7 +343,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.1.2>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-21T14:08:05.220+01:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -370,7 +370,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_1.1.3>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:27:21.392+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -397,7 +397,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_2.0.0>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:32:10.806+02:00"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -424,7 +424,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_2.0.1>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -448,7 +448,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.1_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-07T15:28:18.883+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -463,7 +463,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.1_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-07T15:28:18.883+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -478,7 +478,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.1_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-07T15:28:18.883+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -493,7 +493,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.2_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-22T16:05:41.172+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -508,7 +508,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.2_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-22T16:05:41.172+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -523,7 +523,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.2_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-22T16:05:41.172+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -538,7 +538,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.3_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-29T12:20:09.198+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -553,7 +553,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.3_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-29T12:20:09.198+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -568,7 +568,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.3_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-29T12:20:09.198+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -583,7 +583,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.4_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T14:33:04.073+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.4"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -598,7 +598,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.4_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T14:33:04.073+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.4"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -613,7 +613,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.4_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T14:33:04.073+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.4"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -628,7 +628,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.5_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T15:51:04.330+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.5"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -643,7 +643,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.5_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T15:51:04.330+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.5"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -658,7 +658,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.5_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T15:51:04.330+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.5"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -673,7 +673,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.6_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-10-10T09:57:34.924+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.0.6"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -688,7 +688,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.6_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-10-10T09:57:34.924+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.0.6"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -703,7 +703,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.0.6_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-10-10T09:57:34.924+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.0.6"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -718,7 +718,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.1_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-17T18:20:03.337+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.1.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -733,7 +733,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.1_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-17T18:20:03.337+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.1.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -748,7 +748,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.1_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-17T18:20:03.337+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.1.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -763,7 +763,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.2_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-21T14:08:05.220+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.1.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -778,7 +778,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.2_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-21T14:08:05.220+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.1.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -793,7 +793,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.2_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-21T14:08:05.220+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.1.2"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -808,7 +808,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.3_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:27:21.392+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 1.1.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -823,7 +823,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.3_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:27:21.392+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 1.1.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -838,7 +838,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_1.1.3_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:27:21.392+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 1.1.3"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -853,7 +853,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.0_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:32:10.806+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 2.0.0"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -868,7 +868,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.0_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:32:10.806+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 2.0.0"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -883,7 +883,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.0_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:32:10.806+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.0"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -898,7 +898,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_csv>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -913,7 +913,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_jsonld>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -928,7 +928,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_ttl>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -943,7 +943,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.1>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-07T15:28:18.883+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.1/codelijst-matrix-1.0.1.jar>;
@@ -958,7 +958,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.2>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-22T16:05:41.172+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.2"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.2/codelijst-matrix-1.0.2.jar>;
@@ -973,7 +973,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.3>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-29T12:20:09.198+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.3"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.3/codelijst-matrix-1.0.3.jar>;
@@ -988,7 +988,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.4>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T14:33:04.073+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.4"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.4/codelijst-matrix-1.0.4.jar>;
@@ -1003,7 +1003,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.5>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-09-30T15:51:04.330+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.5"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.5/codelijst-matrix-1.0.5.jar>;
@@ -1018,7 +1018,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.6>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2022-10-10T09:57:34.924+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.6"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.6/codelijst-matrix-1.0.6.jar>;
@@ -1033,7 +1033,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.1>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-17T18:20:03.337+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.1/codelijst-matrix-1.1.1.jar>;
@@ -1048,7 +1048,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.2>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-02-21T14:08:05.220+01:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.2"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.2/codelijst-matrix-1.1.2.jar>;
@@ -1063,7 +1063,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.3>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:27:21.392+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.3"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.3/codelijst-matrix-1.1.3.jar>;
@@ -1078,7 +1078,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.0>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2023-06-26T16:32:10.806+02:00"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 2.0.0"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.0/codelijst-matrix-2.0.0.jar>;
@@ -1093,7 +1093,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1>;
-    dcterms:issued "2024-02-10T11:24:13-01:00"^^xsd:dateTime;
+    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 2.0.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar>;

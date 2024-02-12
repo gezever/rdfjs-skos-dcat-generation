@@ -89,7 +89,7 @@ CONSTRUCT
     dcterms:description         ?dataset_description ;
     dcterms:identifier          ?dataset_version ;
     dcterms:isVersionOf         ?dataset ;
-    dcterms:issued              ?currentDateTime  ;
+    dcterms:issued              ?date_time  ;
     dcterms:language            ?nederlands ;
     dcterms:license             ?licentie ;
     dcterms:publisher           ?publisher ;
@@ -113,7 +113,7 @@ CONSTRUCT
     dcterms:description    ?jar_description ;
     dcterms:format         file_type:JAR ;
     dcterms:identifier     ?package ;
-    dcterms:issued         ?currentDateTime ;
+    dcterms:issued         ?date_time ;
     dcterms:rightsHolder   ?rightsHolder ;
     dcterms:title          ?package_label ;
     spdx:downloadLocation  ?package_download_url ;
@@ -130,7 +130,7 @@ CONSTRUCT
     dcterms:description   ?ttl_description ;
     dcterms:format        file_type:RDF_TURTLE ;
     dcterms:identifier    ?distribution_ttl ;
-    dcterms:issued        ?currentDateTime  ;
+    dcterms:issued        ?date_time  ;
     dcterms:rightsHolder  ?rightsHolder ;
     dcterms:title         ?ttl_label ;
     dcat:accessURL        ?accessURL ;
@@ -147,7 +147,7 @@ CONSTRUCT
     dcterms:description   ?jsonld_description;
     dcterms:format        file_type:JSON_LD ;
     dcterms:identifier    ?distribution_jsonld ;
-    dcterms:issued        ?currentDateTime ;
+    dcterms:issued        ?date_time ;
     dcterms:rightsHolder  ?rightsHolder ;
     dcterms:title         ?jsonld_label ;
     dcat:accessURL        ?accessURL ;
@@ -164,7 +164,7 @@ CONSTRUCT
     dcterms:description   ?csv_description ;
     dcterms:format        file_type:CSV ;
     dcterms:identifier    ?distribution_csv ;
-    dcterms:issued        ?currentDateTime  ;
+    dcterms:issued        ?date_time  ;
     dcterms:rightsHolder  ?rightsHolder ;
     dcterms:title         ?csv_label ;
     dcat:accessURL        ?accessURL ;
@@ -178,11 +178,12 @@ WHERE
     ?s spdx:name ?name; # "codelijst-matrix"
     owl:versionInfo ?version ;
     metadata:artifactId ?artifactId ; # "codelijst-matrix"
-    metadata:groupId ?groupId  # "be.vlaanderen.omgeving.data.id.graph"
-    #metadata:next_release_version ?next_release_version . #"2.0.1"
+    metadata:groupId ?groupId ; # "be.vlaanderen.omgeving.data.id.graph"
+    metadata:date_time ?date_time .
+#metadata:next_release_version ?next_release_version . #"2.0.1"
 
 
-    BIND( now() AS ?currentDateTime ) .
+    #BIND( now() AS ?date_time ) .
 
     BIND(IRI("http://eurovoc.europa.eu/2407") AS ?theme1) .
     BIND(IRI("http://publications.europa.eu/resource/authority/data-theme/ENVI") AS ?theme2) .

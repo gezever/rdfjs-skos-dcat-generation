@@ -6,8 +6,6 @@ import rdfDataset from "@rdfjs/dataset";
 import validate from './shacl/shacl_validation.js';
 import jsonld from "jsonld";
 import request from "request";
-import jp from "jsonpath";
-
 import {
     sortLines,
     rdf_rules,
@@ -28,17 +26,15 @@ import {
     dcat_prefixes,
     frame_catalog,
     shapes_dcat,
-    config,
-    skos_prefixes,
-    shapes_skos
+    config
 } from './var/variables.js';
 import {RoxiReasoner} from "roxi-js";
 import toNT from '@rdfjs/to-ntriples'
 
 
-async function get_versions() {
+async function get_version_urls() {
     console.log('1. get previous versions');
-    let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/versions?g=' +
+    let url = 'https://repo.omgeving.vlaanderen.be/artifactory/api/search/gavc?g=' +
         groupId +
         '&a=' +
         artifactId +
@@ -49,34 +45,57 @@ async function get_versions() {
             return  console.log(error)
         };
         if (!error && res.statusCode == 200) {
-            let version = [next_release_version]
-            let versions = jp.query(body, '$..version');
-            versions.push(next_release_version)
-            construct_metadata(version, dcat_dataset_turtle, dcat_dataset_jsonld)
-            construct_metadata(versions, dcat_catalog_turtle, dcat_catalog_jsonld)
+            let my_uris = new Array();
+            var re = new RegExp("^.*pom$");
+            for (const result of body.results) {
+                if (re.test(result.uri)){
+                    my_uris.push(result.uri);
+                }
+            }
+            get_versions(my_uris)
         };
     });
+}
+
+async function get_versions(uris) {
+    let my_versions = new Array();
+    for (const url of uris) {
+        const object = {};
+        const response = await fetch(url);
+        const data = await response.json();
+        object[version_from_uri(url)] = data.lastModified
+        my_versions.push(object)
+    }
+    var date_time = new Date();
+    let version = {}
+    version[next_release_version] = date_time.toISOString()
+    my_versions.push(version)
+    construct_metadata([version], dcat_dataset_turtle, dcat_dataset_jsonld)
+    construct_metadata(my_versions, dcat_catalog_turtle, dcat_catalog_jsonld)
 }
 
 async function construct_metadata(versions, turtle, json_ld){
     console.log('2. construct metadata');
     const store = RdfStore.createDefault();
     for (const version of versions) {
-        var metadata = {}
-        metadata['@context'] = pom_context;
-        metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template";
-        metadata['groupId'] = groupId
-        metadata['artifactId'] = artifactId
-        metadata['version'] = version
-        metadata['name'] = name
-        const metadata_rdf = await jsonld.toRDF(metadata, { format: "application/n-quads" })
-        const parser = new N3.Parser();
-        parser.parse(
-            metadata_rdf,
-            (error, quad) => {
-                if (quad)
-                    store.addQuad(quad);
-            });
+        for (const [key, value] of Object.entries(version)) {
+            var metadata = {}
+            metadata['@context'] = pom_context;
+            metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template/" + key;
+            metadata['groupId'] = groupId
+            metadata['artifactId'] = artifactId
+            metadata['version'] = key
+            metadata['date_time'] = value
+            metadata['name'] = name
+            const metadata_rdf = await jsonld.toRDF(metadata, { format: "application/n-quads" })
+            const parser = new N3.Parser();
+            parser.parse(
+                metadata_rdf,
+                (error, quad) => {
+                    if (quad)
+                        store.addQuad(quad);
+                });
+        }
     }
     construct_dcat(store, turtle, json_ld);
 }
@@ -146,6 +165,10 @@ async function rdf_to_jsonld(rdf_dataset, filename) {
     fs.writeFileSync(filename, JSON.stringify(framed, null, 4));
 }
 
-get_versions()
+function version_from_uri(uri) {
+    return uri.replace(/.*-(.*).pom$/, "$1")
+}
+
+get_version_urls()
 
 
