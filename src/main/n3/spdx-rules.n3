@@ -117,35 +117,35 @@
         { ?x <http://spdx.org/rdf/terms#created> ?y .} => { ?x a <http://spdx.org/rdf/terms#CreationInfo> .} .
         { ?x <http://spdx.org/rdf/terms#annotation> ?y .} => { ?x a <http://spdx.org/rdf/terms#SpdxElement> .} .
 
-        { ?s <http://spdx.org/rdf/terms#annotationDate>  ?o .} => { ?s  <http://spdx.org/rdf/terms#date> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#snippetName>  ?o .} => { ?s  <http://spdx.org/rdf/terms#name> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#licenseInfoInFile>  ?o .} => { ?s  <http://spdx.org/rdf/terms#licenseInfoFromFiles> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#licenseInfoInSnippet>  ?o .} => { ?s  <http://spdx.org/rdf/terms#licenseInfoFromFiles> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#created>  ?o .} => { ?s  <http://spdx.org/rdf/terms#date> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#packageName>  ?o .} => { ?s  <http://spdx.org/rdf/terms#name> ?o .} .
-        { ?s <http://spdx.org/rdf/terms#fileName>  ?o .} => { ?s  <http://spdx.org/rdf/terms#name> ?o .} .
+        { ?x <http://spdx.org/rdf/terms#annotationDate>  ?y .} => { ?x  <http://spdx.org/rdf/terms#date> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#snippetName>  ?y .} => { ?x  <http://spdx.org/rdf/terms#name> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#licenseInfoInFile>  ?y .} => { ?x  <http://spdx.org/rdf/terms#licenseInfoFromFiles> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#licenseInfoInSnippet>  ?y .} => { ?x  <http://spdx.org/rdf/terms#licenseInfoFromFiles> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#created>  ?y .} => { ?x  <http://spdx.org/rdf/terms#date> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#packageName>  ?y .} => { ?x  <http://spdx.org/rdf/terms#name> ?y .} .
+        { ?x <http://spdx.org/rdf/terms#fileName>  ?y .} => { ?x  <http://spdx.org/rdf/terms#name> ?y .} .
 
-        { ?s a <http://spdx.org/rdf/terms#ConjunctiveLicenseSet>  . } => { ?s a  <http://www.w3.org/2000/01/rdf-schema#Container> .} .
-        { ?s a <http://spdx.org/rdf/terms#ConjunctiveLicenseSet>  . } => { ?s a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
-        { ?s a <http://www.w3.org/2009/pointers#OffsetPointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#SinglePointer> .} .
-        { ?s a <http://spdx.org/rdf/terms#Package>  . } => { ?s a  <http://spdx.org/rdf/terms#SpdxItem> .} .
-        { ?s a <http://spdx.org/rdf/terms#License>  . } => { ?s a  <http://spdx.org/rdf/terms#SimpleLicensingInfo> .} .
-        { ?s a <http://www.w3.org/2009/pointers#CompoundPointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#Pointer> .} .
-        { ?s a <http://spdx.org/rdf/terms#WithExceptionOperator>  . } => { ?s a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
-        { ?s a <http://spdx.org/rdf/terms#File>  . } => { ?s a  <http://spdx.org/rdf/terms#SpdxItem> .} .
-        { ?s a <http://www.w3.org/2009/pointers#StartEndPointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#CompoundPointer> .} .
-        { ?s a <http://www.w3.org/2009/pointers#ByteOffsetPointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#OffsetPointer> .} .
-        { ?s a <http://www.w3.org/2009/pointers#LineCharPointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#OffsetPointer> .} .
-        { ?s a <http://www.w3.org/2009/pointers#SinglePointer>  . } => { ?s a  <http://www.w3.org/2009/pointers#Pointer> .} .
-        { ?s a <http://spdx.org/rdf/terms#OrLaterOperator>  . } => { ?s a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
-        { ?s a <http://spdx.org/rdf/terms#ListedLicense>  . } => { ?s a  <http://spdx.org/rdf/terms#License> .} .
-        { ?s a <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>  . } => { ?s a  <http://www.w3.org/2000/01/rdf-schema#Container> .} .
-        { ?s a <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>  . } => { ?s a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
-        { ?s a <http://spdx.org/rdf/terms#SimpleLicensingInfo>  . } => { ?s a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
-        { ?s a <http://spdx.org/rdf/terms#SpdxItem>  . } => { ?s a  <http://spdx.org/rdf/terms#SpdxElement> .} .
-        { ?s a <http://spdx.org/rdf/terms#Snippet>  . } => { ?s a  <http://spdx.org/rdf/terms#SpdxItem> .} .
-        { ?s a <http://spdx.org/rdf/terms#SpdxDocument>  . } => { ?s a  <http://spdx.org/rdf/terms#SpdxElement> .} .
-        { ?s a <http://spdx.org/rdf/terms#ExtractedLicensingInfo>  . } => { ?s a  <http://spdx.org/rdf/terms#SimpleLicensingInfo> .} .
+        { ?x a <http://spdx.org/rdf/terms#ConjunctiveLicenseSet>  . } => { ?x a  <http://www.w3.org/2000/01/rdf-schema#Container> .} .
+        { ?x a <http://spdx.org/rdf/terms#ConjunctiveLicenseSet>  . } => { ?x a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
+        { ?x a <http://www.w3.org/2009/pointers#OffsetPointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#SinglePointer> .} .
+        { ?x a <http://spdx.org/rdf/terms#Package>  . } => { ?x a  <http://spdx.org/rdf/terms#SpdxItem> .} .
+        { ?x a <http://spdx.org/rdf/terms#License>  . } => { ?x a  <http://spdx.org/rdf/terms#SimpleLicensingInfo> .} .
+        { ?x a <http://www.w3.org/2009/pointers#CompoundPointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#Pointer> .} .
+        { ?x a <http://spdx.org/rdf/terms#WithExceptionOperator>  . } => { ?x a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
+        { ?x a <http://spdx.org/rdf/terms#File>  . } => { ?x a  <http://spdx.org/rdf/terms#SpdxItem> .} .
+        { ?x a <http://www.w3.org/2009/pointers#StartEndPointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#CompoundPointer> .} .
+        { ?x a <http://www.w3.org/2009/pointers#ByteOffsetPointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#OffsetPointer> .} .
+        { ?x a <http://www.w3.org/2009/pointers#LineCharPointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#OffsetPointer> .} .
+        { ?x a <http://www.w3.org/2009/pointers#SinglePointer>  . } => { ?x a  <http://www.w3.org/2009/pointers#Pointer> .} .
+        { ?x a <http://spdx.org/rdf/terms#OrLaterOperator>  . } => { ?x a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
+        { ?x a <http://spdx.org/rdf/terms#ListedLicense>  . } => { ?x a  <http://spdx.org/rdf/terms#License> .} .
+        { ?x a <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>  . } => { ?x a  <http://www.w3.org/2000/01/rdf-schema#Container> .} .
+        { ?x a <http://spdx.org/rdf/terms#DisjunctiveLicenseSet>  . } => { ?x a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
+        { ?x a <http://spdx.org/rdf/terms#SimpleLicensingInfo>  . } => { ?x a  <http://spdx.org/rdf/terms#AnyLicenseInfo> .} .
+        { ?x a <http://spdx.org/rdf/terms#SpdxItem>  . } => { ?x a  <http://spdx.org/rdf/terms#SpdxElement> .} .
+        { ?x a <http://spdx.org/rdf/terms#Snippet>  . } => { ?x a  <http://spdx.org/rdf/terms#SpdxItem> .} .
+        { ?x a <http://spdx.org/rdf/terms#SpdxDocument>  . } => { ?x a  <http://spdx.org/rdf/terms#SpdxElement> .} .
+        { ?x a <http://spdx.org/rdf/terms#ExtractedLicensingInfo>  . } => { ?x a  <http://spdx.org/rdf/terms#SimpleLicensingInfo> .} .
 
 
 
