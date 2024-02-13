@@ -8,6 +8,7 @@ import jsonld from "jsonld";
 import request from "request";
 import {
     sortLines,
+    spdx_rules,
     rdf_rules,
     void_rules,
     foaf_rules,
@@ -129,6 +130,7 @@ async function n3_reasoning(rdf, turtle, json_ld) {
     reasoner.add_rules(foaf_rules);
     reasoner.add_rules(void_rules);
     reasoner.add_rules(rdf_rules);
+    reasoner.add_rules(spdx_rules);
     reasoner.materialize();
     output(sortLines(reasoner.get_abox_dump()), turtle, json_ld);
 }

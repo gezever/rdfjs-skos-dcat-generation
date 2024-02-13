@@ -97,7 +97,7 @@ ons:package a  sh:NodeShape ;
             sh:description   ""@en ;
             sh:closed true ;
             rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
-            sh:property   omg_ps:rdf_type,omg_ps:dcat_downloadURL,omg_ps:dc_identifier,omg_ps:dcterms_accessRights,omg_ps:dcterms_description,omg_ps:dcterms_format,omg_ps:dcterms_identifier,omg_ps:dcterms_issued,omg_ps:dcterms_rightsHolder,omg_ps:dcterms_title,omg_ps:rdfs_label,omg_ps:spdx_downloadLocation,omg_ps:spdx_packageFileName,omg_ps:spdx_packageName,omg_ps:spdx_versionInfo;
+            sh:property   omg_ps:rdf_type,omg_ps:dcat_downloadURL,omg_ps:dc_identifier,omg_ps:dcterms_accessRights,omg_ps:dcterms_description,omg_ps:dcterms_format,omg_ps:dcterms_identifier,omg_ps:dcterms_issued,omg_ps:dcterms_rightsHolder,omg_ps:dcterms_title,omg_ps:rdfs_label,omg_ps:spdx_downloadLocation,omg_ps:spdx_packageFileName,omg_ps:spdx_name, omg_ps:spdx_packageName,omg_ps:spdx_versionInfo;
             sh:targetSubjectsOf spdx:packageFileName .
 
 ons:distribution a                sh:NodeShape ;
@@ -547,9 +547,9 @@ omg_ps:spdx_downloadLocation
 
 omg_ps:spdx_packageFileName
     a sh:PropertyShape ;
-    rdfs:label  ""@en ;
-    sh:name ""@en ;
-    sh:description ""@en ;
+    rdfs:label  "package bestandsnaam"@en ;
+    sh:name "package bestandsnaam"@en ;
+    sh:description "The name of the file relative to the root of the package."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -559,9 +559,9 @@ omg_ps:spdx_packageFileName
 
 omg_ps:spdx_packageName
     a sh:PropertyShape ;
-    rdfs:label  ""@en ;
-    sh:name ""@en ;
-    sh:description ""@en ;
+    rdfs:label  "packagenaam"@en ;
+    sh:name "packagenaam"@en ;
+    sh:description "Identify the full name of the package as given by Package Originator."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -569,11 +569,23 @@ omg_ps:spdx_packageName
     sh:nodeKind      sh:Literal ;
     sh:path  spdx:packageName .
 
+omg_ps:spdx_name
+    a sh:PropertyShape ;
+    rdfs:label  "naam"@en ;
+    sh:name "naam"@en ;
+    sh:description "Identify name of this SpdxElement."@en ;
+    rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:datatype      xsd:string ;
+    sh:nodeKind      sh:Literal ;
+    sh:path  spdx:name .
+
 omg_ps:spdx_versionInfo
     a sh:PropertyShape ;
-    rdfs:label  ""@en ;
-    sh:name ""@en ;
-    sh:description ""@en ;
+    rdfs:label  "versie-info"@en ;
+    sh:name "versie-info"@en ;
+    sh:description "Provides an indication of the version of the package that is described by this SpdxDocument."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
     sh:maxCount 1 ;
     sh:minCount 1 ;

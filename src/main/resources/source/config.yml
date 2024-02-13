@@ -43,3 +43,4 @@ n3 :
   foaf_rules : ../n3/foaf-rules.n3
   void_rules : ../n3/void-rules.n3
   rdf_rules : ../n3/rdf-rules.n3
+  spdx_rules : ../n3/spdx-rules.n3

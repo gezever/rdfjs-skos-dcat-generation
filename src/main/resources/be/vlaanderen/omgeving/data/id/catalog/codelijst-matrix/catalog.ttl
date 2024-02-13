@@ -69,6 +69,8 @@ dcterms:PeriodOfTime a rdfs:Class.
 dcterms:RightsStatement a rdfs:Class.
 void:Dataset a rdfs:Class.
 spdx:Package a rdfs:Class.
+spdx:SpdxElement a rdfs:Class.
+spdx:SpdxItem a rdfs:Class.
 datatheme_be:ENVI a rdfs:Resource, skos:Concept.
 <http://www.eionet.europa.eu/gemet/concept/10087> a rdfs:Resource, skos:Concept.
 <http://www.iana.org/assignments/media-types/application/gzip> a dcterms:MediaType, dcterms:MediaTypeOrExtent.
@@ -424,7 +426,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld."@nl;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/dataset/codelijst-matrix_2.0.1>;
     dcterms:isVersionOf omg_dataset:codelijst-matrix;
-    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
+    dcterms:issued "2024-02-13T10:51:27.734Z"^^xsd:dateTime;
     dcterms:language <http://publications.europa.eu/resource/authority/language/NLD>;
     dcterms:license <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0>;
     dcterms:publisher ovo:OVO003323;
@@ -898,7 +900,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als csv bestand."@nl;
     dcterms:format file_type:CSV, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/csv>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_csv>;
-    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
+    dcterms:issued "2024-02-13T10:51:27.734Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in csv-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -913,7 +915,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als json-ld bestand."@nl;
     dcterms:format file_type:JSON_LD, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/application/ld+json>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_jsonld>;
-    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
+    dcterms:issued "2024-02-13T10:51:27.734Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in jsonld-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -928,7 +930,7 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, geserialiseerd als Turtle bestand."@nl;
     dcterms:format file_type:RDF_TURTLE, <http://www.iana.org/assignments/media-types/application/gzip>, <https://www.iana.org/assignments/media-types/text/turtle>;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/distribution/codelijst-matrix_2.0.1_ttl>;
-    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
+    dcterms:issued "2024-02-13T10:51:27.734Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1"@nl;
     a rdfs:Resource, dcat:Distribution;
@@ -947,10 +949,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.1/codelijst-matrix-1.0.1.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.1.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.1";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.1"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.1/codelijst-matrix-1.0.1.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.2> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.2";
@@ -962,10 +965,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.2"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.2/codelijst-matrix-1.0.2.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.2.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.2";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.2"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.2/codelijst-matrix-1.0.2.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.3> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.3";
@@ -977,10 +981,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.3"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.3/codelijst-matrix-1.0.3.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.3.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.3";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.3"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.3/codelijst-matrix-1.0.3.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.4> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.4";
@@ -992,10 +997,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.4"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.4/codelijst-matrix-1.0.4.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.4.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.4";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.4"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.4/codelijst-matrix-1.0.4.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.5> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.5";
@@ -1007,10 +1013,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.5"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.5/codelijst-matrix-1.0.5.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.5.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.5";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.5"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.5/codelijst-matrix-1.0.5.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.6> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.0.6";
@@ -1022,10 +1029,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.0.6"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.6/codelijst-matrix-1.0.6.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.0.6.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.0.6";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.0.6"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.0.6/codelijst-matrix-1.0.6.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.1> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.1";
@@ -1037,10 +1045,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.1/codelijst-matrix-1.1.1.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.1.1.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.1.1";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.1.1"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.1/codelijst-matrix-1.1.1.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.2> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.2";
@@ -1052,10 +1061,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.2"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.2/codelijst-matrix-1.1.2.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.1.2.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.1.2";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.1.2"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.2/codelijst-matrix-1.1.2.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.3> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.1.1.3";
@@ -1067,10 +1077,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 1.1.3"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.3/codelijst-matrix-1.1.3.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-1.1.3.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "1.1.3";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 1.1.3"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/1.1.3/codelijst-matrix-1.1.3.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.0> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.0";
@@ -1082,10 +1093,11 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 2.0.0"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.0/codelijst-matrix-2.0.0.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-2.0.0.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "2.0.0";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 2.0.0"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.0/codelijst-matrix-2.0.0.jar>.
 <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1> dc:identifier "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1";
@@ -1093,14 +1105,15 @@ omg_dataset:codelijst-matrix dc:identifier "be.vlaanderen.omgeving.data.id.datas
     dcterms:description "Codelijst matrix, Jar maven package."@nl;
     dcterms:format file_type:JAR;
     dcterms:identifier <https://data.omgeving.vlaanderen.be/id/package/be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1>;
-    dcterms:issued "2024-02-12T17:28:05.045Z"^^xsd:dateTime;
+    dcterms:issued "2024-02-13T10:51:27.734Z"^^xsd:dateTime;
     dcterms:rightsHolder ovo:OVO003751;
     dcterms:title "Codelijst matrix package versie 2.0.1"@nl;
     spdx:downloadLocation <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar>;
+    spdx:name "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:packageFileName "codelijst-matrix-2.0.1.jar";
     spdx:packageName "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix";
     spdx:versionInfo "2.0.1";
-    a spdx:Package, rdfs:Resource, dcat:Distribution;
+    a spdx:Package, spdx:SpdxElement, spdx:SpdxItem, rdfs:Resource, dcat:Distribution;
     rdfs:label "Codelijst matrix package versie 2.0.1"@nl;
     dcat:downloadURL <https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar>.
 omg_periodoftime:dataset_omg a dcterms:PeriodOfTime.

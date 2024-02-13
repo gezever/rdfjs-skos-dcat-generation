@@ -299,7 +299,7 @@
             "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
             "identifier": "omg_dataset:codelijst-matrix_2.0.1",
             "isVersionOf": "omg_dataset:codelijst-matrix",
-            "issued": "2024-02-12T17:28:05.045Z",
+            "issued": "2024-02-13T10:51:27.734Z",
             "dct.language": {
                 "id": "language:NLD",
                 "type": "dcterms:LinguisticSystem"
@@ -343,7 +343,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -389,7 +389,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
                     "label": "Codelijst matrix in jsonld-formaat. Versie 2.0.1",
@@ -429,7 +429,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
                     "label": "Codelijst matrix in Turtle rdf-formaat. Versie 2.0.1",
@@ -447,6 +447,8 @@
                     "type": [
                         "rdfs:Resource",
                         "spdx:Package",
+                        "spdx:SpdxElement",
+                        "spdx:SpdxItem",
                         "dcat:Distribution"
                     ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
@@ -457,13 +459,14 @@
                         "type": "dcterms:MediaTypeOrExtent"
                     },
                     "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": "ovo:OVO003751",
                     "title": "Codelijst matrix package versie 2.0.1",
                     "downloadLocation": {
                         "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
                         "type": "rdfs:Resource"
                     },
+                    "spdx:name": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "packageFileName": "codelijst-matrix-2.0.1.jar",
                     "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "versionInfo": "2.0.1",
@@ -642,7 +645,7 @@
             "description": "Deze dataset bevat een lijst van matrixtypes, die gebruikt worden binnen het beleidsdomein omgeving van de Vlaamse Overheid en zoals die initieel binnen het kader van het OSLO thema omgeving is opgesteld.",
             "identifier": "omg_dataset:codelijst-matrix_2.0.1",
             "isVersionOf": "omg_dataset:codelijst-matrix",
-            "issued": "2024-02-12T17:28:05.045Z",
+            "issued": "2024-02-13T10:51:27.734Z",
             "dct.language": {
                 "id": "language:NLD",
                 "type": "dcterms:LinguisticSystem"
@@ -689,7 +692,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -756,7 +759,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -823,7 +826,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -862,6 +865,8 @@
                     "type": [
                         "rdfs:Resource",
                         "spdx:Package",
+                        "spdx:SpdxElement",
+                        "spdx:SpdxItem",
                         "dcat:Distribution"
                     ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
@@ -875,7 +880,7 @@
                         "type": "dcterms:MediaTypeOrExtent"
                     },
                     "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -885,6 +890,7 @@
                         "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
                         "type": "rdfs:Resource"
                     },
+                    "spdx:name": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "packageFileName": "codelijst-matrix-2.0.1.jar",
                     "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "versionInfo": "2.0.1",
@@ -988,7 +994,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_csv",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -1055,7 +1061,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_jsonld",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -1122,7 +1128,7 @@
                         }
                     ],
                     "identifier": "omg_distribution:codelijst-matrix_2.0.1_ttl",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -1161,6 +1167,8 @@
                     "type": [
                         "rdfs:Resource",
                         "spdx:Package",
+                        "spdx:SpdxElement",
+                        "spdx:SpdxItem",
                         "dcat:Distribution"
                     ],
                     "dc.identifier": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
@@ -1174,7 +1182,7 @@
                         "type": "dcterms:MediaTypeOrExtent"
                     },
                     "identifier": "omg_package:be.vlaanderen.omgeving.data.id.graph.codelijst-matrix.2.0.1",
-                    "issued": "2024-02-12T17:28:05.045Z",
+                    "issued": "2024-02-13T10:51:27.734Z",
                     "rightsHolder": {
                         "id": "ovo:OVO003751",
                         "type": "dcterms:Agent"
@@ -1184,6 +1192,7 @@
                         "id": "https://repo.omgeving.vlaanderen.be/artifactory/release/be/vlaanderen/omgeving/data/id/graph/codelijst-matrix/2.0.1/codelijst-matrix-2.0.1.jar",
                         "type": "rdfs:Resource"
                     },
+                    "spdx:name": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "packageFileName": "codelijst-matrix-2.0.1.jar",
                     "packageName": "be.vlaanderen.omgeving.data.id.graph.codelijst-matrix",
                     "versionInfo": "2.0.1",
