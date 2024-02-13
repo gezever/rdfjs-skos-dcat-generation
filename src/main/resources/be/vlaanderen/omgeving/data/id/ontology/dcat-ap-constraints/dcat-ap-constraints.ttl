@@ -83,7 +83,7 @@ ons:dataset a                sh:NodeShape ;
 
 
 ons:dataset_version a                sh:NodeShape ;
-                    rdfs:label       ""@en ;
+                    rdfs:label       "dataset versie"@en ;
                     sh:name          ""@en ;
                     sh:description   ""@en ;
                     sh:closed true ;
@@ -117,7 +117,8 @@ omg_ps:dcat_dataset
     sh:name          "heeft dataset"@en ;
     sh:description   "De relatie tussen een dcat:Catalog en een dcat:Dataset."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
-    sh:class         dcat:Dataset ;
+    #sh:class         dcat:Dataset ;
+    sh:or (dcat:Dataset void:Dataset rdfs:Resource dcat:Resource) ;
     sh:minCount      1 ;
     sh:nodeKind      sh:IRI ;
     sh:path          dcat:dataset .
@@ -129,7 +130,8 @@ omg_ps:rdfs_member
     sh:name          "heeft lid"@en ;
     sh:description   "De relatie tussen een groep en een lid."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
-    sh:class         dcat:Dataset ;
+    #sh:class         dcat:Dataset ;
+    sh:or (dcat:Dataset void:Dataset rdfs:Resource dcat:Resource) ;
     sh:minCount      1 ;
     sh:nodeKind      sh:IRI ;
     sh:path           rdfs:member .
@@ -140,7 +142,8 @@ omg_ps:dcterms_hasPart
     sh:name          "heeft onderdeel"@en ;
     sh:description   "Een verwante bron die, fysiek of logisch, onderdeel is van de beschreven bron."@en ;
     rdfs:isDefinedBy omg_ont:dcat-ap-constraints, omg_voc:dcat-ap-constraints ;
-    sh:class         dcat:Dataset ;
+    #sh:class         dcat:Dataset ;
+    sh:or (dcat:Dataset void:Dataset rdfs:Resource dcat:Resource) ;
     sh:minCount      1 ;
     sh:nodeKind      sh:IRI ;
     sh:path          dcterms:hasPart .
