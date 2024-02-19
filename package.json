@@ -13,6 +13,7 @@
   "dependencies": {
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@rdfjs/parser-jsonld": "^2.1.0",
+    "@rdfjs/parser-n3": "^2.0.2",
     "@zazuko/env-node": "^1.0.2",
     "@zazuko/rdf-vocabularies": "^2023.1.19",
     "express": "^4.18.2",

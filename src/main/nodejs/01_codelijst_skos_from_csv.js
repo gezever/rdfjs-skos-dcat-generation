@@ -46,7 +46,7 @@ async function n3_reasoning(json_ld) {
 
 function output(rdf) {
     console.log("3: output");
-    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: skos_prefixes });
+    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: config.prefixes });
     const nt_writer = new N3.Writer({ format: 'N-Triples' });
     const dataset = rdfDataset.dataset()
     const parser = new N3.Parser();

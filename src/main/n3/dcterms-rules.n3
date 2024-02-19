@@ -57,6 +57,10 @@
         { ?x dcterms:subject ?y . } => { ?y a rdfs:Resource . } .
 
 
+        { ?x dcterms:title ?y . } => { ?x rdfs:label ?y . } .
+
+
+# dit laatste is geen onderdeel van het dcterms vocabularium
 
 #{ ?x dcterms:type ?y . } => { ?y a rdfs:Class . } .
 

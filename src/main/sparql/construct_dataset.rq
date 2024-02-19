@@ -189,6 +189,7 @@ WHERE
     BIND(IRI("http://publications.europa.eu/resource/authority/data-theme/ENVI") AS ?theme2) .
     BIND(IRI("http://vocab.belgif.be/auth/datatheme/ENVI") AS ?theme3) .
     BIND(IRI("http://www.eionet.europa.eu/gemet/concept/10087") AS ?theme4) .
+
     BIND(IRI("http://publications.europa.eu/resource/authority/access-right/PUBLIC") AS ?access_rights) .
     BIND(IRI("http://publications.europa.eu/resource/authority/frequency/IRREG") AS ?frequency) .
     BIND(IRI("http://data.vlaanderen.be/id/organisatie/OVO003323") AS ?publisher) .
@@ -244,7 +245,7 @@ WHERE
     BIND(IRI(CONCAT("https://data.omgeving.vlaanderen.be/id/conceptscheme/", strafter(?artifactId,"-"))) AS ?conceptscheme ) .
     BIND(IRI("http://publications.europa.eu/resource/authority/language/NLD") AS ?nederlands)
     BIND(IRI("http://publications.europa.eu/resource/authority/country/BEL") AS ?belgium)
-    BIND(IRI("https://www.geonames.org/3337388/flanders") AS ?flanders)
+    BIND(IRI("https://sws.geonames.org/3337388/") AS ?flanders)
     ##### VARIABLES
     BIND(IRI("http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0") AS ?licentie ) .
     BIND(IRI(CONCAT("https://github.com/milieuinfo/", STR( ?artifactId ), ".git")) AS ?accessURL ) .

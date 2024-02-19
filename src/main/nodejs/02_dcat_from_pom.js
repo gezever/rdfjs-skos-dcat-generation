@@ -9,6 +9,7 @@ import request from "request";
 import {
     sortLines,
     spdx_rules,
+    spdx_extra_rules,
     rdf_rules,
     void_rules,
     foaf_rules,
@@ -19,7 +20,7 @@ import {
     dcat_dataset_turtle,
     dcat_catalog_jsonld,
     dcat_catalog_turtle,
-    pom_context,
+    context_catalog,
     groupId,
     artifactId,
     next_release_version,
@@ -29,8 +30,10 @@ import {
     shapes_dcat,
     config
 } from './var/variables.js';
+import {
+    construct_metadata
+} from './var/metadata.js';
 import {RoxiReasoner} from "roxi-js";
-import toNT from '@rdfjs/to-ntriples'
 
 
 async function get_version_urls() {
@@ -71,57 +74,16 @@ async function get_versions(uris) {
     let version = {}
     version[next_release_version] = date_time.toISOString()
     my_versions.push(version)
-    construct_metadata([version], dcat_dataset_turtle, dcat_dataset_jsonld)
-    construct_metadata(my_versions, dcat_catalog_turtle, dcat_catalog_jsonld)
+    //construct_metadata2([version])
+    n3_reasoning(construct_metadata([version]), dcat_dataset_turtle, dcat_dataset_jsonld)
+    n3_reasoning(construct_metadata(my_versions), dcat_catalog_turtle, dcat_catalog_jsonld)
+
 }
 
-async function construct_metadata(versions, turtle, json_ld){
-    console.log('2. construct metadata');
-    const store = RdfStore.createDefault();
-    for (const version of versions) {
-        for (const [key, value] of Object.entries(version)) {
-            var metadata = {}
-            metadata['@context'] = pom_context;
-            metadata['@id'] = "https://data.omgeving.vlaanderen.be/id/metadata/template/" + key;
-            metadata['groupId'] = groupId
-            metadata['artifactId'] = artifactId
-            metadata['version'] = key
-            metadata['date_time'] = value
-            metadata['name'] = name
-            const metadata_rdf = await jsonld.toRDF(metadata, { format: "application/n-quads" })
-            const parser = new N3.Parser();
-            parser.parse(
-                metadata_rdf,
-                (error, quad) => {
-                    if (quad)
-                        store.addQuad(quad);
-                });
-        }
-    }
-    construct_dcat(store, turtle, json_ld);
-}
 
-async function construct_dcat(store, turtle, json_ld){
-    console.log('3. construct dcat');
-    const myConstructEngine = new QueryEngine();
-    const query = fs.readFileSync(config.sparql.construct_dataset, 'utf8');
-    const dataset = rdfDataset.dataset()
-    const quadStream = await myConstructEngine.queryQuads(query, { sources: [ store ] });
-    quadStream.on('data', (quad) => {
-        dataset.add(quad);
-    });
-    quadStream.on('end', () => {
-        (async () => {
-            n3_reasoning(toNT(dataset), turtle, json_ld);
-        })()
-    });
-    quadStream.on('error', (error) => {
-        console.error(error);
-    });
-}
-
-async function n3_reasoning(rdf, turtle, json_ld) {
+async function n3_reasoning(json, turtle, json_ld) {
     console.log("4: n3 reasoning ");
+    let rdf = await jsonld.toRDF(json, { format: "application/n-quads" })
     const reasoner = RoxiReasoner.new();
     reasoner.add_abox(rdf);
     reasoner.add_rules(dcat_rules);
@@ -131,6 +93,7 @@ async function n3_reasoning(rdf, turtle, json_ld) {
     reasoner.add_rules(void_rules);
     reasoner.add_rules(rdf_rules);
     reasoner.add_rules(spdx_rules);
+    reasoner.add_rules(spdx_extra_rules);
     reasoner.materialize();
     output(sortLines(reasoner.get_abox_dump()), turtle, json_ld);
 }
@@ -139,7 +102,7 @@ async function n3_reasoning(rdf, turtle, json_ld) {
 function output(rdf, turtle, json_ld) {
     console.log("5: output");
     const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: dcat_prefixes });
-    const nt_writer = new N3.Writer({ format: 'N-Triples' });
+    //const nt_writer = new N3.Writer({ format: 'N-Triples' });
     const dataset = rdfDataset.dataset()
     const parser = new N3.Parser();
     parser.parse(
@@ -147,14 +110,14 @@ function output(rdf, turtle, json_ld) {
         (error, quad) => {
             if (quad)
                 ttl_writer.addQuad(quad),
-                    nt_writer.addQuad(quad),
+                    //nt_writer.addQuad(quad),
                     dataset.add(quad);
             else
                 (async () => {
-                   if (await validate(shapes_dcat, dataset)) {
+                   //if (await validate(shapes_dcat, dataset)) {
                         ttl_writer.end((error, result) => fs.writeFileSync(turtle, result));
                         rdf_to_jsonld(dataset, json_ld);
-                   }
+                   //}
                 })()
         });
 }

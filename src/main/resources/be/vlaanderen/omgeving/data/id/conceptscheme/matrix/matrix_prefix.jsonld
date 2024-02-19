@@ -1,5 +1,228 @@
 {
     "@context": {
+        "collections": {
+            "@type": "@id",
+            "@reverse": "member"
+        },
+        "id": "@id",
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
+        "source": {
+            "@id": "http://purl.org/dc/terms/source",
+            "@type": "@id"
+        },
+        "sparql-service-description-name": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#name",
+            "@type": "@id"
+        },
+        "identifier": {
+            "@id": "http://purl.org/dc/terms/identifier",
+            "@type": "@id"
+        },
+        "hasVersion": {
+            "@id": "http://purl.org/dc/terms/hasVersion",
+            "@type": "@id"
+        },
+        "isVersionOf": {
+            "@id": "http://purl.org/dc/terms/isVersionOf",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+            "@language": "nl"
+        },
+        "distribution": {
+            "@id": "http://www.w3.org/ns/dcat#distribution",
+            "@type": "@id"
+        },
+        "alternative": {
+            "@id": "http://purl.org/dc/terms/alternative",
+            "@language": "nl"
+        },
+        "description": {
+            "@id": "http://purl.org/dc/terms/description",
+            "@language": "nl"
+        },
+        "spatial": {
+            "@id": "http://purl.org/dc/terms/spatial",
+            "@type": "@id"
+        },
+        "page": {
+            "@id": "http://xmlns.com/foaf/0.1/page",
+            "@type": "@id"
+        },
+        "theme": {
+            "@id": "http://www.w3.org/ns/dcat#theme",
+            "@type": "@id"
+        },
+        "title": {
+            "@id": "http://purl.org/dc/terms/title",
+            "@language": "nl"
+        },
+        "landingPage": {
+            "@id": "http://www.w3.org/ns/dcat#landingPage",
+            "@type": "@id"
+        },
+        "rightsHolder": {
+            "@id": "http://purl.org/dc/terms/rightsHolder",
+            "@type": "@id"
+        },
+        "language": "http://publications.europa.eu/resource/authority/language/",
+        "accrualPeriodicity": {
+            "@id": "http://purl.org/dc/terms/accrualPeriodicity",
+            "@type": "@id"
+        },
+        "publisher": {
+            "@id": "http://purl.org/dc/terms/publisher",
+            "@type": "@id"
+        },
+        "dct.language": {
+            "@id": "http://purl.org/dc/terms/language",
+            "@type": "@id"
+        },
+        "contactPoint": {
+            "@id": "http://www.w3.org/ns/dcat#contactPoint",
+            "@type": "@id"
+        },
+        "temporal": {
+            "@id": "http://purl.org/dc/terms/temporal",
+            "@type": "@id"
+        },
+        "issued": {
+            "@id": "http://purl.org/dc/terms/issued",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "accessRights": {
+            "@id": "http://purl.org/dc/terms/accessRights",
+            "@type": "@id"
+        },
+        "license": {
+            "@id": "http://purl.org/dc/terms/license",
+            "@type": "@id"
+        },
+        "accessURL": {
+            "@id": "http://www.w3.org/ns/dcat#accessURL",
+            "@type": "@id"
+        },
+        "compressFormat": {
+            "@id": "http://www.w3.org/ns/dcat#compressFormat",
+            "@type": "@id"
+        },
+        "downloadURL": {
+            "@id": "http://www.w3.org/ns/dcat#downloadURL",
+            "@type": "@id"
+        },
+        "mediaType": {
+            "@id": "http://www.w3.org/ns/dcat#mediaType",
+            "@type": "@id"
+        },
+        "format": {
+            "@id": "http://purl.org/dc/terms/format",
+            "@type": "@id"
+        },
+        "versionInfo": {
+            "@id": "http://spdx.org/rdf/terms#versionInfo"
+        },
+        "packageName": {
+            "@id": "http://spdx.org/rdf/terms#packageName"
+        },
+        "packageFileName": {
+            "@id": "http://spdx.org/rdf/terms#packageFileName"
+        },
+        "downloadLocation": {
+            "@id": "http://spdx.org/rdf/terms#downloadLocation",
+            "@type": "@id"
+        },
+        "relationshipType_packageOf": {
+            "@id": "http://spdx.org/rdf/terms#relationshipType_packageOf",
+            "@type": "@id"
+        },
+        "availableGraphs": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#availableGraphs",
+            "@type": "@id"
+        },
+        "resultFormat": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#resultFormat",
+            "@type": "@id"
+        },
+        "feature": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#feature",
+            "@type": "@id"
+        },
+        "supportedLanguage": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#supportedLanguage",
+            "@type": "@id"
+        },
+        "url": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#url",
+            "@type": "@id"
+        },
+        "comment": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+            "@language": "nl"
+        },
+        "defaultDataset": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#defaultDataset",
+            "@type": "@id"
+        },
+        "endpoint": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#endpoint",
+            "@type": "@id"
+        },
+        "namedGraph": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#namedGraph",
+            "@type": "@id"
+        },
+        "homepage": {
+            "@id": "http://xmlns.com/foaf/0.1/homepage",
+            "@type": "@id"
+        },
+        "service": {
+            "@id": "http://www.w3.org/ns/dcat#service",
+            "@type": "@id"
+        },
+        "rootResource": {
+            "@id": "http://rdfs.org/ns/void#rootResource",
+            "@type": "@id"
+        },
+        "dataset": {
+            "@id": "http://www.w3.org/ns/dcat#dataset",
+            "@type": "@id"
+        },
+        "servesDataset": {
+            "@id": "http://www.w3.org/ns/dcat#servesDataset",
+            "@type": "@id"
+        },
+        "endpointDescription": {
+            "@id": "http://www.w3.org/ns/dcat#endpointDescription",
+            "@type": "@id"
+        },
+        "endpointURL": {
+            "@id": "http://www.w3.org/ns/dcat#endpointURL",
+            "@type": "@id"
+        },
+        "conformsTo": {
+            "@id": "http://purl.org/dc/terms/conformsTo",
+            "@type": "@id"
+        },
+        "dc.identifier": {
+            "@id": "http://purl.org/dc/elements/1.1/identifier"
+        },
+        "dc.language": {
+            "@id": "http://purl.org/dc/elements/1.1/language",
+            "@language": "nl"
+        },
+        "dc.source": {
+            "@id": "http://purl.org/dc/elements/1.1/source"
+        },
+        "version": {
+            "@id": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        "name": {
+            "@id": "http://spdx.org/rdf/terms#name"
+        },
         "seeAlso": {
             "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
             "@type": "@id"
@@ -14,14 +237,6 @@
         },
         "hasTopConcept": {
             "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
-            "@type": "@id"
-        },
-        "theme": {
-            "@id": "http://www.w3.org/ns/dcat#theme",
-            "@type": "@id"
-        },
-        "type": {
-            "@id": "@type",
             "@type": "@id"
         },
         "uri": {
@@ -48,10 +263,6 @@
             "@id": "http://www.w3.org/2004/02/skos/core#definition",
             "@language": "nl"
         },
-        "collections": {
-            "@type": "@id",
-            "@reverse": "member"
-        },
         "member": {
             "@id": "http://www.w3.org/2004/02/skos/core#member",
             "@type": "@id"
@@ -59,230 +270,276 @@
         "graph": {
             "@id": "@graph"
         },
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "skos": "http://www.w3.org/2004/02/skos/core#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "dcat": "http://www.w3.org/ns/dcat#",
-        "dct": "http://purl.org/dc/terms/",
-        "dc": "http://purl.org/dc/elements/1.1/",
-        "gemet": "http://www.eionet.europa.eu/gemet/concept/",
+        "access_right": "http://publications.europa.eu/resource/authority/access-right/",
+        "adms": "http://www.w3.org/ns/adms#",
+        "assettype": "http://purl.org/adms/assettype/",
         "conceptscheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
-        "collection": "https://data.omgeving.vlaanderen.be/id/collection/matrix/",
-        "@base": "https://data.omgeving.vlaanderen.be/id/concept/matrix/"
+        "country": "http://publications.europa.eu/resource/authority/country/",
+        "datasets": "https://datasets.omgeving.vlaanderen.be/",
+        "datatheme_be": "http://vocab.belgif.be/auth/datatheme/",
+        "datatheme_eu": "http://publications.europa.eu/resource/authority/data-theme/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dct": "http://purl.org/dc/terms/",
+        "eurovoc": "http://eurovoc.europa.eu/",
+        "file_type": "http://publications.europa.eu/resource/authority/file-type/",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "formats": "http://www.w3.org/ns/formats/",
+        "frequency": "http://publications.europa.eu/resource/authority/frequency/",
+        "gemet": "http://www.eionet.europa.eu/gemet/concept/",
+        "licence": "http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/",
+        "metadata": "https://data.omgeving.vlaanderen.be/ns/metadata#",
+        "omg_catalog": "https://data.omgeving.vlaanderen.be/id/catalog/",
+        "omg_catalog_doc": "https://data.omgeving.vlaanderen.be/doc/catalog/",
+        "omg_collection": "https://data.omgeving.vlaanderen.be/id/collection/",
+        "omg_conceptscheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
+        "omg_dataservice": "https://data.omgeving.vlaanderen.be/id/dataservice/",
+        "omg_dataset_doc": "https://data.omgeving.vlaanderen.be/doc/dataset/",
+        "omg_dataset": "https://data.omgeving.vlaanderen.be/id/dataset/",
+        "omg_distribution_doc": "https://data.omgeving.vlaanderen.be/doc/distribution/",
+        "omg_distribution": "https://data.omgeving.vlaanderen.be/id/distribution/",
+        "omg_graphcollection": "https://data.omgeving.vlaanderen.be/id/graphcollection/",
+        "omg_graph": "https://data.omgeving.vlaanderen.be/id/graph/",
+        "omg_id": "https://data.omgeving.vlaanderen.be/id/",
+        "omg_named_graph": "https://data.omgeving.vlaanderen.be/id/namedgraph/",
+        "omg_ontology": "https://data.omgeving.vlaanderen.be/id/ontology/",
+        "omg_package": "https://data.omgeving.vlaanderen.be/id/package/",
+        "omg_periodoftime": "https://data.omgeving.vlaanderen.be/id/periodoftime/",
+        "omg_service": "https://data.omgeving.vlaanderen.be/id/service/",
+        "omg_vcard": "https://data.omgeving.vlaanderen.be/id/vcard/",
+        "ovo": "http://data.vlaanderen.be/id/organisatie/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "repo": "https://repo.omgeving.vlaanderen.be/artifactory/release/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "sd": "http://www.w3.org/ns/sparql-service-description#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "spdx": "http://spdx.org/rdf/terms#",
+        "ssd": "http://www.w3.org/ns/sparql-service-description#",
+        "ts": "http://www.w3.org/ns/formats/",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+        "vlcs": "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
+        "void": "http://rdfs.org/ns/void#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "@base": "https://data.omgeving.vlaanderen.be/id/concept/matrix/",
+        "cm": "https://data.omgeving.vlaanderen.be/id/concept/matrix/",
+        "com": "https://data.omgeving.vlaanderen.be/id/collection/matrix/",
+        "collection": "https://data.omgeving.vlaanderen.be/id/collection/matrix/"
     },
     "graph": [
         {
-            "uri": "collection:bodem",
+            "id": "com:bodem",
             "type": "skos:Collection",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "member": [
-                "depositie",
-                "zwevend_stof"
+                "cm:depositie",
+                "cm:zwevend_stof"
             ],
             "prefLabel": "Collectie van matrices m.b.t. bodem."
         },
         {
-            "uri": "collection:lucht",
+            "id": "com:lucht",
             "type": "skos:Collection",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "member": [
-                "biota",
-                "eieren",
-                "gewassen",
-                "groenten",
-                "hard_gesteente",
-                "infrastructuur",
-                "sediment",
-                "strooisel",
-                "vilt"
+                "cm:biota",
+                "cm:eieren",
+                "cm:gewassen",
+                "cm:groenten",
+                "cm:hard_gesteente",
+                "cm:infrastructuur",
+                "cm:sediment",
+                "cm:strooisel",
+                "cm:vilt"
             ],
             "prefLabel": "Collectie van matrices m.b.t. lucht."
         },
         {
-            "uri": "collection:water",
+            "id": "com:water",
             "type": "skos:Collection",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "member": [
-                "afvalwater",
-                "bemalingswater",
-                "drinkwater",
-                "grondwater",
-                "koelwater",
-                "oppervlaktewater",
-                "waterbodem"
+                "cm:afvalwater",
+                "cm:bemalingswater",
+                "cm:drinkwater",
+                "cm:grondwater",
+                "cm:koelwater",
+                "cm:oppervlaktewater",
+                "cm:waterbodem"
             ],
             "prefLabel": "Collectie van matrices m.b.t. water."
         },
         {
-            "uri": "afvalwater",
+            "id": "cm:afvalwater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Afvalwater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "bemalingswater",
+            "id": "cm:bemalingswater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Bemalingswater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "biota",
+            "id": "cm:biota",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Biota",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "depositie",
+            "id": "cm:depositie",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Depositie",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:270"
         },
         {
-            "uri": "drinkwater",
+            "id": "cm:drinkwater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Drinkwater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "eieren",
+            "id": "cm:eieren",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Eieren",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "gewassen",
+            "id": "cm:gewassen",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Gewassen",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "groenten",
+            "id": "cm:groenten",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Groenten",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "grondwater",
+            "id": "cm:grondwater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Grondwater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "hard_gesteente",
+            "id": "cm:hard_gesteente",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Hard gesteente",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "infrastructuur",
+            "id": "cm:infrastructuur",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Infrastructuur",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "koelwater",
+            "id": "cm:koelwater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Koelwater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "oppervlaktewater",
+            "id": "cm:oppervlaktewater",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Oppervlaktewater",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "sediment",
+            "id": "cm:sediment",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Sediment",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "strooisel",
+            "id": "cm:strooisel",
             "type": "skos:Concept",
             "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "note": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
             "prefLabel": "Strooisel",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "vilt",
+            "id": "cm:vilt",
             "type": "skos:Concept",
             "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "note": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
             "prefLabel": "Vilt",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:7884"
         },
         {
-            "uri": "waterbodem",
+            "id": "cm:waterbodem",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Waterbodem",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:15179"
         },
         {
-            "uri": "zwevend_stof",
+            "id": "cm:zwevend_stof",
             "type": "skos:Concept",
-            "inScheme": "conceptscheme:matrix",
+            "inScheme": "vlcs:matrix",
             "prefLabel": "Zwevend stof",
-            "topConceptOf": "conceptscheme:matrix",
+            "topConceptOf": "vlcs:matrix",
             "theme": "gemet:270"
         },
         {
-            "uri": "conceptscheme:matrix",
+            "id": "vlcs:matrix",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
-                "depositie",
-                "zwevend_stof",
-                "biota",
-                "eieren",
-                "gewassen",
-                "groenten",
-                "hard_gesteente",
-                "infrastructuur",
-                "sediment",
-                "strooisel",
-                "vilt",
-                "afvalwater",
-                "bemalingswater",
-                "drinkwater",
-                "grondwater",
-                "koelwater",
-                "oppervlaktewater",
-                "waterbodem"
+                "cm:depositie",
+                "cm:zwevend_stof",
+                "cm:biota",
+                "cm:eieren",
+                "cm:gewassen",
+                "cm:groenten",
+                "cm:hard_gesteente",
+                "cm:infrastructuur",
+                "cm:sediment",
+                "cm:strooisel",
+                "cm:vilt",
+                "cm:afvalwater",
+                "cm:bemalingswater",
+                "cm:drinkwater",
+                "cm:grondwater",
+                "cm:koelwater",
+                "cm:oppervlaktewater",
+                "cm:waterbodem"
             ],
             "prefLabel": "Codelijst matrices."
         }

@@ -8,6 +8,7 @@ import convert from 'xml-js';
 import jp from 'jsonpath';
 import { QueryEngine } from '@comunica/query-sparql';
 
+
 const xml_file = readFileSync('../../../pom.xml', 'utf8');
 
 

@@ -1,5 +1,228 @@
 {
     "@context": {
+        "collections": {
+            "@type": "@id",
+            "@reverse": "member"
+        },
+        "id": "@id",
+        "type": {
+            "@id": "@type",
+            "@type": "@id"
+        },
+        "source": {
+            "@id": "http://purl.org/dc/terms/source",
+            "@type": "@id"
+        },
+        "sparql-service-description-name": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#name",
+            "@type": "@id"
+        },
+        "identifier": {
+            "@id": "http://purl.org/dc/terms/identifier",
+            "@type": "@id"
+        },
+        "hasVersion": {
+            "@id": "http://purl.org/dc/terms/hasVersion",
+            "@type": "@id"
+        },
+        "isVersionOf": {
+            "@id": "http://purl.org/dc/terms/isVersionOf",
+            "@type": "@id"
+        },
+        "label": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+            "@language": "nl"
+        },
+        "distribution": {
+            "@id": "http://www.w3.org/ns/dcat#distribution",
+            "@type": "@id"
+        },
+        "alternative": {
+            "@id": "http://purl.org/dc/terms/alternative",
+            "@language": "nl"
+        },
+        "description": {
+            "@id": "http://purl.org/dc/terms/description",
+            "@language": "nl"
+        },
+        "spatial": {
+            "@id": "http://purl.org/dc/terms/spatial",
+            "@type": "@id"
+        },
+        "page": {
+            "@id": "http://xmlns.com/foaf/0.1/page",
+            "@type": "@id"
+        },
+        "theme": {
+            "@id": "http://www.w3.org/ns/dcat#theme",
+            "@type": "@id"
+        },
+        "title": {
+            "@id": "http://purl.org/dc/terms/title",
+            "@language": "nl"
+        },
+        "landingPage": {
+            "@id": "http://www.w3.org/ns/dcat#landingPage",
+            "@type": "@id"
+        },
+        "rightsHolder": {
+            "@id": "http://purl.org/dc/terms/rightsHolder",
+            "@type": "@id"
+        },
+        "language": "http://publications.europa.eu/resource/authority/language/",
+        "accrualPeriodicity": {
+            "@id": "http://purl.org/dc/terms/accrualPeriodicity",
+            "@type": "@id"
+        },
+        "publisher": {
+            "@id": "http://purl.org/dc/terms/publisher",
+            "@type": "@id"
+        },
+        "dct.language": {
+            "@id": "http://purl.org/dc/terms/language",
+            "@type": "@id"
+        },
+        "contactPoint": {
+            "@id": "http://www.w3.org/ns/dcat#contactPoint",
+            "@type": "@id"
+        },
+        "temporal": {
+            "@id": "http://purl.org/dc/terms/temporal",
+            "@type": "@id"
+        },
+        "issued": {
+            "@id": "http://purl.org/dc/terms/issued",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "accessRights": {
+            "@id": "http://purl.org/dc/terms/accessRights",
+            "@type": "@id"
+        },
+        "license": {
+            "@id": "http://purl.org/dc/terms/license",
+            "@type": "@id"
+        },
+        "accessURL": {
+            "@id": "http://www.w3.org/ns/dcat#accessURL",
+            "@type": "@id"
+        },
+        "compressFormat": {
+            "@id": "http://www.w3.org/ns/dcat#compressFormat",
+            "@type": "@id"
+        },
+        "downloadURL": {
+            "@id": "http://www.w3.org/ns/dcat#downloadURL",
+            "@type": "@id"
+        },
+        "mediaType": {
+            "@id": "http://www.w3.org/ns/dcat#mediaType",
+            "@type": "@id"
+        },
+        "format": {
+            "@id": "http://purl.org/dc/terms/format",
+            "@type": "@id"
+        },
+        "versionInfo": {
+            "@id": "http://spdx.org/rdf/terms#versionInfo"
+        },
+        "packageName": {
+            "@id": "http://spdx.org/rdf/terms#packageName"
+        },
+        "packageFileName": {
+            "@id": "http://spdx.org/rdf/terms#packageFileName"
+        },
+        "downloadLocation": {
+            "@id": "http://spdx.org/rdf/terms#downloadLocation",
+            "@type": "@id"
+        },
+        "relationshipType_packageOf": {
+            "@id": "http://spdx.org/rdf/terms#relationshipType_packageOf",
+            "@type": "@id"
+        },
+        "availableGraphs": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#availableGraphs",
+            "@type": "@id"
+        },
+        "resultFormat": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#resultFormat",
+            "@type": "@id"
+        },
+        "feature": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#feature",
+            "@type": "@id"
+        },
+        "supportedLanguage": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#supportedLanguage",
+            "@type": "@id"
+        },
+        "url": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#url",
+            "@type": "@id"
+        },
+        "comment": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+            "@language": "nl"
+        },
+        "defaultDataset": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#defaultDataset",
+            "@type": "@id"
+        },
+        "endpoint": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#endpoint",
+            "@type": "@id"
+        },
+        "namedGraph": {
+            "@id": "http://www.w3.org/ns/sparql-service-description#namedGraph",
+            "@type": "@id"
+        },
+        "homepage": {
+            "@id": "http://xmlns.com/foaf/0.1/homepage",
+            "@type": "@id"
+        },
+        "service": {
+            "@id": "http://www.w3.org/ns/dcat#service",
+            "@type": "@id"
+        },
+        "rootResource": {
+            "@id": "http://rdfs.org/ns/void#rootResource",
+            "@type": "@id"
+        },
+        "dataset": {
+            "@id": "http://www.w3.org/ns/dcat#dataset",
+            "@type": "@id"
+        },
+        "servesDataset": {
+            "@id": "http://www.w3.org/ns/dcat#servesDataset",
+            "@type": "@id"
+        },
+        "endpointDescription": {
+            "@id": "http://www.w3.org/ns/dcat#endpointDescription",
+            "@type": "@id"
+        },
+        "endpointURL": {
+            "@id": "http://www.w3.org/ns/dcat#endpointURL",
+            "@type": "@id"
+        },
+        "conformsTo": {
+            "@id": "http://purl.org/dc/terms/conformsTo",
+            "@type": "@id"
+        },
+        "dc.identifier": {
+            "@id": "http://purl.org/dc/elements/1.1/identifier"
+        },
+        "dc.language": {
+            "@id": "http://purl.org/dc/elements/1.1/language",
+            "@language": "nl"
+        },
+        "dc.source": {
+            "@id": "http://purl.org/dc/elements/1.1/source"
+        },
+        "version": {
+            "@id": "http://www.w3.org/2002/07/owl#versionInfo"
+        },
+        "name": {
+            "@id": "http://spdx.org/rdf/terms#name"
+        },
         "seeAlso": {
             "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
             "@type": "@id"
@@ -14,14 +237,6 @@
         },
         "hasTopConcept": {
             "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
-            "@type": "@id"
-        },
-        "theme": {
-            "@id": "http://www.w3.org/ns/dcat#theme",
-            "@type": "@id"
-        },
-        "type": {
-            "@id": "@type",
             "@type": "@id"
         },
         "uri": {
@@ -58,7 +273,7 @@
     },
     "graph": [
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/bodem",
+            "id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/bodem",
             "type": "http://www.w3.org/2004/02/skos/core#Collection",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "member": [
@@ -68,7 +283,7 @@
             "prefLabel": "Collectie van matrices m.b.t. bodem."
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/lucht",
+            "id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/lucht",
             "type": "http://www.w3.org/2004/02/skos/core#Collection",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "member": [
@@ -85,7 +300,7 @@
             "prefLabel": "Collectie van matrices m.b.t. lucht."
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/collection/matrix/water",
+            "id": "https://data.omgeving.vlaanderen.be/id/collection/matrix/water",
             "type": "http://www.w3.org/2004/02/skos/core#Collection",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "member": [
@@ -100,7 +315,7 @@
             "prefLabel": "Collectie van matrices m.b.t. water."
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Afvalwater",
@@ -108,7 +323,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Bemalingswater",
@@ -116,7 +331,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/biota",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Biota",
@@ -124,7 +339,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Depositie",
@@ -132,7 +347,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/270"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/drinkwater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Drinkwater",
@@ -140,7 +355,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/eieren",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Eieren",
@@ -148,7 +363,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/gewassen",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Gewassen",
@@ -156,7 +371,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/groenten",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Groenten",
@@ -164,7 +379,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/grondwater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Grondwater",
@@ -172,7 +387,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/hard_gesteente",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Hard gesteente",
@@ -180,7 +395,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/infrastructuur",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Infrastructuur",
@@ -188,7 +403,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/koelwater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Koelwater",
@@ -196,7 +411,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/oppervlaktewater",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Oppervlaktewater",
@@ -204,7 +419,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/sediment",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Sediment",
@@ -212,7 +427,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "definition": "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is.",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
@@ -222,7 +437,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "definition": "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem.",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
@@ -232,7 +447,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/7884"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Waterbodem",
@@ -240,7 +455,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/15179"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof",
+            "id": "https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof",
             "type": "http://www.w3.org/2004/02/skos/core#Concept",
             "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "prefLabel": "Zwevend stof",
@@ -248,7 +463,7 @@
             "theme": "http://www.eionet.europa.eu/gemet/concept/270"
         },
         {
-            "uri": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
+            "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix",
             "type": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
             "hasTopConcept": [
                 "https://data.omgeving.vlaanderen.be/id/concept/matrix/depositie",

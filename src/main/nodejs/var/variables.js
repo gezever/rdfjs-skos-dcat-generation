@@ -8,11 +8,13 @@ import jp from "jsonpath";
 
 const config = yaml.load(fs.readFileSync('../resources/source/config.yml', 'utf8'));
 
-const context_skos_prefixes = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_context));
+const context_skos_prefixes = Object.assign({},JSON.parse(readFileSync(config.source.path + config.source.context)),
+    config.prefixes, {  '@base' : "https://data.omgeving.vlaanderen.be/id/concept/matrix/"}, config.skos.prefixes)
 
-const context_skos_no_prefixes = JSON.parse(fs.readFileSync(config.source.path + config.source.codelijst_csv_result_context));
+const context_skos_no_prefixes = JSON.parse(readFileSync(config.source.path + config.source.context));
 
-const context_catalog = JSON.parse(readFileSync(config.source.path + config.source.catalog_context));
+const context_catalog = Object.assign({},JSON.parse(readFileSync(config.source.path + config.source.context)), config.prefixes)
+
 
 const shapes_skos = await rdf.dataset().import(rdf.fromFile(config.ap.path + config.ap.name + '-' + config.ap.type + '/' + config.ap.name + '-' + config.ap.type + config.ap.turtle))
 
@@ -30,7 +32,6 @@ const next_release_version = jp.query(result, '$.project.version._text').toStrin
 
 const name = jp.query(result, '$.project.name._text').toString();
 
-const pom_context = JSON.parse(fs.readFileSync(config.source.path + config.source.pom_context))
 
 const skos_rules = fs.readFileSync(config.n3.skos_rules, 'utf8');
 
@@ -45,6 +46,8 @@ const void_rules = fs.readFileSync(config.n3.void_rules, 'utf8');
 const rdf_rules = fs.readFileSync(config.n3.rdf_rules, 'utf8');
 
 const spdx_rules = fs.readFileSync(config.n3.spdx_rules, 'utf8');
+
+const spdx_extra_rules = fs.readFileSync(config.n3.spdx_extra_rules, 'utf8');
 
 const skos_prefixes = {
     xsd: "http://www.w3.org/2001/XMLSchema#",
@@ -212,5 +215,5 @@ const dcat_catalog_turtle = config.dcat.path_catalog + config.dcat.name + '/' + 
 const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
 
-export { sortLines, rdf_rules, spdx_rules, void_rules, foaf_rules, dcterms_rules, dcat_rules, skos_rules, dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, pom_context, groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
+export { sortLines, rdf_rules, spdx_rules, spdx_extra_rules, void_rules, foaf_rules, dcterms_rules, dcat_rules, skos_rules, dcat_dataset_jsonld, dcat_dataset_turtle, dcat_catalog_jsonld, dcat_catalog_turtle, groupId, artifactId, version, next_release_version, name, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, context_skos_no_prefixes, shapes_skos, shapes_dcat, skos_prefixes, dcat_prefixes, context_catalog, frame_catalog };
 
