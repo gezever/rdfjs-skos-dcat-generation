@@ -1,11 +1,8 @@
-
-
 skos:
   prefixes :
-    cm: https://data.omgeving.vlaanderen.be/id/concept/matrix/
-    com: https://data.omgeving.vlaanderen.be/id/collection/matrix/
-    collection: https://data.omgeving.vlaanderen.be/id/collection/matrix/
-  path: ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/
+    concept : https://data.omgeving.vlaanderen.be/id/concept/matrix/
+    collection : https://data.omgeving.vlaanderen.be/id/collection/matrix/
+  path: ./main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/
   name: matrix
   turtle: .ttl
   jsonld: .jsonld
@@ -14,15 +11,13 @@ skos:
   nt: .nt
 
 source:
-  path: ../resources/source/
+  path: ./source/
   codelijst_csv: codelijst-source.csv
-  codelijst_context: codelijst_context.json
-  codelijst_csv_result_context: codelijst_csv_result_context.json
   context: context.json
 
 dcat:
-  path_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/
-  path_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/
+  path_catalog: /tmp/dcat/be/vlaanderen/omgeving/data/id/catalog/
+  path_dataset: /tmp/dcat/be/vlaanderen/omgeving/data/id/dataset/
   name: codelijst-matrix
   dataset_jsonld: dataset.jsonld
   dataset_turtle: dataset.ttl
@@ -36,20 +31,20 @@ sparql :
   construct_dataset : ../sparql/construct_dataset.rq
 
 ap :
-  path: ../resources/be/vlaanderen/omgeving/data/id/ontology/
+  path: ./main/resources/be/vlaanderen/omgeving/data/id/ontology/
   type: ap-constraints
   name: matrix
   turtle: .ttl
 
 n3 :
-  skos_rules : ../n3/skos-rules.n3
-  dcat_rules : ../n3/dcat-rules.n3
-  dcterms_rules : ../n3/dcterms-rules.n3
-  foaf_rules : ../n3/foaf-rules.n3
-  void_rules : ../n3/void-rules.n3
-  rdf_rules : ../n3/rdf-rules.n3
-  spdx_rules : ../n3/spdx-rules.n3
-  spdx_extra_rules : ../n3/spdx-extra-rules.n3
+  skos_rules : ./n3/skos-rules.n3
+  dcat_rules : ./n3/dcat-rules.n3
+  dcterms_rules : ./n3/dcterms-rules.n3
+  foaf_rules : ./n3/foaf-rules.n3
+  void_rules : ./n3/void-rules.n3
+  rdf_rules : ./n3/rdf-rules.n3
+  spdx_rules : ./n3/spdx-rules.n3
+  spdx_extra_rules : ./n3/spdx-extra-rules.n3
 
 metadata :
   catalog :
@@ -69,7 +64,7 @@ metadata :
     spatial :
       - http://publications.europa.eu/resource/authority/country/BEL
       - https://sws.geonames.org/3337388/
-    access_rights :  http://publications.europa.eu/resource/authority/access-right/PUBLIC
+    accessRights :  http://publications.europa.eu/resource/authority/access-right/PUBLIC
     accrualPeriodicity : http://publications.europa.eu/resource/authority/frequency/IRREG
     dct.language : http://publications.europa.eu/resource/authority/language/NLD
     landingPage  : https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html
@@ -83,25 +78,26 @@ metadata :
       format : http://publications.europa.eu/resource/authority/file-type/CSV
       type : http://www.w3.org/ns/dcat#Distribution
     ttl:
-      mediaType: https://www.iana.org/assignments/media-types/text/csv
-      format: http://publications.europa.eu/resource/authority/file-type/CSV
+      mediaType: https://www.iana.org/assignments/media-types/text/turtle
+      format: http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE
       type : http://www.w3.org/ns/dcat#Distribution
     jsonld:
-      mediaType: https://www.iana.org/assignments/media-types/text/csv
-      format: http://publications.europa.eu/resource/authority/file-type/CSV
+      mediaType: https://www.iana.org/assignments/media-types/application/ld+json
+      format: http://publications.europa.eu/resource/authority/file-type/JSON_LD
       type : http://www.w3.org/ns/dcat#Distribution
     jar :
-      mediaType : https://www.iana.org/assignments/media-types/text/csv
+      mediaType : https://www.iana.org/assignments/media-types/application/java-archive
       format : http://publications.europa.eu/resource/authority/file-type/JAR
       type :
         - http://www.w3.org/ns/dcat#Distribution
+        - http://spdx.org/rdf/terms#Package
+
 types : matrixtypes
 
 prefixes :
   access_right: http://publications.europa.eu/resource/authority/access-right/
   adms: http://www.w3.org/ns/adms#
   assettype: http://purl.org/adms/assettype/
-
   conceptscheme: https://data.omgeving.vlaanderen.be/id/conceptscheme/
   country: http://publications.europa.eu/resource/authority/country/
   datasets: https://datasets.omgeving.vlaanderen.be/
@@ -122,7 +118,6 @@ prefixes :
   omg_catalog: https://data.omgeving.vlaanderen.be/id/catalog/
   omg_catalog_doc: https://data.omgeving.vlaanderen.be/doc/catalog/
   omg_collection: https://data.omgeving.vlaanderen.be/id/collection/
-  omg_conceptscheme: https://data.omgeving.vlaanderen.be/id/conceptscheme/
   omg_dataservice: https://data.omgeving.vlaanderen.be/id/dataservice/
   omg_dataset_doc: https://data.omgeving.vlaanderen.be/doc/dataset/
   omg_dataset: https://data.omgeving.vlaanderen.be/id/dataset/
@@ -148,9 +143,9 @@ prefixes :
   ssd: http://www.w3.org/ns/sparql-service-description#
   ts: http://www.w3.org/ns/formats/
   vcard: http://www.w3.org/2006/vcard/ns#
-  vlcs: https://data.omgeving.vlaanderen.be/id/conceptscheme/
   void: http://rdfs.org/ns/void#
   xsd: http://www.w3.org/2001/XMLSchema#
 
-
+pom :
+  path : '../pom.xml'
 

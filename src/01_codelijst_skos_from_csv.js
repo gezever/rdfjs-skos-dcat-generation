@@ -7,9 +7,17 @@ import rdfDataset from '@rdfjs/dataset';
 import {RoxiReasoner} from "roxi-js";
 import jp from 'jsonpath';
 import  { json2csv }  from 'json-2-csv';
-import validate from './shacl/shacl_validation.js';
-import { sortLines, skos_rules, frame_skos_prefixes, frame_skos_no_prefixes, config, context_skos_prefixes, shapes_skos, skos_prefixes } from './var/variables.js';
+import validate from './utils/shacl_validation.js';
+import { skos_rules,
+    dcterms_rules,
+    frame_skos_prefixes,
+    frame_skos_no_prefixes,
+    config,
+    context_prefixes,
+    shapes_skos
+} from './utils/variables.js';
 
+const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
 async function csv_to_jsonld() {
     console.log("1: csv to jsonld ");
@@ -27,7 +35,7 @@ async function csv_to_jsonld() {
                 })
                 new_json.push(object)
             }
-            let jsonld = {"@graph": new_json, "@context": context_skos_prefixes};
+            let jsonld = {"@graph": new_json, "@context": context_prefixes};
             console.log("1: Csv to Jsonld");
             n3_reasoning(jsonld)
         })
@@ -39,6 +47,7 @@ async function n3_reasoning(json_ld) {
     //const skos_rules = fs.readFileSync(config.n3.skos_rules, 'utf8');
     const reasoner = RoxiReasoner.new();
     reasoner.add_abox(rdf);
+    reasoner.add_rules(dcterms_rules);
     reasoner.add_rules(skos_rules);
     reasoner.materialize();
     output(sortLines(reasoner.get_abox_dump()));
@@ -46,7 +55,7 @@ async function n3_reasoning(json_ld) {
 
 function output(rdf) {
     console.log("3: output");
-    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: config.prefixes });
+    const ttl_writer = new N3.Writer({ format: 'text/turtle' , prefixes: Object.assign( {}, config.skos.prefixes, config.prefixes)});
     const nt_writer = new N3.Writer({ format: 'N-Triples' });
     const dataset = rdfDataset.dataset()
     const parser = new N3.Parser();

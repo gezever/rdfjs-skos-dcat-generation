@@ -10,8 +10,3 @@
 
         { ?x a spdx:Package  . ?x dcat:downloadURL ?y . } => { ?x spdx:downloadLocation ?y .} .
         { ?x a spdx:Package  . ?x owl:versionInfo ?y . } => { ?x spdx:versionInfo ?y .} .
-
-
-
-
-

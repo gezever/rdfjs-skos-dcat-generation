@@ -12,10 +12,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-
-
-
-
 { ?x a dcat:Catalog } => { ?x a dcat:Dataset } .
 { ?x a dcat:DataService } => { ?x a dctype:Service } .
 { ?x a dcat:DataService } => { ?x a dcat:Resource } .
@@ -52,7 +48,6 @@
 
 { ?x dcat:theme ?y } => { ?x dcterms:subject ?y } .
 
-
 { ?x dcat:endpointURL ?y } => { ?y a rdfs:Resource } .
 { ?x dcat:hadRole ?y } => { ?y a dcat:Role } .
 { ?x dcat:landingPage ?y } => { ?y a foaf:Document } .
@@ -67,27 +62,3 @@
 { ?x dcat:theme ?y } => { ?y a skos:Concept } .
 { ?x dcat:servesDataset ?y } => { ?y a dcat:Dataset } .
 { ?x dcat:servesDataset ?y } => { ?y a dcat:Dataset } .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
