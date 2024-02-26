@@ -98,12 +98,14 @@
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#definition> "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> .
+<https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#note> "Afgestorven plantenmateriaal dat op de bodem ligt en nog niet verteerd is."@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Strooisel"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/strooisel> <http://www.w3.org/ns/dcat#theme> <http://www.eionet.europa.eu/gemet/concept/7884> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#definition> "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> .
+<https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#note> "Afgestorven gazonmaaisel en plantendelen, mossen, mosresten en ander organisch materiaal dat met de wind wordt aangevoerd dat een ondoordringbare laag vormt op de bodem."@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#prefLabel> "Vilt"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> <http://www.w3.org/ns/dcat#theme> <http://www.eionet.europa.eu/gemet/concept/7884> .
@@ -118,7 +120,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> .
 <https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof> <http://www.w3.org/ns/dcat#theme> <http://www.eionet.europa.eu/gemet/concept/270> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#prefLabel> "Codelijst matrices."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/afvalwater> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/bemalingswater> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/biota> .
@@ -137,3 +138,4 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/vilt> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/waterbodem> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/matrix/zwevend_stof> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/matrix> <http://www.w3.org/2004/02/skos/core#prefLabel> "Codelijst matrices."@nl .
