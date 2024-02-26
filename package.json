@@ -5,7 +5,7 @@
   "description": "",
   "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
   "scripts": {
-    "create_metadata": "cd src && node metadata.js"
+    "create_metadata": "cd src && node 02_metadata.js"
   },
   "keywords": [],
   "author": "Geert Van Haute",

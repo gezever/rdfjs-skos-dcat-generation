@@ -14,7 +14,7 @@
 
 
 { ?x a ?type } => { ?type a rdfs:Class } .
-#{ ?x ?p ?y } => { ?p a rdf:Property } .
+##{ ?x ?p ?y } => { ?p a rdf:Property } .
 
 
 
