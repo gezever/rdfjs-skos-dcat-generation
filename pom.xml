@@ -68,12 +68,12 @@
               <!--workingDirectory>target/classes/be/vlaanderen/omgeving/data/id/</workingDirectory-->
             </configuration>
           </execution>
-          <execution>
+          <!--execution>
             <id>npm install</id>
             <goals>
               <goal>npm</goal>
             </goals>
-          </execution>
+          </execution-->
           <execution>
             <id>create metadata</id>
             <goals>
