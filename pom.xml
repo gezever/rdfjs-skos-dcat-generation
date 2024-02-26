@@ -82,7 +82,7 @@
             <configuration>
               <arguments>run create_metadata</arguments>
               <!-- See https://nodejs.org/en/download/ for latest node and npm (lts) versions -->
-              <installDirectory>target</installDirectory>
+              <installDirectory>target/</installDirectory>
               <!--workingDirectory>target/classes/be/vlaanderen/omgeving/data/id/</workingDirectory-->
             </configuration>
           </execution>
