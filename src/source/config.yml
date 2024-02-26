@@ -1,3 +1,5 @@
+types : matrixtypes
+
 skos:
   prefixes :
     concept : https://data.omgeving.vlaanderen.be/id/concept/matrix/
@@ -47,9 +49,6 @@ n3 :
   spdx_extra_rules : ./n3/spdx-extra-rules.n3
 
 metadata :
-  catalog :
-    uri : https://data.omgeving.vlaanderen.be/id/catalog
-    type: http://www.w3.org/ns/dcat#Catalog
   all :
     accessURL : https://github.com/milieuinfo/codelijst-matrix.git
     contactPoint : https://data.omgeving.vlaanderen.be/id/vcard/helpdesk
@@ -68,7 +67,9 @@ metadata :
     accrualPeriodicity : http://publications.europa.eu/resource/authority/frequency/IRREG
     dct.language : http://publications.europa.eu/resource/authority/language/NLD
     landingPage  : https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html
-
+  catalog :
+    uri : https://data.omgeving.vlaanderen.be/id/catalog
+    type: http://www.w3.org/ns/dcat#Catalog
   dataset :     
     temporal : https://data.omgeving.vlaanderen.be/id/periodoftime/dataset_omg
     type : http://www.w3.org/ns/dcat#Dataset
@@ -92,7 +93,6 @@ metadata :
         - http://www.w3.org/ns/dcat#Distribution
         - http://spdx.org/rdf/terms#Package
 
-types : matrixtypes
 
 prefixes :
   access_right: http://publications.europa.eu/resource/authority/access-right/
