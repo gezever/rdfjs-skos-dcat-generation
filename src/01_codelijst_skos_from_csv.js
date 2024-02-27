@@ -121,7 +121,7 @@ function joinArray(arr) {
     if (Array.isArray(arr)) {
         if (typeof(arr[0]) === "object"){
             console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
-            process.exit();
+            process.exit(1);
         }
         else {
             return arr.join('|') // array to pipe separated string
@@ -130,7 +130,7 @@ function joinArray(arr) {
     else {
         if (typeof(arr) === "object"){
             console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
-            process.exit();
+            process.exit(1);
         }
         else {
             return arr; // is string
