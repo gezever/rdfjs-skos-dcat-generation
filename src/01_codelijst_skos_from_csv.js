@@ -7,7 +7,8 @@ import rdfDataset from '@rdfjs/dataset';
 import {RoxiReasoner} from "roxi-js";
 import jp from 'jsonpath';
 import  { json2csv }  from 'json-2-csv';
-import validate from './utils/shacl_validation.js';
+import {  validate, separateString, joinArray, sortLines } from 'maven-metadata-generator-npm';
+
 import { skos_rules,
     dcterms_rules,
     frame_skos_prefixes,
@@ -17,7 +18,6 @@ import { skos_rules,
     shapes_skos
 } from './utils/variables.js';
 
-const sortLines = str => str.split(/\r?\n/).sort().join('\n'); // To sort the dump of the reasoner for turtle pretty printing. Easier than using the Sink or Store.
 
 async function csv_to_jsonld() {
     console.log("1: csv to jsonld ");
@@ -72,7 +72,7 @@ function output(rdf) {
                         nt_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.nt, result)),
                             ttl_writer.end((error, result) => fs.writeFileSync(config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.turtle, result)),
                             rdf_to_jsonld(dataset)
-                   }
+                    }
                 })()
         });
 }
@@ -108,35 +108,6 @@ async function jsonld_to_csv(my_json){
 
 
 
-function separateString(originalString) {
-    if (originalString.includes('|')) {
-        return originalString.split('|'); // pipe separated string to array
-    }
-    else {
-        return originalString; // is string
-    }
-}
-
-function joinArray(arr) {
-    if (Array.isArray(arr)) {
-        if (typeof(arr[0]) === "object"){
-            console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
-            process.exit(1);
-        }
-        else {
-            return arr.join('|') // array to pipe separated string
-        }
-    }
-    else {
-        if (typeof(arr) === "object"){
-            console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
-            process.exit(1);
-        }
-        else {
-            return arr; // is string
-        }
-    }
-}
 
 csv_to_jsonld();
 
