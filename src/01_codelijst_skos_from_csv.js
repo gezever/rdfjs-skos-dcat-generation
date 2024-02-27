@@ -119,10 +119,22 @@ function separateString(originalString) {
 
 function joinArray(arr) {
     if (Array.isArray(arr)) {
-        return arr.join('|') // array to pipe separated string
+        if (typeof(arr[0]) === "object"){
+            console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
+            process.exit();
+        }
+        else {
+            return arr.join('|') // array to pipe separated string
+        }
     }
     else {
-        return arr; // is string
+        if (typeof(arr) === "object"){
+            console.log(new Error('Transformation to csv failed.\nThis json is nested. Please add properties to "frame_skos_no_prefixes" in variables.js\nExit process'))
+            process.exit();
+        }
+        else {
+            return arr; // is string
+        }
     }
 }
 
