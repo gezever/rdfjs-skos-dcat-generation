@@ -5,7 +5,7 @@
 **Van Haute Geert**
 
 **Poster :**
-![Poster](src/documentation/poster-ufora-lod-2023.svg)
+![Poster](src/documentation/poster-ufora-lod-2023.pdf)
 
 ## Context
 Software development is typically the outcome of a larger change process aimed at optimizing business operations. This process typically commences with an analysis of existing business processes. During these business analyses, conducted by business or functional analysts through interviews with relevant personnel, the processes and their associated elements are identified and documented in explanatory lists known as business terms. Currently, these business analyses culminate in the creation of distributed, non-machine-readable documents such as Word files or wiki pages.
